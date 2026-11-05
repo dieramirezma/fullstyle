@@ -1,6 +1,6 @@
 # Consolidación para portafolio
 
-Estado: **monorepo verificado en Docker local; publicación en curso**. Este documento registra la validación del monorepo; los resultados de la copia modernizada son históricos y no sustituyen estas comprobaciones.
+Estado: **monorepo público y verificado en Docker local**. Este documento registra la validación del monorepo; los resultados de la copia modernizada son históricos y no sustituyen estas comprobaciones.
 
 ## Checklist de publicación
 
@@ -14,7 +14,7 @@ Estado: **monorepo verificado en Docker local; publicación en curso**. Este doc
 - [x] Documentar demo, arquitectura, calidad y alcance de licencias.
 - [x] Verificar archivos versionados, secretos e historial nuevo.
 - [x] Ejecutar la pipeline completa sobre este monorepo y la reconstrucción limpia.
-- [ ] Publicar `dieramirezma/fullstyle`, público, y comprobar remoto y GitHub Actions.
+- [x] Publicar `dieramirezma/fullstyle`, público, y comprobar remoto y GitHub Actions.
 
 ## Decisiones
 
@@ -36,3 +36,5 @@ Pipeline local de **27 pasos con salida 0**, 30 controles de calidad, siete audi
 GitHub Actions ejecuta la pipeline sobre un checkout nuevo. Consultar sus resultados actuales en [Actions](https://github.com/dieramirezma/fullstyle/actions); la evidencia local anterior no afirma por sí sola el resultado de ese runner.
 
 Durante la preparación, el primer intento falló en el navegador por selectores con tildes leídos con una codificación incorrecta. Se restauró ese archivo desde UTF-8, se comprobó el botón real y se repitió la pipeline completa con éxito. El intento fallido permanece separado en `.quality/attempt-browser-encoding/`; no se computa como una ejecución aprobada.
+
+Repositorio público: [dieramirezma/fullstyle](https://github.com/dieramirezma/fullstyle). Se comprobó la correspondencia del commit remoto con la copia local y la creación de la ejecución de GitHub Actions; su resultado hospedado se consulta en Actions, separado de la evidencia Docker local.
