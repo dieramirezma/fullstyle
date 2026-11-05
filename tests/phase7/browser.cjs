@@ -65,7 +65,7 @@ async function main() {
     await page.locator('input[name="email"]').fill(email);
     await page.locator('input[name="password"]').fill(password);
     await page
-      .getByRole("button", { name: "Iniciar SesiÃ³n", exact: true })
+      .getByRole("button", { name: "Iniciar Sesión", exact: true })
       .click();
     await page.waitForURL("**/customer", { timeout: 25000 });
     const oldSession = await (
@@ -80,7 +80,7 @@ async function main() {
         response.url().endsWith("/api/logic/enable-2fa") &&
         response.request().method() === "POST",
     );
-    await page.getByRole("button", { name: "Iniciar activaciÃ³n MFA" }).click();
+    await page.getByRole("button", { name: "Iniciar activación MFA" }).click();
     const enrollment = await (await enrollmentResponse).json();
     const secret = new URL(enrollment.otpauth_url).searchParams.get("secret");
     assert(secret);
@@ -90,12 +90,12 @@ async function main() {
       .fill(totp(secret));
     await page.getByRole("button", { name: "Verifica y activa" }).click();
     await page
-      .getByText("Guarda tus cÃ³digos de recuperaciÃ³n", { exact: true })
+      .getByText("Guarda tus códigos de recuperación", { exact: true })
       .waitFor();
     const codes = (await page.locator("pre").innerText()).trim().split("\n");
     assert.equal(new Set(codes).size, 10);
     const downloadPromise = page.waitForEvent("download");
-    await page.getByRole("button", { name: "Descargar cÃ³digos" }).click();
+    await page.getByRole("button", { name: "Descargar códigos" }).click();
     const download = await downloadPromise;
     assert.equal(
       (await fs.readFile(await download.path(), "utf8")).trim(),
@@ -114,14 +114,14 @@ async function main() {
     );
     stage = "recovery";
     await page
-      .getByRole("button", { name: "Ya los guardÃ©; iniciar sesiÃ³n" })
+      .getByRole("button", { name: "Ya los guardé; iniciar sesión" })
       .click();
     await page.waitForURL("**/login", { timeout: 15000 });
     await page.locator('input[name="email"]').fill(email);
     await page.locator('input[name="password"]').fill(password);
-    await page.getByRole("button", { name: "PerdÃ­ mi autenticador" }).click();
+    await page.getByRole("button", { name: "Perdí mi autenticador" }).click();
     await page
-      .getByText("CÃ³digo de recuperaciÃ³n guardado", { exact: true })
+      .getByText("Código de recuperación guardado", { exact: true })
       .locator("..")
       .locator("input")
       .fill(codes[0]);
@@ -135,7 +135,7 @@ async function main() {
       .click();
     assert.equal((await recoveryResponse).status(), 200);
     await page
-      .getByRole("button", { name: "Iniciar SesiÃ³n", exact: true })
+      .getByRole("button", { name: "Iniciar Sesión", exact: true })
       .click();
     await page.waitForURL("**/customer", { timeout: 25000 });
     steps.push("offline recovery form and successful subsequent browser login");
@@ -189,17 +189,17 @@ async function main() {
       if (request.url().endsWith("/chat/send")) sends++;
     });
     await page
-      .getByLabel("ConversaciÃ³n (guarda el identificador para continuar)", {
+      .getByLabel("Conversación (guarda el identificador para continuar)", {
         exact: true,
       })
       .fill(conversation);
     await page.getByRole("button", { name: "Cargar historial" }).click();
     await page.getByText("Estado: uncertain", { exact: true }).waitFor();
-    await page.getByLabel("Ya consultÃ© el estado de mi reserva").check();
+    await page.getByLabel("Ya consulté el estado de mi reserva").check();
     await page
-      .getByLabel("Nota de revisiÃ³n")
+      .getByLabel("Nota de revisión")
       .fill("Consulted my empty bookings; outcome reviewed");
-    await page.getByRole("button", { name: "Registrar revisiÃ³n" }).click();
+    await page.getByRole("button", { name: "Registrar revisión" }).click();
     await page.getByText("Estado: reviewed", { exact: true }).waitFor();
     assert.equal(sends, 0);
     const currentSession = await (
