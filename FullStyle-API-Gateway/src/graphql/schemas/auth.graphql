@@ -1,0 +1,38 @@
+type User {
+  id: Int!
+  name: String!
+  email: String!
+}
+
+type LoginResponse {
+  message: String!
+  token: String!
+  refresh_token: String
+  user: User!
+}
+
+type RegisterUserResponse {
+  message: String!
+  user: User!
+}
+
+type Mutation {
+  login(email: String!, password: String!, otp: String): LoginResponse!
+  registerUser(
+    name: String!
+    email: String!
+    password: String!
+  ): RegisterUserResponse!
+  registerManager(
+    name: String!
+    email: String!
+    password: String!
+    bankaccount: Int!
+    bankentity: String!
+    accounttype: String!
+    subscriptionactive: Boolean!
+    subscriptionstartdate: String!
+    subscriptionfinishdate: String!
+    subscriptiontype: String!
+  ): RegisterUserResponse!
+}

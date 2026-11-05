@@ -1,0 +1,1140 @@
+{
+  "cache_epoch": {
+    "columns": {
+      "namespace": {
+        "type": "VARCHAR(40)",
+        "nullable": false
+      },
+      "generation": {
+        "type": "VARCHAR(32)",
+        "nullable": false
+      }
+    },
+    "primary_key": [
+      "namespace"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "checks": []
+  },
+  "category": {
+    "columns": {
+      "id": {
+        "type": "INTEGER",
+        "nullable": false
+      },
+      "name": {
+        "type": "VARCHAR(100)",
+        "nullable": false
+      }
+    },
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [
+      [
+        "name"
+      ]
+    ],
+    "checks": []
+  },
+  "client": {
+    "columns": {
+      "id": {
+        "type": "INTEGER",
+        "nullable": false
+      }
+    },
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "checks": []
+  },
+  "mail_event": {
+    "columns": {
+      "id": {
+        "type": "VARCHAR(64)",
+        "nullable": false
+      },
+      "payload": {
+        "type": "JSON",
+        "nullable": false
+      },
+      "payload_hash": {
+        "type": "VARCHAR(64)",
+        "nullable": false
+      },
+      "state": {
+        "type": "VARCHAR(20)",
+        "nullable": false
+      },
+      "attempts": {
+        "type": "INTEGER",
+        "nullable": false
+      },
+      "created_at": {
+        "type": "TIMESTAMP WITH TIME ZONE",
+        "nullable": false
+      },
+      "next_attempt": {
+        "type": "TIMESTAMP WITH TIME ZONE",
+        "nullable": false
+      },
+      "delivered_at": {
+        "type": "TIMESTAMP WITH TIME ZONE",
+        "nullable": true
+      },
+      "last_error": {
+        "type": "VARCHAR(80)",
+        "nullable": true
+      }
+    },
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "checks": []
+  },
+  "provider_receipt": {
+    "columns": {
+      "id": {
+        "type": "VARCHAR(36)",
+        "nullable": false
+      },
+      "provider": {
+        "type": "VARCHAR(30)",
+        "nullable": false
+      },
+      "transaction_id": {
+        "type": "VARCHAR(150)",
+        "nullable": false
+      },
+      "payload": {
+        "type": "JSON",
+        "nullable": false
+      },
+      "state": {
+        "type": "VARCHAR(30)",
+        "nullable": false
+      }
+    },
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "checks": []
+  },
+  "session_revocation": {
+    "columns": {
+      "subject": {
+        "type": "VARCHAR(100)",
+        "nullable": false
+      },
+      "token_type": {
+        "type": "VARCHAR(20)",
+        "nullable": false
+      },
+      "jti": {
+        "type": "VARCHAR(100)",
+        "nullable": false
+      },
+      "expires_at": {
+        "type": "BIGINT",
+        "nullable": false
+      }
+    },
+    "primary_key": [
+      "subject",
+      "token_type",
+      "jti"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "checks": []
+  },
+  "site": {
+    "columns": {
+      "id": {
+        "type": "INTEGER",
+        "nullable": false
+      },
+      "name": {
+        "type": "VARCHAR(150)",
+        "nullable": false
+      },
+      "address": {
+        "type": "VARCHAR(255)",
+        "nullable": false
+      },
+      "phone": {
+        "type": "VARCHAR(20)",
+        "nullable": true
+      },
+      "manager_id": {
+        "type": "INTEGER",
+        "nullable": false
+      },
+      "photos": {
+        "type": "JSON",
+        "nullable": true
+      }
+    },
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "checks": []
+  },
+  "userr": {
+    "columns": {
+      "id": {
+        "type": "INTEGER",
+        "nullable": false
+      },
+      "name": {
+        "type": "VARCHAR(100)",
+        "nullable": false
+      },
+      "email": {
+        "type": "VARCHAR(150)",
+        "nullable": false
+      },
+      "password": {
+        "type": "VARCHAR(255)",
+        "nullable": true
+      },
+      "active": {
+        "type": "BOOLEAN",
+        "nullable": false
+      },
+      "auth_provider": {
+        "type": "VARCHAR(20)",
+        "nullable": false
+      },
+      "google_id": {
+        "type": "VARCHAR(100)",
+        "nullable": true
+      }
+    },
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [
+      [
+        "email"
+      ],
+      [
+        "google_id"
+      ]
+    ],
+    "checks": []
+  },
+  "chat_turn": {
+    "columns": {
+      "sequence": {
+        "type": "BIGINT",
+        "nullable": false
+      },
+      "user_id": {
+        "type": "INTEGER",
+        "nullable": false
+      },
+      "session_id": {
+        "type": "VARCHAR(120)",
+        "nullable": false
+      },
+      "operation_id": {
+        "type": "VARCHAR(80)",
+        "nullable": false
+      },
+      "message": {
+        "type": "TEXT",
+        "nullable": false
+      },
+      "reply": {
+        "type": "TEXT",
+        "nullable": true
+      },
+      "state": {
+        "type": "VARCHAR(20)",
+        "nullable": false
+      },
+      "created_at": {
+        "type": "TIMESTAMP WITH TIME ZONE",
+        "nullable": false
+      }
+    },
+    "primary_key": [
+      "sequence"
+    ],
+    "foreign_keys": [
+      {
+        "constrained_columns": [
+          "user_id"
+        ],
+        "referred_table": "userr",
+        "referred_columns": [
+          "id"
+        ],
+        "options": {
+          "ondelete": "CASCADE"
+        }
+      }
+    ],
+    "unique_constraints": [
+      [
+        "user_id",
+        "session_id",
+        "operation_id"
+      ]
+    ],
+    "checks": []
+  },
+  "identity_link": {
+    "columns": {
+      "provider": {
+        "type": "VARCHAR(30)",
+        "nullable": false
+      },
+      "subject": {
+        "type": "VARCHAR(150)",
+        "nullable": false
+      },
+      "user_id": {
+        "type": "INTEGER",
+        "nullable": false
+      }
+    },
+    "primary_key": [
+      "provider",
+      "subject"
+    ],
+    "foreign_keys": [
+      {
+        "constrained_columns": [
+          "user_id"
+        ],
+        "referred_table": "userr",
+        "referred_columns": [
+          "id"
+        ],
+        "options": {}
+      }
+    ],
+    "unique_constraints": [
+      [
+        "provider",
+        "user_id"
+      ]
+    ],
+    "checks": []
+  },
+  "mail_delivery": {
+    "columns": {
+      "event_id": {
+        "type": "VARCHAR(64)",
+        "nullable": false
+      },
+      "ordinal": {
+        "type": "INTEGER",
+        "nullable": false
+      },
+      "result": {
+        "type": "JSON",
+        "nullable": false
+      },
+      "created_at": {
+        "type": "TIMESTAMP WITH TIME ZONE",
+        "nullable": false
+      }
+    },
+    "primary_key": [
+      "event_id",
+      "ordinal"
+    ],
+    "foreign_keys": [
+      {
+        "constrained_columns": [
+          "event_id"
+        ],
+        "referred_table": "mail_event",
+        "referred_columns": [
+          "id"
+        ],
+        "options": {
+          "ondelete": "CASCADE"
+        }
+      }
+    ],
+    "unique_constraints": [],
+    "checks": []
+  },
+  "manager": {
+    "columns": {
+      "id": {
+        "type": "INTEGER",
+        "nullable": false
+      },
+      "bankaccount": {
+        "type": "BIGINT",
+        "nullable": false
+      },
+      "accounttype": {
+        "type": "VARCHAR(45)",
+        "nullable": false
+      },
+      "bankentity": {
+        "type": "VARCHAR(45)",
+        "nullable": false
+      },
+      "subscriptionactive": {
+        "type": "BOOLEAN",
+        "nullable": false
+      },
+      "subscriptionstartdate": {
+        "type": "TIMESTAMP WITH TIME ZONE",
+        "nullable": true
+      },
+      "subscriptiontype": {
+        "type": "VARCHAR(45)",
+        "nullable": true
+      },
+      "subscriptionfinishdate": {
+        "type": "TIMESTAMP WITH TIME ZONE",
+        "nullable": true
+      }
+    },
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [
+      {
+        "constrained_columns": [
+          "id"
+        ],
+        "referred_table": "userr",
+        "referred_columns": [
+          "id"
+        ],
+        "options": {}
+      }
+    ],
+    "unique_constraints": [],
+    "checks": []
+  },
+  "service": {
+    "columns": {
+      "id": {
+        "type": "INTEGER",
+        "nullable": false
+      },
+      "category_id": {
+        "type": "INTEGER",
+        "nullable": false
+      },
+      "name": {
+        "type": "VARCHAR(100)",
+        "nullable": false
+      }
+    },
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [
+      {
+        "constrained_columns": [
+          "category_id"
+        ],
+        "referred_table": "category",
+        "referred_columns": [
+          "id"
+        ],
+        "options": {}
+      }
+    ],
+    "unique_constraints": [],
+    "checks": []
+  },
+  "site_has_category": {
+    "columns": {
+      "site_id": {
+        "type": "INTEGER",
+        "nullable": false
+      },
+      "category_id": {
+        "type": "INTEGER",
+        "nullable": false
+      }
+    },
+    "primary_key": [
+      "site_id",
+      "category_id"
+    ],
+    "foreign_keys": [
+      {
+        "constrained_columns": [
+          "category_id"
+        ],
+        "referred_table": "category",
+        "referred_columns": [
+          "id"
+        ],
+        "options": {
+          "ondelete": "CASCADE"
+        }
+      },
+      {
+        "constrained_columns": [
+          "site_id"
+        ],
+        "referred_table": "site",
+        "referred_columns": [
+          "id"
+        ],
+        "options": {
+          "ondelete": "CASCADE"
+        }
+      }
+    ],
+    "unique_constraints": [],
+    "checks": []
+  },
+  "worker": {
+    "columns": {
+      "id": {
+        "type": "INTEGER",
+        "nullable": false
+      },
+      "name": {
+        "type": "VARCHAR(100)",
+        "nullable": false
+      },
+      "site_id": {
+        "type": "INTEGER",
+        "nullable": false
+      },
+      "profilepicture": {
+        "type": "VARCHAR(255)",
+        "nullable": true
+      },
+      "description": {
+        "type": "TEXT",
+        "nullable": true
+      },
+      "active": {
+        "type": "BOOLEAN",
+        "nullable": false
+      }
+    },
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [
+      {
+        "constrained_columns": [
+          "site_id"
+        ],
+        "referred_table": "site",
+        "referred_columns": [
+          "id"
+        ],
+        "options": {
+          "ondelete": "CASCADE"
+        }
+      }
+    ],
+    "unique_constraints": [],
+    "checks": []
+  },
+  "appointment": {
+    "columns": {
+      "id": {
+        "type": "INTEGER",
+        "nullable": false
+      },
+      "appointmenttime": {
+        "type": "TIMESTAMP WITHOUT TIME ZONE",
+        "nullable": false
+      },
+      "status": {
+        "type": "VARCHAR(50)",
+        "nullable": false
+      },
+      "worker_id": {
+        "type": "INTEGER",
+        "nullable": false
+      },
+      "site_id": {
+        "type": "INTEGER",
+        "nullable": false
+      },
+      "service_id": {
+        "type": "INTEGER",
+        "nullable": false
+      },
+      "client_id": {
+        "type": "INTEGER",
+        "nullable": false
+      }
+    },
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [
+      {
+        "constrained_columns": [
+          "service_id"
+        ],
+        "referred_table": "service",
+        "referred_columns": [
+          "id"
+        ],
+        "options": {
+          "ondelete": "CASCADE"
+        }
+      },
+      {
+        "constrained_columns": [
+          "site_id"
+        ],
+        "referred_table": "site",
+        "referred_columns": [
+          "id"
+        ],
+        "options": {
+          "ondelete": "CASCADE"
+        }
+      },
+      {
+        "constrained_columns": [
+          "worker_id"
+        ],
+        "referred_table": "worker",
+        "referred_columns": [
+          "id"
+        ],
+        "options": {
+          "ondelete": "CASCADE"
+        }
+      }
+    ],
+    "unique_constraints": [],
+    "checks": []
+  },
+  "availability": {
+    "columns": {
+      "id": {
+        "type": "INTEGER",
+        "nullable": false
+      },
+      "worker_id": {
+        "type": "INTEGER",
+        "nullable": false
+      },
+      "weekday": {
+        "type": "VARCHAR(10)",
+        "nullable": false
+      },
+      "starttime": {
+        "type": "TIME WITHOUT TIME ZONE",
+        "nullable": false
+      },
+      "endtime": {
+        "type": "TIME WITHOUT TIME ZONE",
+        "nullable": false
+      }
+    },
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [
+      {
+        "constrained_columns": [
+          "worker_id"
+        ],
+        "referred_table": "worker",
+        "referred_columns": [
+          "id"
+        ],
+        "options": {
+          "ondelete": "CASCADE"
+        }
+      }
+    ],
+    "unique_constraints": [],
+    "checks": []
+  },
+  "days_off": {
+    "columns": {
+      "id": {
+        "type": "INTEGER",
+        "nullable": false
+      },
+      "worker_id": {
+        "type": "INTEGER",
+        "nullable": false
+      },
+      "dayoff": {
+        "type": "DATE",
+        "nullable": false
+      }
+    },
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [
+      {
+        "constrained_columns": [
+          "worker_id"
+        ],
+        "referred_table": "worker",
+        "referred_columns": [
+          "id"
+        ],
+        "options": {
+          "ondelete": "CASCADE"
+        }
+      }
+    ],
+    "unique_constraints": [],
+    "checks": []
+  },
+  "detail": {
+    "columns": {
+      "site_id": {
+        "type": "INTEGER",
+        "nullable": false
+      },
+      "service_id": {
+        "type": "INTEGER",
+        "nullable": false
+      },
+      "description": {
+        "type": "TEXT",
+        "nullable": true
+      },
+      "price": {
+        "type": "INTEGER",
+        "nullable": false
+      },
+      "duration": {
+        "type": "INTEGER",
+        "nullable": false
+      },
+      "photos": {
+        "type": "JSON",
+        "nullable": true
+      },
+      "active": {
+        "type": "BOOLEAN",
+        "nullable": false
+      }
+    },
+    "primary_key": [
+      "site_id",
+      "service_id"
+    ],
+    "foreign_keys": [
+      {
+        "constrained_columns": [
+          "service_id"
+        ],
+        "referred_table": "service",
+        "referred_columns": [
+          "id"
+        ],
+        "options": {
+          "ondelete": "CASCADE"
+        }
+      },
+      {
+        "constrained_columns": [
+          "site_id"
+        ],
+        "referred_table": "site",
+        "referred_columns": [
+          "id"
+        ],
+        "options": {
+          "ondelete": "CASCADE"
+        }
+      }
+    ],
+    "unique_constraints": [],
+    "checks": []
+  },
+  "seasonal_schedule": {
+    "columns": {
+      "id": {
+        "type": "INTEGER",
+        "nullable": false
+      },
+      "worker_id": {
+        "type": "INTEGER",
+        "nullable": false
+      },
+      "seasonname": {
+        "type": "VARCHAR(50)",
+        "nullable": false
+      },
+      "startdate": {
+        "type": "DATE",
+        "nullable": false
+      },
+      "enddate": {
+        "type": "DATE",
+        "nullable": false
+      },
+      "starttime": {
+        "type": "TIME WITHOUT TIME ZONE",
+        "nullable": false
+      },
+      "endtime": {
+        "type": "TIME WITHOUT TIME ZONE",
+        "nullable": false
+      }
+    },
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [
+      {
+        "constrained_columns": [
+          "worker_id"
+        ],
+        "referred_table": "worker",
+        "referred_columns": [
+          "id"
+        ],
+        "options": {
+          "ondelete": "CASCADE"
+        }
+      }
+    ],
+    "unique_constraints": [],
+    "checks": []
+  },
+  "worker_has_service": {
+    "columns": {
+      "worker_id": {
+        "type": "INTEGER",
+        "nullable": false
+      },
+      "service_id": {
+        "type": "INTEGER",
+        "nullable": false
+      }
+    },
+    "primary_key": [
+      "worker_id",
+      "service_id"
+    ],
+    "foreign_keys": [
+      {
+        "constrained_columns": [
+          "service_id"
+        ],
+        "referred_table": "service",
+        "referred_columns": [
+          "id"
+        ],
+        "options": {
+          "ondelete": "CASCADE"
+        }
+      },
+      {
+        "constrained_columns": [
+          "worker_id"
+        ],
+        "referred_table": "worker",
+        "referred_columns": [
+          "id"
+        ],
+        "options": {
+          "ondelete": "CASCADE"
+        }
+      }
+    ],
+    "unique_constraints": [],
+    "checks": []
+  },
+  "booking_terms": {
+    "columns": {
+      "appointment_id": {
+        "type": "INTEGER",
+        "nullable": false
+      },
+      "duration": {
+        "type": "INTEGER",
+        "nullable": false
+      },
+      "amount": {
+        "type": "INTEGER",
+        "nullable": false
+      },
+      "currency": {
+        "type": "VARCHAR(3)",
+        "nullable": false
+      }
+    },
+    "primary_key": [
+      "appointment_id"
+    ],
+    "foreign_keys": [
+      {
+        "constrained_columns": [
+          "appointment_id"
+        ],
+        "referred_table": "appointment",
+        "referred_columns": [
+          "id"
+        ],
+        "options": {
+          "ondelete": "CASCADE"
+        }
+      }
+    ],
+    "unique_constraints": [],
+    "checks": [
+      "duration > 0 AND amount >= 0"
+    ]
+  },
+  "notification": {
+    "columns": {
+      "id": {
+        "type": "INTEGER",
+        "nullable": false
+      },
+      "timestamp": {
+        "type": "TIMESTAMP WITHOUT TIME ZONE",
+        "nullable": true
+      },
+      "type": {
+        "type": "VARCHAR(50)",
+        "nullable": false
+      },
+      "status": {
+        "type": "VARCHAR(50)",
+        "nullable": false
+      },
+      "appointment_id": {
+        "type": "INTEGER",
+        "nullable": false
+      }
+    },
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [
+      {
+        "constrained_columns": [
+          "appointment_id"
+        ],
+        "referred_table": "appointment",
+        "referred_columns": [
+          "id"
+        ],
+        "options": {
+          "ondelete": "CASCADE"
+        }
+      }
+    ],
+    "unique_constraints": [],
+    "checks": []
+  },
+  "payment": {
+    "columns": {
+      "id": {
+        "type": "INTEGER",
+        "nullable": false
+      },
+      "timestamp": {
+        "type": "TIMESTAMP WITHOUT TIME ZONE",
+        "nullable": true
+      },
+      "amount": {
+        "type": "INTEGER",
+        "nullable": false
+      },
+      "paymentmethod": {
+        "type": "VARCHAR(50)",
+        "nullable": false
+      },
+      "status": {
+        "type": "VARCHAR(50)",
+        "nullable": false
+      },
+      "appointment_id": {
+        "type": "INTEGER",
+        "nullable": false
+      }
+    },
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [
+      {
+        "constrained_columns": [
+          "appointment_id"
+        ],
+        "referred_table": "appointment",
+        "referred_columns": [
+          "id"
+        ],
+        "options": {
+          "ondelete": "CASCADE"
+        }
+      }
+    ],
+    "unique_constraints": [],
+    "checks": []
+  },
+  "payment_intent": {
+    "columns": {
+      "reference": {
+        "type": "VARCHAR(36)",
+        "nullable": false
+      },
+      "appointment_id": {
+        "type": "INTEGER",
+        "nullable": false
+      },
+      "payment_id": {
+        "type": "INTEGER",
+        "nullable": false
+      },
+      "amount_in_cents": {
+        "type": "BIGINT",
+        "nullable": false
+      },
+      "currency": {
+        "type": "VARCHAR(3)",
+        "nullable": false
+      }
+    },
+    "primary_key": [
+      "reference"
+    ],
+    "foreign_keys": [
+      {
+        "constrained_columns": [
+          "appointment_id"
+        ],
+        "referred_table": "appointment",
+        "referred_columns": [
+          "id"
+        ],
+        "options": {
+          "ondelete": "CASCADE"
+        }
+      },
+      {
+        "constrained_columns": [
+          "payment_id"
+        ],
+        "referred_table": "payment",
+        "referred_columns": [
+          "id"
+        ],
+        "options": {
+          "ondelete": "RESTRICT"
+        }
+      }
+    ],
+    "unique_constraints": [
+      [
+        "appointment_id"
+      ],
+      [
+        "payment_id"
+      ]
+    ],
+    "checks": [
+      "amount_in_cents > 0"
+    ]
+  },
+  "provider_transaction": {
+    "columns": {
+      "provider": {
+        "type": "VARCHAR(30)",
+        "nullable": false
+      },
+      "transaction_id": {
+        "type": "VARCHAR(150)",
+        "nullable": false
+      },
+      "receipt_id": {
+        "type": "VARCHAR(36)",
+        "nullable": false
+      },
+      "reference": {
+        "type": "VARCHAR(150)",
+        "nullable": true
+      },
+      "amount_in_cents": {
+        "type": "BIGINT",
+        "nullable": true
+      },
+      "currency": {
+        "type": "VARCHAR(3)",
+        "nullable": true
+      },
+      "status": {
+        "type": "VARCHAR(30)",
+        "nullable": false
+      },
+      "verified_payload": {
+        "type": "JSON",
+        "nullable": false
+      },
+      "applied_payment_id": {
+        "type": "INTEGER",
+        "nullable": true
+      }
+    },
+    "primary_key": [
+      "provider",
+      "transaction_id"
+    ],
+    "foreign_keys": [
+      {
+        "constrained_columns": [
+          "applied_payment_id"
+        ],
+        "referred_table": "payment",
+        "referred_columns": [
+          "id"
+        ],
+        "options": {}
+      },
+      {
+        "constrained_columns": [
+          "receipt_id"
+        ],
+        "referred_table": "provider_receipt",
+        "referred_columns": [
+          "id"
+        ],
+        "options": {
+          "ondelete": "CASCADE"
+        }
+      }
+    ],
+    "unique_constraints": [
+      [
+        "applied_payment_id"
+      ],
+      [
+        "receipt_id"
+      ]
+    ],
+    "checks": []
+  }
+}

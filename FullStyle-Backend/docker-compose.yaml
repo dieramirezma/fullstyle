@@ -1,0 +1,3 @@
+# Phase 1: use the isolated dependency stack in the parent directory.
+# Application startup is pending environment and authorization review.
+services: {}

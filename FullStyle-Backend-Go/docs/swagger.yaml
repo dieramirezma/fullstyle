@@ -1,0 +1,182 @@
+basePath: /
+definitions:
+  models.ErrorResponse:
+    properties:
+      error:
+        example: Invalid credentials
+        type: string
+    type: object
+  models.LoginRequest:
+    properties:
+      email:
+        example: john.doe@example.com
+        type: string
+      password:
+        example: securePassword123
+        type: string
+    type: object
+  models.LoginResponse:
+    properties:
+      message:
+        example: Login successful
+        type: string
+      token:
+        example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+        type: string
+      user:
+        $ref: '#/definitions/models.UserResponse'
+    type: object
+  models.RegisterManagerRequest:
+    properties:
+      accounttype:
+        example: Checking
+        type: string
+      bankaccount:
+        example: 123456789
+        type: integer
+      bankentity:
+        example: BankName
+        type: string
+      email:
+        example: jane.smith@example.com
+        type: string
+      name:
+        example: Jane Smith
+        type: string
+      password:
+        example: securePassword123
+        type: string
+      subscriptionactive:
+        example: true
+        type: boolean
+      subscriptionfinishdate:
+        example: "2026-06-03"
+        type: string
+      subscriptionstartdate:
+        example: "2025-06-03"
+        type: string
+      subscriptiontype:
+        example: Premium
+        type: string
+    type: object
+  models.RegisterUserRequest:
+    properties:
+      email:
+        example: john.doe@example.com
+        type: string
+      name:
+        example: John Doe
+        type: string
+      password:
+        example: securePassword123
+        type: string
+    type: object
+  models.RegisterUserResponse:
+    properties:
+      message:
+        example: User registered successfully
+        type: string
+      user:
+        $ref: '#/definitions/models.UserResponse'
+    type: object
+  models.UserResponse:
+    properties:
+      email:
+        example: john.doe@example.com
+        type: string
+      id:
+        example: 1
+        type: integer
+      name:
+        example: John Doe
+        type: string
+    type: object
+host: localhost:5000
+info:
+  contact: {}
+  description: API de autenticación para la aplicación FullStyle
+  title: FullStyle Backend API
+  version: "1.0"
+paths:
+  /api/login:
+    post:
+      consumes:
+      - application/json
+      description: Autentica un usuario y retorna un token JWT
+      parameters:
+      - description: Credenciales de acceso
+        in: body
+        name: credentials
+        required: true
+        schema:
+          $ref: '#/definitions/models.LoginRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.LoginResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/models.ErrorResponse'
+      summary: Iniciar sesión
+      tags:
+      - Autenticación
+  /api/manager_register:
+    post:
+      consumes:
+      - application/json
+      description: Registra un nuevo manager en el sistema
+      parameters:
+      - description: Información del manager
+        in: body
+        name: manager
+        required: true
+        schema:
+          $ref: '#/definitions/models.RegisterManagerRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.RegisterUserResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ErrorResponse'
+      summary: Registrar un nuevo manager
+      tags:
+      - Autenticación
+  /api/register:
+    post:
+      consumes:
+      - application/json
+      description: Registra un nuevo usuario en el sistema
+      parameters:
+      - description: Información del usuario
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/models.RegisterUserRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.RegisterUserResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ErrorResponse'
+      summary: Registrar un nuevo usuario
+      tags:
+      - Autenticación
+schemes:
+- http
+- https
+swagger: "2.0"

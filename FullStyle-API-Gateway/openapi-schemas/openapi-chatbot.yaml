@@ -1,0 +1,66 @@
+openapi: 3.0.0
+info:
+  title: Chat API
+  version: v1
+paths:
+  /send:
+    post:
+      summary: Send Chat Message
+      description: Receives a user message, processes it with the Langchain agent via LLMService, and returns the agent's reply.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ChatRequest"
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ChatResponse"
+        "400":
+          description: Bad Request - Message cannot be empty
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  detail:
+                    type: string
+                    example: Message cannot be empty.
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  detail:
+                    type: string
+                    example: An internal error occurred
+components:
+  schemas:
+    ChatRequest:
+      type: object
+      required:
+        - message
+      properties:
+        message:
+          type: string
+          description: The user's message.
+        session_id:
+          type: string
+          nullable: true
+          description: The session ID to maintain conversation context.
+    ChatResponse:
+      type: object
+      properties:
+        reply:
+          type: string
+          description: The agent's reply.
+        session_id:
+          type: string
+          nullable: true
+          description: The session ID.

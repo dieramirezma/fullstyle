@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <body> 
+        <div style="
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            text-align: left;">
+            <h2 style="color: #d9534f; text-align: center;">⚠️ Pago Rechazado</h2>
+            <p>Hola <strong>{{customerName}}</strong>,</p>
+            <p>Lamentamos informarte que el pago para la reserva de tu cita ha sido rechazado. Debido a esto, la cita no ha sido agendada.</p>
+
+            <div style="background-color: #fff; padding: 15px; border-radius: 8px; border: 1px solid #ddd;">
+                <hr style="margin: 10px 0;" />
+
+                <p><strong>📅 Fecha tentativa:</strong> {{appointmentDate}}</p>
+                <p><strong>⏰ Hora tentativa:</strong> {{appointmentTime}} hrs</p>
+                <p><strong>💰 Monto del servicio:</strong> ${{servicePrice}}</p>
+            </div>
+
+            <p style="font-size: 14px; color: #666; margin-top: 20px;">
+                Puedes intentar nuevamente con otro método de pago o contactar con nuestro soporte para más información.
+            </p>
+
+            <p style="font-size: 14px; color: #666;">
+                Si necesitas ayuda, no dudes en comunicarte con nosotros.
+            </p>
+
+            <p style="font-size: 16px; font-weight: bold; color: #007bff; text-align: center;">
+                — El equipo de FullStyle
+            </p>
+        </div>
+    </body>
+</html>

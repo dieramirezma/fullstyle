@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <div style="
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            text-align: left">
+            <h2 style="color: #d9534f; text-align: center">📅 Cita Cancelada</h2>
+            <p>Hola <strong>{{customerName}}</strong>,</p>
+            <p>Has cancelado tu cita en <strong>{{siteName}}</strong>. Lamentamos que no puedas asistir en esta ocasión.</p>
+
+            <div style="background-color: #fff; padding: 15px; border-radius: 8px; border: 1px solid #ddd">
+                <h3 style="margin-bottom: 5px; color: #d9534f">{{serviceName}}</h3>
+
+                <hr style="margin: 10px 0" />
+
+                <p><strong>📅 Fecha:</strong> {{appointmentDate}}</p>
+                <p><strong>⏰ Hora:</strong> {{appointmentTime}} hrs</p>
+                <p><strong>👤 Profesional:</strong> {{workerName}}</p>
+
+                <hr style="margin: 10px 0" />
+
+                <h4 style="margin-bottom: 5px; color: #333">📍 Ubicación</h4>
+                <p>{{siteName}}</p>
+                <p>{{siteAddress}}</p>
+                <p>📞 {{sitePhone}}</p>
+            </div>
+
+            <p style="font-size: 14px; color: #666; margin-top: 20px">
+                Si deseas agendar una nueva cita, puedes hacerlo en nuestra plataforma en cualquier momento.
+            </p>
+
+            <p style="font-size: 16px; font-weight: bold; color: #007bff; text-align: center">
+                — El equipo de FullStyle
+            </p>
+        </div>
+    </body>
+</html>

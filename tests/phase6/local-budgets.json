@@ -1,0 +1,21 @@
+{
+  "scope": "Local Docker synthetic acceptance; no production SLO",
+  "schedule": {
+    "rows_per_variant": 100000,
+    "samples": 20,
+    "max_queries_per_request": 4,
+    "max_p95_ms": 15,
+    "baseline_phase5_p95_ms": 41.217,
+    "baseline_phase6_p95_ms": 5.452
+  },
+  "contracts": {
+    "max_unexpected_errors": 0,
+    "max_login_p95_ms": 2000,
+    "max_identity_read_p95_ms": 1000
+  },
+  "mail": {
+    "pending_warning_age_seconds": 120,
+    "pending_critical_age_seconds": 300,
+    "recovery_acceptance_seconds": 60
+  }
+}

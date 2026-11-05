@@ -1,0 +1,8 @@
+type ChatResponse {
+  reply: String!
+  session_id: String
+}
+
+type Mutation {
+  sendMessage(message: String!, session_id: String): ChatResponse!
+}

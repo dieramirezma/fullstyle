@@ -1,0 +1,961 @@
+[
+  {
+    "transport": "REST Flask",
+    "operation": "GET /api/appointment",
+    "resource": "Appointment",
+    "policy": "JWT activo; citas propias/manager; cache privada con generacion SQL",
+    "source": "FullStyle-Backend/services/appointment_service.py:48"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "POST /api/appointment",
+    "resource": "Appointment",
+    "policy": "JWT y recurso autorizado; pending; bloqueo trabajador y commit atomico",
+    "source": "FullStyle-Backend/services/appointment_service.py:87"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "PUT /api/appointment",
+    "resource": "Appointment",
+    "policy": "JWT y recurso autorizado; bloqueo cita/trabajadores; sin cambios financieros",
+    "source": "FullStyle-Backend/services/appointment_service.py:123"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "DELETE /api/appointment",
+    "resource": "Appointment",
+    "policy": "JWT y recurso autorizado; bloqueo; registros financieros impiden borrado",
+    "source": "FullStyle-Backend/services/appointment_service.py:173"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "GET /api/appointmentdetail",
+    "resource": "AppointmentDetail",
+    "policy": "JWT activo; cliente de la cita o manager del sitio",
+    "source": "FullStyle-Backend/services/appointment_service.py:208"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "GET /api/appointment/worker_statistics",
+    "resource": "AppointmentWorkerStatistics",
+    "policy": "JWT activo; manager de sitios de origen y destino",
+    "source": "FullStyle-Backend/services/appointment_service.py:293"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "GET /api/appointment/site_statistics",
+    "resource": "AppointmentSiteStatistics",
+    "policy": "JWT activo; manager de sitios de origen y destino",
+    "source": "FullStyle-Backend/services/appointment_service.py:352"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "GET /api/appointment/service_statistics",
+    "resource": "AppointmentServiceStatistics",
+    "policy": "JWT activo; manager de sitios de origen y destino",
+    "source": "FullStyle-Backend/services/appointment_service.py:409"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "POST /api/login",
+    "resource": "UserLogin",
+    "policy": "Público; verificar prueba de identidad según operación",
+    "source": "FullStyle-Backend/services/user_service.py:331"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "POST /api/register",
+    "resource": "UserRegister",
+    "policy": "Público; verificar prueba de identidad según operación",
+    "source": "FullStyle-Backend/services/user_service.py:187"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "POST /api/manager_register",
+    "resource": "ManagerRegister",
+    "policy": "Público; verificar prueba de identidad según operación",
+    "source": "FullStyle-Backend/services/user_service.py:252"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "DELETE /api/logout",
+    "resource": "UserLogout",
+    "policy": "JWT; catálogo/horarios de consulta",
+    "source": "FullStyle-Backend/services/user_service.py:381"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "GET /api/test",
+    "resource": "Test",
+    "policy": "JWT activo; solo usuario propio (ruta heredada)",
+    "source": "FullStyle-Backend/services/user_service.py:414"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "POST /api/register_google",
+    "resource": "RegisterGoogle",
+    "policy": "Token Google verificado por proveedor; sin confianza en email aislado",
+    "source": "FullStyle-Backend/services/user_service.py:85"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "POST /api/login_google",
+    "resource": "LoginGoogle",
+    "policy": "Token Google verificado por proveedor; sin confianza en email aislado",
+    "source": "FullStyle-Backend/services/user_service.py:94"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "POST /api/enable-2fa",
+    "resource": "Enable2FA",
+    "policy": "JWT activo, email propio y password actual; TOTP confirmado, antirreplay, bloqueo y epoch SQL",
+    "source": "FullStyle-Backend/services/mfa_service.py:30"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "DELETE /api/enable-2fa",
+    "resource": "Enable2FA",
+    "policy": "JWT activo, email propio y password actual; TOTP confirmado, antirreplay, bloqueo y epoch SQL",
+    "source": "FullStyle-Backend/services/mfa_service.py:51"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "POST /api/verify-2fa",
+    "resource": "Verify2FA",
+    "policy": "JWT activo, email propio y password actual; TOTP confirmado, antirreplay, bloqueo y epoch SQL",
+    "source": "FullStyle-Backend/services/mfa_service.py:68"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "GET /api/availability",
+    "resource": "Availability",
+    "policy": "JWT; catálogo/horarios de consulta",
+    "source": "FullStyle-Backend/services/availability_service.py:20"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "POST /api/availability",
+    "resource": "Availability",
+    "policy": "JWT activo; manager de sitios de origen y destino",
+    "source": "FullStyle-Backend/services/availability_service.py:47"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "PUT /api/availability",
+    "resource": "Availability",
+    "policy": "JWT activo; manager de sitios de origen y destino",
+    "source": "FullStyle-Backend/services/availability_service.py:72"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "DELETE /api/availability",
+    "resource": "Availability",
+    "policy": "JWT activo; manager de sitios de origen y destino",
+    "source": "FullStyle-Backend/services/availability_service.py:108"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "GET /api/cache/test",
+    "resource": "CacheTest",
+    "policy": "JWT; operación administrativa bloqueada (403)",
+    "source": "FullStyle-Backend/services/cache_service.py:9"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "GET /api/cache/stats",
+    "resource": "CacheStats",
+    "policy": "JWT; operación administrativa bloqueada (403)",
+    "source": "FullStyle-Backend/services/cache_service.py:9"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "DELETE /api/cache/clear",
+    "resource": "CacheClear",
+    "policy": "JWT; operación administrativa bloqueada (403)",
+    "source": "FullStyle-Backend/services/cache_service.py:19"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "GET /api/category",
+    "resource": "Category",
+    "policy": "JWT; catálogo/horarios de consulta",
+    "source": "FullStyle-Backend/services/category_service.py:12"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "GET /api/days_off",
+    "resource": "DaysOff",
+    "policy": "JWT; catálogo/horarios de consulta",
+    "source": "FullStyle-Backend/services/days_off_service.py:18"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "POST /api/days_off",
+    "resource": "DaysOff",
+    "policy": "JWT activo; manager de sitios de origen y destino",
+    "source": "FullStyle-Backend/services/days_off_service.py:45"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "PUT /api/days_off",
+    "resource": "DaysOff",
+    "policy": "JWT activo; manager de sitios de origen y destino",
+    "source": "FullStyle-Backend/services/days_off_service.py:73"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "DELETE /api/days_off",
+    "resource": "DaysOff",
+    "policy": "JWT activo; manager de sitios de origen y destino",
+    "source": "FullStyle-Backend/services/days_off_service.py:111"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "GET /api/detail",
+    "resource": "Detail",
+    "policy": "JWT; catálogo/horarios de consulta",
+    "source": "FullStyle-Backend/services/detail_service.py:25"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "POST /api/detail",
+    "resource": "Detail",
+    "policy": "JWT activo; manager de sitios de origen y destino",
+    "source": "FullStyle-Backend/services/detail_service.py:78"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "PUT /api/detail",
+    "resource": "Detail",
+    "policy": "JWT activo; manager de sitios de origen y destino",
+    "source": "FullStyle-Backend/services/detail_service.py:125"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "DELETE /api/detail",
+    "resource": "Detail",
+    "policy": "JWT activo; manager de sitios de origen y destino",
+    "source": "FullStyle-Backend/services/detail_service.py:156"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "GET /api/logs",
+    "resource": "GetLogs",
+    "policy": "JWT; operación administrativa bloqueada (403)",
+    "source": "FullStyle-Backend/services/log_service.py:9"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "GET /api/subscription/<int:id>",
+    "resource": "Subscription",
+    "policy": "JWT activo; usuario propio",
+    "source": "FullStyle-Backend/services/manager_service.py:28"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "PUT /api/subscription/<int:id>",
+    "resource": "Subscription",
+    "policy": "JWT propio; cambio directo de suscripcion rechazado 403",
+    "source": "FullStyle-Backend/services/manager_service.py:47"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "GET /api/notification",
+    "resource": "Notification",
+    "policy": "JWT activo; cliente de la cita o manager del sitio",
+    "source": "FullStyle-Backend/services/notification_service.py:15"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "POST /api/notification",
+    "resource": "Notification",
+    "policy": "JWT activo; cliente de la cita o manager del sitio",
+    "source": "FullStyle-Backend/services/notification_service.py:61"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "PUT /api/notification",
+    "resource": "Notification",
+    "policy": "JWT activo; cliente de la cita o manager del sitio",
+    "source": "FullStyle-Backend/services/notification_service.py:81"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "DELETE /api/notification",
+    "resource": "Notification",
+    "policy": "JWT activo; cliente de la cita o manager del sitio",
+    "source": "FullStyle-Backend/services/notification_service.py:109"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "GET /api/payment",
+    "resource": "Payment",
+    "policy": "JWT activo; cliente de la cita o manager del sitio",
+    "source": "FullStyle-Backend/services/payment_service.py:25"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "POST /api/payment",
+    "resource": "Payment",
+    "policy": "JWT y cita autorizada; precio SQL, pending/wompi; intencion unica por reserva",
+    "source": "FullStyle-Backend/services/payment_service.py:85"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "PUT /api/payment",
+    "resource": "Payment",
+    "policy": "JWT y recurso autorizado; registros financieros inmutables, rechazo 403",
+    "source": "FullStyle-Backend/services/payment_service.py:91"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "DELETE /api/payment",
+    "resource": "Payment",
+    "policy": "JWT y recurso autorizado; borrado financiero rechazado 403",
+    "source": "FullStyle-Backend/services/payment_service.py:101"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "GET /api/payment/worker_statistics",
+    "resource": "PaymentWorkerStatistics",
+    "policy": "JWT activo; manager de sitios de origen y destino",
+    "source": "FullStyle-Backend/services/payment_service.py:132"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "GET /api/payment/site_statistics",
+    "resource": "PaymentSiteStatistics",
+    "policy": "JWT activo; manager de sitios de origen y destino",
+    "source": "FullStyle-Backend/services/payment_service.py:208"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "GET /api/payment/service_statistics",
+    "resource": "PaymentServiceStatistics",
+    "policy": "JWT activo; manager de sitios de origen y destino",
+    "source": "FullStyle-Backend/services/payment_service.py:268"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "GET /api/seasonal_schedule",
+    "resource": "SeasonalSchedule",
+    "policy": "JWT; catálogo/horarios de consulta",
+    "source": "FullStyle-Backend/services/seasonal_schedule_service.py:23"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "POST /api/seasonal_schedule",
+    "resource": "SeasonalSchedule",
+    "policy": "JWT activo; manager de sitios de origen y destino",
+    "source": "FullStyle-Backend/services/seasonal_schedule_service.py:50"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "PUT /api/seasonal_schedule",
+    "resource": "SeasonalSchedule",
+    "policy": "JWT activo; manager de sitios de origen y destino",
+    "source": "FullStyle-Backend/services/seasonal_schedule_service.py:97"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "DELETE /api/seasonal_schedule",
+    "resource": "SeasonalSchedule",
+    "policy": "JWT activo; manager de sitios de origen y destino",
+    "source": "FullStyle-Backend/services/seasonal_schedule_service.py:150"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "GET /api/service",
+    "resource": "Service",
+    "policy": "JWT; catálogo/horarios de consulta",
+    "source": "FullStyle-Backend/services/service_service.py:15"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "POST /api/service",
+    "resource": "Service",
+    "policy": "JWT; catálogo/horarios de consulta",
+    "source": "FullStyle-Backend/services/service_service.py:41"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "GET /api/site_has_category",
+    "resource": "SiteHasCategory",
+    "policy": "JWT; catálogo/horarios de consulta",
+    "source": "FullStyle-Backend/services/site_has_category_service.py:16"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "POST /api/site_has_category",
+    "resource": "SiteHasCategory",
+    "policy": "JWT activo; manager de sitios de origen y destino",
+    "source": "FullStyle-Backend/services/site_has_category_service.py:39"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "GET /api/site",
+    "resource": "Site",
+    "policy": "JWT; catálogo/horarios de consulta",
+    "source": "FullStyle-Backend/services/site_service.py:25"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "POST /api/site",
+    "resource": "Site",
+    "policy": "JWT activo; usuario propio",
+    "source": "FullStyle-Backend/services/site_service.py:65"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "PUT /api/site",
+    "resource": "Site",
+    "policy": "JWT activo; manager de sitios de origen y destino",
+    "source": "FullStyle-Backend/services/site_service.py:90"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "DELETE /api/site",
+    "resource": "Site",
+    "policy": "JWT activo; manager de sitios de origen y destino",
+    "source": "FullStyle-Backend/services/site_service.py:129"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "GET /api/me",
+    "resource": "CurrentUser",
+    "policy": "JWT activo; identidad propia",
+    "source": "FullStyle-Backend/services/identity_service.py:12"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "GET /api/user/<int:id>",
+    "resource": "User",
+    "policy": "JWT activo; usuario propio",
+    "source": "FullStyle-Backend/services/user_service.py:34"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "PUT /api/user/<int:id>",
+    "resource": "User",
+    "policy": "JWT activo; usuario propio",
+    "source": "FullStyle-Backend/services/user_service.py:43"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "DELETE /api/user/<int:id>",
+    "resource": "User",
+    "policy": "JWT activo; usuario propio",
+    "source": "FullStyle-Backend/services/user_service.py:68"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "POST /api/user/reset-password-request",
+    "resource": "ResetPasswordRequest",
+    "policy": "Público; verificar prueba de identidad según operación",
+    "source": "FullStyle-Backend/services/user_service.py:427"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "POST /api/user/reset-password",
+    "resource": "ResetPasswordConfirm",
+    "policy": "Público; verificar prueba de identidad según operación",
+    "source": "FullStyle-Backend/services/user_service.py:453"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "GET /api/worker_has_service",
+    "resource": "WorkerHasService",
+    "policy": "JWT; catálogo/horarios de consulta",
+    "source": "FullStyle-Backend/services/worker_has_service_service.py:17"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "POST /api/worker_has_service",
+    "resource": "WorkerHasService",
+    "policy": "JWT activo; manager de sitios de origen y destino",
+    "source": "FullStyle-Backend/services/worker_has_service_service.py:40"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "GET /api/worker",
+    "resource": "Worker",
+    "policy": "JWT; catálogo/horarios de consulta",
+    "source": "FullStyle-Backend/services/worker_service.py:22"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "POST /api/worker",
+    "resource": "Worker",
+    "policy": "JWT activo; manager de sitios de origen y destino",
+    "source": "FullStyle-Backend/services/worker_service.py:53"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "PUT /api/worker",
+    "resource": "Worker",
+    "policy": "JWT activo; manager de sitios de origen y destino",
+    "source": "FullStyle-Backend/services/worker_service.py:93"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "DELETE /api/worker",
+    "resource": "Worker",
+    "policy": "JWT activo; manager de sitios de origen y destino",
+    "source": "FullStyle-Backend/services/worker_service.py:124"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "GET /api/worker/weekly_schedule",
+    "resource": "WorkerWeeklySchedule",
+    "policy": "JWT; catálogo/horarios de consulta",
+    "source": "FullStyle-Backend/services/worker_service.py:174"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "GET /api/worker/daily_schedule",
+    "resource": "WorkerDailySchedule",
+    "policy": "JWT; catálogo/horarios de consulta",
+    "source": "FullStyle-Backend/services/worker_service.py:146"
+  },
+  {
+    "transport": "REST Go",
+    "operation": "POST /api/register",
+    "resource": "auth",
+    "policy": "Credenciales/registro; JWT HS256 con sub textual, verificado por negocio",
+    "source": "FullStyle-Backend-Go/internal/routes/auth_route.go"
+  },
+  {
+    "transport": "REST Go",
+    "operation": "POST /api/manager_register",
+    "resource": "auth",
+    "policy": "Registro publico validado; campos de suscripcion no conceden derechos",
+    "source": "FullStyle-Backend-Go/internal/routes/auth_route.go"
+  },
+  {
+    "transport": "REST Go",
+    "operation": "POST /api/login",
+    "resource": "auth",
+    "policy": "Credenciales/registro; JWT HS256 con sub textual, verificado por negocio",
+    "source": "FullStyle-Backend-Go/internal/routes/auth_route.go"
+  },
+  {
+    "transport": "REST chatbot",
+    "operation": "POST /api/v1/chat/send",
+    "resource": "chat/citas",
+    "policy": "Bearer verificado por /api/me; delegación por contexto; historial separado por usuario",
+    "source": "FullStyle-Chatbot/app/api/v1/endpoints/chat_handler.py"
+  },
+  {
+    "transport": "REST chatbot",
+    "operation": "GET /api/v1/chat/history/{session_id}",
+    "resource": "historial de chat",
+    "policy": "Bearer verificado por /api/me; historial SQL limitado al usuario y sesion solicitados",
+    "source": "FullStyle-Chatbot/app/api/v1/endpoints/chat_handler.py"
+  },
+  {
+    "transport": "GraphQL /graphql",
+    "operation": "Mutation.login",
+    "resource": "POST Go /api/login",
+    "policy": "Autenticación/registro Go",
+    "source": "FullStyle-API-Gateway/src/graphql/schemas/auth.graphql"
+  },
+  {
+    "transport": "GraphQL /graphql",
+    "operation": "Mutation.registerUser",
+    "resource": "POST Go /api/register",
+    "policy": "Autenticación/registro Go",
+    "source": "FullStyle-API-Gateway/src/graphql/schemas/auth.graphql"
+  },
+  {
+    "transport": "GraphQL /graphql",
+    "operation": "Mutation.registerManager",
+    "resource": "POST Go /api/manager_register",
+    "policy": "Autenticación/registro Go",
+    "source": "FullStyle-API-Gateway/src/graphql/schemas/auth.graphql"
+  },
+  {
+    "transport": "GraphQL /graphql",
+    "operation": "Mutation.sendMessage",
+    "resource": "POST /api/v1/chat/send",
+    "policy": "Delegación Bearer al backend; política REST aplicable",
+    "source": "FullStyle-API-Gateway/src/graphql/schemas/chat.graphql"
+  },
+  {
+    "transport": "GraphQL /graphql",
+    "operation": "Query.getUser",
+    "resource": "GET /api/user/:id",
+    "policy": "Delegación Bearer al backend; política REST aplicable",
+    "source": "FullStyle-API-Gateway/src/graphql/schemas/logic.graphql"
+  },
+  {
+    "transport": "GraphQL /graphql",
+    "operation": "Query.deleteUser",
+    "resource": "DELETE /api/user/:id (Query heredada)",
+    "policy": "Delegación Bearer al backend; política REST aplicable",
+    "source": "FullStyle-API-Gateway/src/graphql/schemas/logic.graphql"
+  },
+  {
+    "transport": "GraphQL /graphql",
+    "operation": "Query.getAppointments",
+    "resource": "GET /api/appointment",
+    "policy": "Delegación Bearer al backend; política REST aplicable",
+    "source": "FullStyle-API-Gateway/src/graphql/schemas/logic.graphql"
+  },
+  {
+    "transport": "GraphQL /graphql",
+    "operation": "Query.getAppointmentDetails",
+    "resource": "GET /api/appointmentdetail",
+    "policy": "Delegación Bearer al backend; política REST aplicable",
+    "source": "FullStyle-API-Gateway/src/graphql/schemas/logic.graphql"
+  },
+  {
+    "transport": "GraphQL /graphql",
+    "operation": "Query.getSiteAppointmentsStatistics",
+    "resource": "GET /api/appointment/site_statistics",
+    "policy": "Delegación Bearer al backend; política REST aplicable",
+    "source": "FullStyle-API-Gateway/src/graphql/schemas/logic.graphql"
+  },
+  {
+    "transport": "GraphQL /graphql",
+    "operation": "Query.getSites",
+    "resource": "GET /api/site",
+    "policy": "Delegación Bearer al backend; política REST aplicable",
+    "source": "FullStyle-API-Gateway/src/graphql/schemas/logic.graphql"
+  },
+  {
+    "transport": "GraphQL /graphql",
+    "operation": "Query.getWorkers",
+    "resource": "GET /api/worker",
+    "policy": "Delegación Bearer al backend; política REST aplicable",
+    "source": "FullStyle-API-Gateway/src/graphql/schemas/logic.graphql"
+  },
+  {
+    "transport": "GraphQL /graphql",
+    "operation": "Query.getWorkerWeeklySchedule",
+    "resource": "GET /api/worker/weekly_schedule",
+    "policy": "Delegación Bearer al backend; política REST aplicable",
+    "source": "FullStyle-API-Gateway/src/graphql/schemas/logic.graphql"
+  },
+  {
+    "transport": "GraphQL /graphql",
+    "operation": "Query.getServices",
+    "resource": "GET /api/service",
+    "policy": "Delegación Bearer al backend; política REST aplicable",
+    "source": "FullStyle-API-Gateway/src/graphql/schemas/logic.graphql"
+  },
+  {
+    "transport": "GraphQL /graphql",
+    "operation": "Query.getDetails",
+    "resource": "GET /api/detail",
+    "policy": "Delegación Bearer al backend; política REST aplicable",
+    "source": "FullStyle-API-Gateway/src/graphql/schemas/logic.graphql"
+  },
+  {
+    "transport": "GraphQL /graphql",
+    "operation": "Mutation.updateSubscription",
+    "resource": "PUT /api/subscription/:id",
+    "policy": "Bearer delegado; cambios directos rechazados por negocio",
+    "source": "FullStyle-API-Gateway/src/graphql/schemas/logic.graphql"
+  },
+  {
+    "transport": "GraphQL /graphql",
+    "operation": "Mutation.createAppointment",
+    "resource": "POST /api/appointment",
+    "policy": "Delegación Bearer al backend; política REST aplicable",
+    "source": "FullStyle-API-Gateway/src/graphql/schemas/logic.graphql"
+  },
+  {
+    "transport": "GraphQL /graphql",
+    "operation": "Mutation.deleteAppointment",
+    "resource": "DELETE /api/appointment",
+    "policy": "Delegación Bearer al backend; política REST aplicable",
+    "source": "FullStyle-API-Gateway/src/graphql/schemas/logic.graphql"
+  },
+  {
+    "transport": "GraphQL /graphql",
+    "operation": "Mutation.createPayment",
+    "resource": "POST /api/payment",
+    "policy": "Bearer delegado; precio SQL; Payment agrega reference/currency/amount_in_cents",
+    "source": "FullStyle-API-Gateway/src/graphql/schemas/logic.graphql"
+  },
+  {
+    "transport": "Next handler",
+    "operation": "GET /api/auth/[...nextauth]",
+    "resource": "[...nextauth]",
+    "policy": "NextAuth",
+    "source": "FullStyle-Frontend/src/app/api/auth/[...nextauth]/route.ts"
+  },
+  {
+    "transport": "Next handler",
+    "operation": "POST /api/auth/[...nextauth]",
+    "resource": "auth",
+    "policy": "NextAuth",
+    "source": "FullStyle-Frontend/src/app/api/auth/[...nextauth]/route.ts"
+  },
+  {
+    "transport": "Next handler",
+    "operation": "GET /api/geocode",
+    "resource": "geocode",
+    "policy": "Bearer/cookie verificado en negocio; cuota; adaptador local o proveedor deshabilitado 503",
+    "source": "FullStyle-Frontend/src/app/api/geocode/route.ts"
+  },
+  {
+    "transport": "Next handler",
+    "operation": "GET /api/health",
+    "resource": "health",
+    "policy": "Publico; salud sin datos",
+    "source": "FullStyle-Frontend/src/app/api/health/route.ts"
+  },
+  {
+    "transport": "Next handler",
+    "operation": "GET /api/media/[userId]/[filename]",
+    "resource": "[filename]",
+    "policy": "Bearer/cookie verificado en negocio; cuota por identidad; imagen propia",
+    "source": "FullStyle-Frontend/src/app/api/media/[userId]/[filename]/route.ts"
+  },
+  {
+    "transport": "Next handler",
+    "operation": "POST /api/recaptcha",
+    "resource": "recaptcha",
+    "policy": "Bearer/cookie verificado en negocio; cuota; adaptador local o proveedor deshabilitado 503",
+    "source": "FullStyle-Frontend/src/app/api/recaptcha/route.ts"
+  },
+  {
+    "transport": "Next handler",
+    "operation": "POST /api/sendEmail/appointmenRejected",
+    "resource": "appointmenRejected",
+    "policy": "Bearer/cookie verificado en negocio; cuota; adaptador local o proveedor deshabilitado 503",
+    "source": "FullStyle-Frontend/src/app/api/sendEmail/appointmenRejected/route.ts"
+  },
+  {
+    "transport": "Next handler",
+    "operation": "POST /api/sendEmail/appointmentCanceled",
+    "resource": "appointmentCanceled",
+    "policy": "Bearer/cookie verificado en negocio; cuota; adaptador local o proveedor deshabilitado 503",
+    "source": "FullStyle-Frontend/src/app/api/sendEmail/appointmentCanceled/route.ts"
+  },
+  {
+    "transport": "Next handler",
+    "operation": "POST /api/sendEmail/appointmentFullPaid",
+    "resource": "appointmentFullPaid",
+    "policy": "Bearer/cookie verificado en negocio; cuota; adaptador local o proveedor deshabilitado 503",
+    "source": "FullStyle-Frontend/src/app/api/sendEmail/appointmentFullPaid/route.ts"
+  },
+  {
+    "transport": "Next handler",
+    "operation": "POST /api/sendEmail/appointmentPartialPaid",
+    "resource": "appointmentPartialPaid",
+    "policy": "Bearer/cookie verificado en negocio; cuota; adaptador local o proveedor deshabilitado 503",
+    "source": "FullStyle-Frontend/src/app/api/sendEmail/appointmentPartialPaid/route.ts"
+  },
+  {
+    "transport": "Next handler",
+    "operation": "POST /api/sendEmail/contact",
+    "resource": "contact",
+    "policy": "Bearer/cookie verificado en negocio; cuota; adaptador local o proveedor deshabilitado 503",
+    "source": "FullStyle-Frontend/src/app/api/sendEmail/contact/route.ts"
+  },
+  {
+    "transport": "Next handler",
+    "operation": "POST /api/sendEmail/resetPassword",
+    "resource": "resetPassword",
+    "policy": "Bearer/cookie verificado en negocio; cuota; adaptador local o proveedor deshabilitado 503",
+    "source": "FullStyle-Frontend/src/app/api/sendEmail/resetPassword/route.ts"
+  },
+  {
+    "transport": "Next handler",
+    "operation": "POST /api/sendEmail/subscription",
+    "resource": "subscription",
+    "policy": "Bearer/cookie verificado en negocio; cuota; adaptador local o proveedor deshabilitado 503",
+    "source": "FullStyle-Frontend/src/app/api/sendEmail/subscription/route.ts"
+  },
+  {
+    "transport": "Next handler",
+    "operation": "POST /api/UploadMedia",
+    "resource": "UploadMedia",
+    "policy": "Bearer/cookie verificado en negocio; cuota; adaptador local o proveedor deshabilitado 503",
+    "source": "FullStyle-Frontend/src/app/api/UploadMedia/route.ts"
+  },
+  {
+    "transport": "Next handler",
+    "operation": "POST /api/wompi",
+    "resource": "wompi",
+    "policy": "Bearer/cookie verificado en negocio; cuota; adaptador local o proveedor deshabilitado 503",
+    "source": "FullStyle-Frontend/src/app/api/wompi/route.ts"
+  },
+  {
+    "transport": "Next handler",
+    "operation": "POST /api/wompi/webhook",
+    "resource": "webhook",
+    "policy": "Checksum y capacidad ligada al cuerpo; negocio aplica solo intenciones test verificadas",
+    "source": "FullStyle-Frontend/src/app/api/wompi/webhook/route.ts"
+  },
+  {
+    "transport": "REST correo",
+    "operation": "POST /api/emails/subscription",
+    "resource": "correo",
+    "policy": "Capacidad mail.publish ligada al cuerpo; intencion SQL durable; RabbitMQ y consumidor v0/v1",
+    "source": "FullStyle-Email-Service/routes/email_routes.py"
+  },
+  {
+    "transport": "REST correo",
+    "operation": "POST /api/emails/reset-password",
+    "resource": "correo",
+    "policy": "Capacidad mail.publish ligada al cuerpo; intencion SQL durable; RabbitMQ y consumidor v0/v1",
+    "source": "FullStyle-Email-Service/routes/email_routes.py"
+  },
+  {
+    "transport": "REST correo",
+    "operation": "POST /api/emails/contact",
+    "resource": "correo",
+    "policy": "Capacidad mail.publish ligada al cuerpo; intencion SQL durable; RabbitMQ y consumidor v0/v1",
+    "source": "FullStyle-Email-Service/routes/email_routes.py"
+  },
+  {
+    "transport": "REST correo",
+    "operation": "POST /api/emails/appointment/confirmation",
+    "resource": "correo",
+    "policy": "Capacidad mail.publish ligada al cuerpo; intencion SQL durable; RabbitMQ y consumidor v0/v1",
+    "source": "FullStyle-Email-Service/routes/email_routes.py"
+  },
+  {
+    "transport": "REST correo",
+    "operation": "POST /api/emails/appointment/partial-payment",
+    "resource": "correo",
+    "policy": "Capacidad mail.publish ligada al cuerpo; intencion SQL durable; RabbitMQ y consumidor v0/v1",
+    "source": "FullStyle-Email-Service/routes/email_routes.py"
+  },
+  {
+    "transport": "REST correo",
+    "operation": "POST /api/emails/appointment/rejected",
+    "resource": "correo",
+    "policy": "Capacidad mail.publish ligada al cuerpo; intencion SQL durable; RabbitMQ y consumidor v0/v1",
+    "source": "FullStyle-Email-Service/routes/email_routes.py"
+  },
+  {
+    "transport": "REST correo",
+    "operation": "POST /api/emails/appointment/canceled",
+    "resource": "correo",
+    "policy": "Capacidad mail.publish ligada al cuerpo; intencion SQL durable; RabbitMQ y consumidor v0/v1",
+    "source": "FullStyle-Email-Service/routes/email_routes.py"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "GET /health",
+    "resource": "salud/documentación",
+    "policy": "Público, sin datos de usuarios ni escrituras",
+    "source": "FullStyle-Backend/config/runtime_config.py"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "GET /api/swagger.json",
+    "resource": "salud/documentación",
+    "policy": "Público, sin datos de usuarios ni escrituras",
+    "source": "FullStyle-Backend/config/runtime_config.py"
+  },
+  {
+    "transport": "REST chatbot",
+    "operation": "GET /",
+    "resource": "salud/documentación",
+    "policy": "Público, sin datos de usuarios ni escrituras",
+    "source": "FullStyle-Chatbot/app/main.py"
+  },
+  {
+    "transport": "REST Go",
+    "operation": "GET /swagger/*any",
+    "resource": "salud/documentación",
+    "policy": "Público, sin datos de usuarios ni escrituras",
+    "source": "FullStyle-Backend-Go/main.go"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "GET /ready",
+    "resource": "adaptador local",
+    "policy": "Readiness PostgreSQL; 503 si falta DB/esquema",
+    "source": "FullStyle-Backend/config/runtime_config.py"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "GET /api/docs",
+    "resource": "adaptador local",
+    "policy": "Documentacion publica",
+    "source": "FullStyle-Backend/config/runtime_config.py"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "POST /api/refresh",
+    "resource": "adaptador local",
+    "policy": "JWT refresh activo, epoch y MFA SQL; rotacion de un uso y revocacion durable",
+    "source": "FullStyle-Backend/services/session_service.py"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "POST /api/identity/firebase/link",
+    "resource": "adaptador local",
+    "policy": "JWT SQL propio, password vigente y prueba Firebase reciente verificada",
+    "source": "FullStyle-Backend/services/session_service.py"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "POST /api/identity/firebase/session",
+    "resource": "adaptador local",
+    "policy": "Firebase verificado, vinculo SQL explicito, cuenta activa y MFA SQL si esta habilitado; access acotado y revocacion Firebase comprobada",
+    "source": "FullStyle-Backend/services/session_service.py"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "POST /api/provider/authorize",
+    "resource": "adaptador local",
+    "policy": "JWT activo; cuota Redis atomica; fallo cerrado 503",
+    "source": "FullStyle-Backend/services/integration_service.py"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "POST /api/email/<kind>",
+    "resource": "adaptador local",
+    "policy": "Usuario activo; destinatario SQL propio; intencion de correo SQL durable",
+    "source": "FullStyle-Backend/services/integration_service.py"
+  },
+  {
+    "transport": "REST Flask",
+    "operation": "POST /api/integrations/wompi/events",
+    "resource": "adaptador local",
+    "policy": "Servicio wompi.receipt y checksum; ledger y efecto SQL unico de intencion test verificada",
+    "source": "FullStyle-Backend/services/integration_service.py"
+  },
+  {
+    "transport": "REST Go",
+    "operation": "GET /health",
+    "resource": "salud",
+    "policy": "Publico, sin datos de usuario",
+    "source": "FullStyle-Backend-Go/main.go"
+  },
+  {
+    "transport": "REST Go",
+    "operation": "GET /ready",
+    "resource": "salud",
+    "policy": "Publico, sin datos de usuario",
+    "source": "FullStyle-Backend-Go/main.go"
+  },
+  {
+    "transport": "REST chatbot",
+    "operation": "GET /health",
+    "resource": "salud",
+    "policy": "Publico, sin datos de usuario",
+    "source": "FullStyle-Chatbot/app/main.py"
+  },
+  {
+    "transport": "REST correo",
+    "operation": "GET /health",
+    "resource": "salud",
+    "policy": "Publico, sin datos de usuario",
+    "source": "FullStyle-Email-Service/app.py"
+  },
+  {
+    "transport": "REST correo",
+    "operation": "GET /ready",
+    "resource": "salud",
+    "policy": "Publico, sin datos de usuario",
+    "source": "FullStyle-Email-Service/app.py"
+  }
+]

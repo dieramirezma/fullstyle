@@ -1,0 +1,7 @@
+[tool.ruff]
+target-version = "py313"
+line-length = 100
+include = ["models/manager_model.py", "gunicorn_local.py", "models/completion_model.py", "services/completion_service.py", "services/local_finance.py", "utils/mfa_recovery.py", "utils/keyring.py", "rotate_mfa_key.py", "maintenance_local.py", "migrate_local.py", "utils/account_security.py", "services/mfa_service.py", "services/user_service.py", "models/account_security_model.py", "models/appointment_model.py", "models/user_model.py", "tests/*.py", "utils/send_email.py", "services/email_producer.py", "models/reliability_model.py", "utils/mail_outbox.py", "config/runtime_config.py", "config/server_config.py", "init_local.py", "utils/authorization.py", "utils/sessions.py", "utils/observability.py", "services/identity_service.py", "services/session_service.py", "services/integration_service.py", "models/session_model.py", "models/consistency_model.py", "utils/booking_consistency.py", "utils/cache_helper.py", "utils/helpers.py", "services/appointment_service.py", "services/payment_service.py", "services/payment_workflow.py", "services/manager_service.py"]
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I"]

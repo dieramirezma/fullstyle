@@ -1,0 +1,3338 @@
+{
+  "imported_utc": "2026-11-04T23:50:06.904535+00:00",
+  "mode": "sanitized working snapshot, without upstream Git object history",
+  "modernization_source_fingerprint": "c3bf19b967d4604e5f802d5de50d3baa9f87232f1f3e1f5c117c54c7911e7fb6",
+  "repositories": [
+    {
+      "component": ".",
+      "upstream": "https://github.com/Full-Serios/FullStyle-Local-Orchestration",
+      "head": "83ccc3b8e26633b1fd3969b1a0ed744c7e736ac0",
+      "branch": "refactor/architecture-modernization",
+      "contributors": [
+        "Diego Nicolás Ramírez",
+        "Diego Ramirez",
+        "Felipe S Valderrama B",
+        "Gabriel Londoño",
+        "Jesus Quinones",
+        "Juan Manuel Cortes Jimenez",
+        "bforero",
+        "dieramirezma",
+        "glondonot",
+        "jcortesj"
+      ],
+      "local_working_changes_included": true
+    },
+    {
+      "component": "FullStyle-API-Gateway",
+      "upstream": "https://github.com/Full-Serios/FullStyle-API-Gateway",
+      "head": "4499fd203e25e84caf09b0628567252dc9ca7220",
+      "branch": "refactor/architecture-modernization",
+      "contributors": [
+        "Diego Nicolás Ramírez",
+        "Diego Ramirez",
+        "Felipe S Valderrama B",
+        "Jesus Quinones",
+        "dieramirezma"
+      ],
+      "local_working_changes_included": true
+    },
+    {
+      "component": "FullStyle-App",
+      "upstream": "https://github.com/Full-Serios/FullStyle-App",
+      "head": "1678d10aea3222d6df7e7d523ced4fb38d384d00",
+      "branch": "refactor/architecture-modernization",
+      "contributors": [
+        "Gabriel Londoño",
+        "Juan Manuel Cortes Jimenez",
+        "glondonot",
+        "jcortesj"
+      ],
+      "local_working_changes_included": true
+    },
+    {
+      "component": "FullStyle-Backend",
+      "upstream": "https://github.com/Full-Serios/FullStyle-Backend",
+      "head": "fc2dd357b8f91b59439a4891256050334f43c097",
+      "branch": "refactor/architecture-modernization",
+      "contributors": [
+        "Diego Nicolás Ramírez",
+        "Diego Ramirez",
+        "Felipe S Valderrama B",
+        "Gabriel Londoño",
+        "Juan Manuel Cortes Jimenez",
+        "bforero",
+        "bforerob",
+        "dieramirezma",
+        "glondonot",
+        "jcortesj"
+      ],
+      "local_working_changes_included": true
+    },
+    {
+      "component": "FullStyle-Backend-Go",
+      "upstream": "https://github.com/Full-Serios/FullStyle-Backend-Go",
+      "head": "df7c0708e60a8ce7af9f34708b093e5e3086d338",
+      "branch": "refactor/architecture-modernization",
+      "contributors": [
+        "Diego Nicolás Ramírez",
+        "Diego Ramirez",
+        "Felipe S Valderrama B",
+        "Gabriel Londoño",
+        "Juan Manuel Cortes Jimenez",
+        "bforero",
+        "bforerob",
+        "dieramirezma",
+        "glondonot",
+        "jcortesj"
+      ],
+      "local_working_changes_included": true
+    },
+    {
+      "component": "FullStyle-Chatbot",
+      "upstream": "https://github.com/Full-Serios/FullStyle-Chatbot",
+      "head": "c47f26219b26cae4ba22b7b8940f2882d81b7f72",
+      "branch": "refactor/architecture-modernization",
+      "contributors": [
+        "Felipe S Valderrama B",
+        "Juan Manuel Cortes Jimenez",
+        "jcortesj"
+      ],
+      "local_working_changes_included": true
+    },
+    {
+      "component": "FullStyle-Email-Service",
+      "upstream": "https://github.com/Full-Serios/FullStyle-Email-Service",
+      "head": "66073ec06ecfd72d7031b9fba6793a6c2b06572a",
+      "branch": "refactor/architecture-modernization",
+      "contributors": [
+        "Diego Ramirez",
+        "Felipe S Valderrama B"
+      ],
+      "local_working_changes_included": true
+    },
+    {
+      "component": "FullStyle-Frontend",
+      "upstream": "https://github.com/Full-Serios/FullStyle-Frontend",
+      "head": "835c7e4dfaa8bbf1b492d2e3a27b88eb0e7c1299",
+      "branch": "refactor/architecture-modernization",
+      "contributors": [
+        "Diego Nicolás Ramírez",
+        "Diego Ramirez",
+        "Jesus Quinones",
+        "Juan Manuel Cortes Jimenez",
+        "bforerob",
+        "dieramirezma",
+        "glondonot",
+        "jcortesj"
+      ],
+      "local_working_changes_included": true
+    },
+    {
+      "component": "FullStyle-ReverseProxy",
+      "upstream": "https://github.com/Full-Serios/FullStyle-ReverseProxy",
+      "head": "020ae81ff26ccb3cc7bfcd489e0f5668b0945b22",
+      "branch": "refactor/architecture-modernization",
+      "contributors": [
+        "Diego Nicolás Ramírez",
+        "Diego Ramirez",
+        "Juan Manuel Cortes Jimenez",
+        "jcortesj"
+      ],
+      "local_working_changes_included": true
+    }
+  ],
+  "imported_sha256": [
+    {
+      "sha256": "4e315e749bd3ded34996d48e008b6f5eea3b117f77e20fe05450fab3776485b0",
+      "path": "FullStyle-API-Gateway/.eslintrc.json"
+    },
+    {
+      "sha256": "f0410e1c34285acda78cc232408fd1119be10f92791273e35584c8be04ee1d77",
+      "path": "FullStyle-API-Gateway/.gitignore"
+    },
+    {
+      "sha256": "98502b2fc79f950c9d00b4b42483cb2e2544f8bb7c8c6969b2d099fcbd48b4f6",
+      "path": "FullStyle-API-Gateway/.prettierrc.json"
+    },
+    {
+      "sha256": "7b8bd280eb87704a1715059e399448263be92073ffba300765aed41bb96a94c5",
+      "path": "FullStyle-API-Gateway/Dockerfile"
+    },
+    {
+      "sha256": "165a94054abac46cd71e8c71a923039f81bb7dc7d6a34e6d1b7ce155f9804b8d",
+      "path": "FullStyle-API-Gateway/README.md"
+    },
+    {
+      "sha256": "4a15d20b2382cba0b5d80ac03a2d76f82344e16275c3c83486b21ae914f4accb",
+      "path": "FullStyle-API-Gateway/package.json"
+    },
+    {
+      "sha256": "d4c0f67a5d0842215cd6bcad38e867ff96bd0f2bea851382de509f8e93293199",
+      "path": "FullStyle-API-Gateway/pnpm-lock.yaml"
+    },
+    {
+      "sha256": "3aa1f6c1a69018b37b20d62bc90ceed5a5be2b89e853c34e35b5872602fc1cc5",
+      "path": "FullStyle-API-Gateway/tsconfig.json"
+    },
+    {
+      "sha256": "1ce3a30ef3bacd5292a50e562d8a99b6cfb61184311dad7c72867aeba70ca102",
+      "path": "FullStyle-API-Gateway/openapi-schemas/openapi-auth.yaml"
+    },
+    {
+      "sha256": "3136ce49b1bdc44109c34c12daa4f755db515e02c4c35f8c4837f38182b43d85",
+      "path": "FullStyle-API-Gateway/openapi-schemas/openapi-chatbot.yaml"
+    },
+    {
+      "sha256": "d82fd6200a99775d8cc385ff82377ca0db35e14ecdec4fc08ce92b243f6c3555",
+      "path": "FullStyle-API-Gateway/openapi-schemas/openapi-logic.yaml"
+    },
+    {
+      "sha256": "196b3bea9805d9aef29e1a43b743a4c22138a6e74031b6fada1282d700600db1",
+      "path": "FullStyle-API-Gateway/scripts/copy-schemas.cjs"
+    },
+    {
+      "sha256": "890454671453591cf28285c1f1602a8a6c008ddaf9f50786e195276fecab0944",
+      "path": "FullStyle-API-Gateway/src/index.ts"
+    },
+    {
+      "sha256": "443fc7901895ad0c0e33e4a99e473bc17d386a79e2beac37a3765696efc99fed",
+      "path": "FullStyle-API-Gateway/src/tracing.ts"
+    },
+    {
+      "sha256": "2bbd3c14ee3cb2092ba4a0dbee44798f6bd1ee18c650b3182997b4c24abe1537",
+      "path": "FullStyle-API-Gateway/src/config/constants.ts"
+    },
+    {
+      "sha256": "49f371bc0e58173aa36a6570d3516b52f6f3ad74e67f4d0e00c0712d9a92e088",
+      "path": "FullStyle-API-Gateway/src/datasources/authAPI.ts"
+    },
+    {
+      "sha256": "4fa8c433301935f0151a0b83fe213977329cdf69067cab801a8843105f78c19a",
+      "path": "FullStyle-API-Gateway/src/datasources/chatAPI.ts"
+    },
+    {
+      "sha256": "93b860f2447a78bdf7a176b1e766c33c47084060395ccdc73ebd5d32ebfd0ba0",
+      "path": "FullStyle-API-Gateway/src/datasources/logicAPI.ts"
+    },
+    {
+      "sha256": "931837f916eae6168c4ee2e390b34f69cf942af9d360b956d25f50e5017fa83a",
+      "path": "FullStyle-API-Gateway/src/graphql/resolvers/auth.ts"
+    },
+    {
+      "sha256": "6d4fe3423eed219a6bdbe392f6f2999cd032e2abd2d23cd4ea06dc5b6463370a",
+      "path": "FullStyle-API-Gateway/src/graphql/resolvers/chat.ts"
+    },
+    {
+      "sha256": "af218a09cab56edc5184a66a87457f7effd54fbde87806835279f4c84a299101",
+      "path": "FullStyle-API-Gateway/src/graphql/resolvers/index.ts"
+    },
+    {
+      "sha256": "500bc553776f02b25b5a5d54ccdf2c502521380c15eee860ad370700fa726cdd",
+      "path": "FullStyle-API-Gateway/src/graphql/resolvers/logic.ts"
+    },
+    {
+      "sha256": "560d851265c7a78c3122faa4a833b665d393cad7b9b06e7e2b09e755f2c7ee9b",
+      "path": "FullStyle-API-Gateway/src/graphql/schemas/auth.graphql"
+    },
+    {
+      "sha256": "d79fb5bacd9333753858dac346a73f5cdba5d27754f1f9dff9a8dc9f64fd71b7",
+      "path": "FullStyle-API-Gateway/src/graphql/schemas/chat.graphql"
+    },
+    {
+      "sha256": "e777b49e113d23bae64e9b5504763f0157736f6b7a7d6524bdc39df8d68dfb4a",
+      "path": "FullStyle-API-Gateway/src/graphql/schemas/index.ts"
+    },
+    {
+      "sha256": "1bff8b170a1e9eefb45f169957e461de91165bb9de0e8687d9ead7b762cdf282",
+      "path": "FullStyle-API-Gateway/src/graphql/schemas/logic.graphql"
+    },
+    {
+      "sha256": "51aa415c71d20bb19fedc9e80fc68574f13bc14de2d2f70dace56f4c14e60f97",
+      "path": "FullStyle-API-Gateway/src/types/auth.ts"
+    },
+    {
+      "sha256": "f13d221972cd73a6dfa8845317a402e6927cc5b405d49ac1b1cc01e0a663549d",
+      "path": "FullStyle-API-Gateway/src/types/chat.ts"
+    },
+    {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "path": "FullStyle-API-Gateway/src/types/index.ts"
+    },
+    {
+      "sha256": "2be53667447442df4fc65e87da3ea513c7bebfd00de5e4e546020ee9978c3ba7",
+      "path": "FullStyle-API-Gateway/src/types/logic.ts"
+    },
+    {
+      "sha256": "3d4844ca088128980c66623d0375515ac43102c67884760df73fe1637940e3ef",
+      "path": "FullStyle-API-Gateway/tests/chat-delegation.cjs"
+    },
+    {
+      "sha256": "3f36389c398b83a300af95795e03d2ac3ab31a7d9d7751c56f0ef6a520a2ea78",
+      "path": "FullStyle-App/.gitignore"
+    },
+    {
+      "sha256": "02a2f9b6f54878360671afaa1163802664916102a5065c50e9431c7e38e124c5",
+      "path": "FullStyle-App/LICENSE"
+    },
+    {
+      "sha256": "e5d9e6390293ed4f88d1803afdd925d1a1107f98ffcf199363270c6bb27ba15d",
+      "path": "FullStyle-App/README.md"
+    },
+    {
+      "sha256": "329c08d55c687f3b8024210a85b7dd3c6338ad69c0cc228776ac42a7e4dcfa2d",
+      "path": "FullStyle-App/fullstyle_aplication/.gitignore"
+    },
+    {
+      "sha256": "88363c6d4b7905ec4d3e2e2a0e0f5e33326a621ae62867638e85c61d2f4bc7fe",
+      "path": "FullStyle-App/fullstyle_aplication/.metadata"
+    },
+    {
+      "sha256": "04317697215765cbff31658ad0076011094e8d0b43997973c4bfc4acb146e979",
+      "path": "FullStyle-App/fullstyle_aplication/README.md"
+    },
+    {
+      "sha256": "c1e9534c05acb3643e72a82ad3d92d56d2ba9b0df2add014c18f7e1d462f24e4",
+      "path": "FullStyle-App/fullstyle_aplication/analysis_options.yaml"
+    },
+    {
+      "sha256": "7b46e112efbe7611a864f2a01043800633953d881efdc13d09006cde0a5bcfa5",
+      "path": "FullStyle-App/fullstyle_aplication/firebase.json"
+    },
+    {
+      "sha256": "c4174510d2f91b50edc7464b7dcf7971cc6fb469ed2c04ae98b4001ea0a98477",
+      "path": "FullStyle-App/fullstyle_aplication/pubspec.lock"
+    },
+    {
+      "sha256": "2b782c7c4f0c6fdca74fc44931789d1647df47a09f9b7a4baf0733fdbfd69cc5",
+      "path": "FullStyle-App/fullstyle_aplication/pubspec.yaml"
+    },
+    {
+      "sha256": "b027c9de1011765c015e5819bf857c0d75bfcd0886fb01721c091159012e50f1",
+      "path": "FullStyle-App/fullstyle_aplication/android/.gitignore"
+    },
+    {
+      "sha256": "e704c38144ab59a5b51375447918d81d386d9ff49afd6c648b233bca8d759ed2",
+      "path": "FullStyle-App/fullstyle_aplication/android/build.gradle.kts"
+    },
+    {
+      "sha256": "20c411ebbe5162992d16d170656ee19a9ffe0571e6c4d4c5a5314bb06da0a672",
+      "path": "FullStyle-App/fullstyle_aplication/android/gradle.properties"
+    },
+    {
+      "sha256": "f69ef52cf94d9ce73f352da7e8eb274ec30c3c917d34cc82b5987790e001dbec",
+      "path": "FullStyle-App/fullstyle_aplication/android/settings.gradle.kts"
+    },
+    {
+      "sha256": "b31b27412c9d94b3f5584861620faec88dcbf131ee7dfcdf80276d46c44d7690",
+      "path": "FullStyle-App/fullstyle_aplication/android/app/build.gradle.kts"
+    },
+    {
+      "sha256": "30b0832ed8b92dfbd6ae2abfa939ccf26333d37600056b1572bd4a397a18a74b",
+      "path": "FullStyle-App/fullstyle_aplication/android/app/src/debug/AndroidManifest.xml"
+    },
+    {
+      "sha256": "4c47dd17b698a51d7f8bc24ed695e07f181b1d6e4d1348cd956b729e046b356f",
+      "path": "FullStyle-App/fullstyle_aplication/android/app/src/main/AndroidManifest.xml"
+    },
+    {
+      "sha256": "56ba32236b0cd54f9b00eb20ac40c1f00cf7a771aac8f9c1af4e95a1801cd152",
+      "path": "FullStyle-App/fullstyle_aplication/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java"
+    },
+    {
+      "sha256": "27c7fc4d2a7dab5ef43a13b9e0cfea068541d59fb543585fb4a7cf28aa274e97",
+      "path": "FullStyle-App/fullstyle_aplication/android/app/src/main/kotlin/com/example/fullstyle_aplication/MainActivity.kt"
+    },
+    {
+      "sha256": "94433756fe10005ddd6fc55cc5c0b1e9f3c10b66a08ceac795ece6713d34e28a",
+      "path": "FullStyle-App/fullstyle_aplication/android/app/src/main/res/drawable/launch_background.xml"
+    },
+    {
+      "sha256": "5c8137bdc55e3f2f6054b984ae83ce5faa5040368dcdb3b18b73bc45b9c3a0bd",
+      "path": "FullStyle-App/fullstyle_aplication/android/app/src/main/res/drawable-hdpi/ic_launcher_foreground.png"
+    },
+    {
+      "sha256": "fdd53502cbb817a49b4f29647c66eca78ea97d6e23259ccca51f79f5a2719a59",
+      "path": "FullStyle-App/fullstyle_aplication/android/app/src/main/res/drawable-mdpi/ic_launcher_foreground.png"
+    },
+    {
+      "sha256": "7ca6d5cec2169c5a98661a119db23a6f3399c8fef2256ff04f3a642831282478",
+      "path": "FullStyle-App/fullstyle_aplication/android/app/src/main/res/drawable-v21/launch_background.xml"
+    },
+    {
+      "sha256": "98042b333b494c4b635af231a9dcdea7b860223c8b8030d68c568a5a6748ca02",
+      "path": "FullStyle-App/fullstyle_aplication/android/app/src/main/res/drawable-xhdpi/ic_launcher_foreground.png"
+    },
+    {
+      "sha256": "bebd9ae9f27d3063a74201fd146e1793e252adf4bcfef2559d02ad36615449d8",
+      "path": "FullStyle-App/fullstyle_aplication/android/app/src/main/res/drawable-xxhdpi/ic_launcher_foreground.png"
+    },
+    {
+      "sha256": "9cbc27ccd6ef6dd6fcc35550199f2da1b6261569376aa970b5668cd3ae6530b1",
+      "path": "FullStyle-App/fullstyle_aplication/android/app/src/main/res/drawable-xxxhdpi/ic_launcher_foreground.png"
+    },
+    {
+      "sha256": "fe16ab84762f42e1166a008c9c77227fa3ba8399088bf9667e83d04bc4322af1",
+      "path": "FullStyle-App/fullstyle_aplication/android/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+      "sha256": "f78f7e698b90113de5ec6c43aac9083453fefa9790a17558c018d5b29e59feba",
+      "path": "FullStyle-App/fullstyle_aplication/android/app/src/main/res/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+      "sha256": "9fc117a5476b41577972124bab2fabebb791830815574074e5322739c73d7c59",
+      "path": "FullStyle-App/fullstyle_aplication/android/app/src/main/res/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+      "sha256": "0ee5ccb42a3143b7648e715dfe8d8a3eb09e1fc17512d1284f0b4a219ac1f116",
+      "path": "FullStyle-App/fullstyle_aplication/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+      "sha256": "d4e4b63a43b4e2bfea11744ab9c7bb6328be87f003c6b75400ed14eaf8b57e71",
+      "path": "FullStyle-App/fullstyle_aplication/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+      "sha256": "c79b8b2caa609a1da39d027794328506ee3400c196cf69fc1f65203323f28146",
+      "path": "FullStyle-App/fullstyle_aplication/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+      "sha256": "d5d95100301cb149608eecadc042884efbf6c4f88bf6022578847a0857596731",
+      "path": "FullStyle-App/fullstyle_aplication/android/app/src/main/res/values/colors.xml"
+    },
+    {
+      "sha256": "937d7c82f539c72eb94fd3a3773f29b3d3fef1997213c92cb632298cedf4bda9",
+      "path": "FullStyle-App/fullstyle_aplication/android/app/src/main/res/values/styles.xml"
+    },
+    {
+      "sha256": "8c5bad5152f217e837519f9c15211d19f39bd45f5f67faf6dd81cb4b299e518f",
+      "path": "FullStyle-App/fullstyle_aplication/android/app/src/main/res/values-night/styles.xml"
+    },
+    {
+      "sha256": "30b0832ed8b92dfbd6ae2abfa939ccf26333d37600056b1572bd4a397a18a74b",
+      "path": "FullStyle-App/fullstyle_aplication/android/app/src/profile/AndroidManifest.xml"
+    },
+    {
+      "sha256": "b00bce270ab40aa29758d7fe51c356a1bf8dc9a9a0d15e2a5d9a8a6609a749be",
+      "path": "FullStyle-App/fullstyle_aplication/android/gradle/wrapper/gradle-wrapper.properties"
+    },
+    {
+      "sha256": "edbf4abc1c27d752f04419a58793a0a476d611bd1c399cfa1b89f2ce513d74cd",
+      "path": "FullStyle-App/fullstyle_aplication/assets/data/services.json"
+    },
+    {
+      "sha256": "824529ffbfefb00bbe106e79b5180c99e5335ca281781c3dc66ddb8290a88175",
+      "path": "FullStyle-App/fullstyle_aplication/assets/images/image1.jpg"
+    },
+    {
+      "sha256": "6941f160db4f84c8883b1dd64b73d05581c0f0465de16aa55aa93db4ec55b5f8",
+      "path": "FullStyle-App/fullstyle_aplication/assets/images/image2.jpg"
+    },
+    {
+      "sha256": "2c7bd35393a5ef6c047803f78482ae668ef4dc606862ccb2a53d8ed5f8bdf6fd",
+      "path": "FullStyle-App/fullstyle_aplication/assets/images/image3.jpg"
+    },
+    {
+      "sha256": "fb07de3011f48846228bd136eba555e69c6a097f89a94260375e4040d4d29af9",
+      "path": "FullStyle-App/fullstyle_aplication/assets/images/logo-fullstyle.png"
+    },
+    {
+      "sha256": "37380775aeb2499662b7aca80f4ac4c95ae827c3ba2bfa179aa3e9af4812c623",
+      "path": "FullStyle-App/fullstyle_aplication/ios/.gitignore"
+    },
+    {
+      "sha256": "4844be22b72d16d6f6013ce5a2240728c730ef1fef9cf43a5c55198b18614802",
+      "path": "FullStyle-App/fullstyle_aplication/ios/Flutter/AppFrameworkInfo.plist"
+    },
+    {
+      "sha256": "690b8a8b1ae15ddd29b241429963e971bbc6720ab22f154cf8cf6b085b6d4925",
+      "path": "FullStyle-App/fullstyle_aplication/ios/Flutter/Debug.xcconfig"
+    },
+    {
+      "sha256": "ad8abb27e461ebcc49704ce60b5ede664931bcdf330b63dd9240752cb24049a7",
+      "path": "FullStyle-App/fullstyle_aplication/ios/Flutter/Generated.xcconfig"
+    },
+    {
+      "sha256": "75abb819a9de1e0e41c835e7307bc64a506cac25a9a5c0b0d8253fa1c3d5d422",
+      "path": "FullStyle-App/fullstyle_aplication/ios/Flutter/Release.xcconfig"
+    },
+    {
+      "sha256": "98c9fb325a6c7c6f0c7fe1aaa6959a0fca447f0653dd7bb3a0bd5e9f1c89c59f",
+      "path": "FullStyle-App/fullstyle_aplication/ios/Flutter/flutter_export_environment.sh"
+    },
+    {
+      "sha256": "9418c676adebac7e3f04daa80a7db62066e77f9766c804fd3e5e264124a31f80",
+      "path": "FullStyle-App/fullstyle_aplication/ios/Runner/AppDelegate.swift"
+    },
+    {
+      "sha256": "a5f88cc6415d2e639d2cb549348b84e02a7fdd0261603b0063abef6fa11f075a",
+      "path": "FullStyle-App/fullstyle_aplication/ios/Runner/GeneratedPluginRegistrant.h"
+    },
+    {
+      "sha256": "b7c794c7a3987d4d58fe2800cc2b347ecb88487623dae549e449bc37d20d99cc",
+      "path": "FullStyle-App/fullstyle_aplication/ios/Runner/GeneratedPluginRegistrant.m"
+    },
+    {
+      "sha256": "b3b3672e93aa909204dccc1c6a6b19be533a8b4cf180d62ae542a2b61910d0a2",
+      "path": "FullStyle-App/fullstyle_aplication/ios/Runner/Info.plist"
+    },
+    {
+      "sha256": "1a8d11d01d1cc92c650c9c9ed35299240052d4683a15a719a2315ef44185e074",
+      "path": "FullStyle-App/fullstyle_aplication/ios/Runner/Runner-Bridging-Header.h"
+    },
+    {
+      "sha256": "59aee64f32dab46ad775da6ea2f3fc4efe6e8a78289a9185cd0d2d7e055845dd",
+      "path": "FullStyle-App/fullstyle_aplication/ios/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json"
+    },
+    {
+      "sha256": "0bf4bedf0ada79ae1c3d04dd2ee55b611eb1e1149a91414f04a6088fa3ce4b1d",
+      "path": "FullStyle-App/fullstyle_aplication/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png"
+    },
+    {
+      "sha256": "f657dd535267aee5c31584a49ae51545d1839efaa788a55997f778b48efa2fbf",
+      "path": "FullStyle-App/fullstyle_aplication/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@1x.png"
+    },
+    {
+      "sha256": "b68b66954b0d09739927037ee2e95c2c01fcb71820e39edc295db4bf74fbcd99",
+      "path": "FullStyle-App/fullstyle_aplication/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@2x.png"
+    },
+    {
+      "sha256": "e96582bf06fbd637db88238ff7440e0dc8c02962e8a2a8f2b1a37618c4ed50be",
+      "path": "FullStyle-App/fullstyle_aplication/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@3x.png"
+    },
+    {
+      "sha256": "3e28ff4c00e6a5a2e22d86411520b09fb9cccda6823eba813b7b78efecc016e2",
+      "path": "FullStyle-App/fullstyle_aplication/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@1x.png"
+    },
+    {
+      "sha256": "6167d6f8751e56b1f22ba127701479a2a8e73ed61f098c1597894bb8abfb94a9",
+      "path": "FullStyle-App/fullstyle_aplication/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@2x.png"
+    },
+    {
+      "sha256": "3a496ddc5b1e015ac69f8a3396c0ca6307a8857328c83d51b3d3ffd3163f2429",
+      "path": "FullStyle-App/fullstyle_aplication/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@3x.png"
+    },
+    {
+      "sha256": "b68b66954b0d09739927037ee2e95c2c01fcb71820e39edc295db4bf74fbcd99",
+      "path": "FullStyle-App/fullstyle_aplication/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@1x.png"
+    },
+    {
+      "sha256": "c9b46d8e5896c140b20fb089379860c766662c0b181cbd9563f373b60526e506",
+      "path": "FullStyle-App/fullstyle_aplication/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@2x.png"
+    },
+    {
+      "sha256": "b462ca362528068189760f28b5c47625b147a687ca0d34c479a4b16533b4657b",
+      "path": "FullStyle-App/fullstyle_aplication/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@3x.png"
+    },
+    {
+      "sha256": "f38fc4665705805e9113be3e3fa3fb1605d416bd2abbc860273daffd45a2b911",
+      "path": "FullStyle-App/fullstyle_aplication/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-50x50@1x.png"
+    },
+    {
+      "sha256": "00ab946e4a05a6486da731c395f3703d5d41f87035a45ed48c7f88adbcdd6403",
+      "path": "FullStyle-App/fullstyle_aplication/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-50x50@2x.png"
+    },
+    {
+      "sha256": "29e87bdbba2362aeff3163f59e3da9dbf6f79e79b161ae2937a895b257017142",
+      "path": "FullStyle-App/fullstyle_aplication/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-57x57@1x.png"
+    },
+    {
+      "sha256": "8a1dba85044c7d7c322997b16a9ad42b628ea4378922072241d501f52e37d4be",
+      "path": "FullStyle-App/fullstyle_aplication/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-57x57@2x.png"
+    },
+    {
+      "sha256": "b462ca362528068189760f28b5c47625b147a687ca0d34c479a4b16533b4657b",
+      "path": "FullStyle-App/fullstyle_aplication/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@2x.png"
+    },
+    {
+      "sha256": "1317a3e21f4d93a6edc59db1653430f7b46a992eb9e91756d6908718c96e896c",
+      "path": "FullStyle-App/fullstyle_aplication/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@3x.png"
+    },
+    {
+      "sha256": "5664b5739992b9d23028d7a26f77785299597963cd6c810f9d31757f6ee082bd",
+      "path": "FullStyle-App/fullstyle_aplication/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-72x72@1x.png"
+    },
+    {
+      "sha256": "f817f7cf3c3cf858a09c6568e6117ee0383b13913f768b4386b55b627b006675",
+      "path": "FullStyle-App/fullstyle_aplication/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-72x72@2x.png"
+    },
+    {
+      "sha256": "c119303252a6b73f2b8ed73462f77b664a4d56fac023954ddeaa37e09d3ead5e",
+      "path": "FullStyle-App/fullstyle_aplication/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@1x.png"
+    },
+    {
+      "sha256": "ac79a8f1fde87db8e0aa79cd93726113d3d4a0a5f90ded5351c96cc7c9758b35",
+      "path": "FullStyle-App/fullstyle_aplication/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@2x.png"
+    },
+    {
+      "sha256": "4d7ee1b80ffd6347517f8040d2399fc14761bb291517561f5094e663da1f62ad",
+      "path": "FullStyle-App/fullstyle_aplication/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-83.5x83.5@2x.png"
+    },
+    {
+      "sha256": "ccc7950fd5f5b82067c85f667940a9d59189151460761ece8098ca78daa19469",
+      "path": "FullStyle-App/fullstyle_aplication/ios/Runner/Assets.xcassets/LaunchImage.imageset/Contents.json"
+    },
+    {
+      "sha256": "93ae7d494fad0fb30cbf3ae746a39c4bc7a0f8bbf87fbb587a3f3c01f3c5ce20",
+      "path": "FullStyle-App/fullstyle_aplication/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage.png"
+    },
+    {
+      "sha256": "93ae7d494fad0fb30cbf3ae746a39c4bc7a0f8bbf87fbb587a3f3c01f3c5ce20",
+      "path": "FullStyle-App/fullstyle_aplication/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@2x.png"
+    },
+    {
+      "sha256": "93ae7d494fad0fb30cbf3ae746a39c4bc7a0f8bbf87fbb587a3f3c01f3c5ce20",
+      "path": "FullStyle-App/fullstyle_aplication/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@3x.png"
+    },
+    {
+      "sha256": "a985b626c4f7546a8ba392d135e9226c3547c8e2b46895f5f2bdf40d7b14ef9f",
+      "path": "FullStyle-App/fullstyle_aplication/ios/Runner/Assets.xcassets/LaunchImage.imageset/README.md"
+    },
+    {
+      "sha256": "857e61203b3deafb05766d8fcda898b86a7cb6f3d5e385ecc9926c4d698215e9",
+      "path": "FullStyle-App/fullstyle_aplication/ios/Runner/Base.lproj/LaunchScreen.storyboard"
+    },
+    {
+      "sha256": "fd367b6c43006d61b730f674970dd48b9f662c8f2264e52ffc1558102a2c9f2d",
+      "path": "FullStyle-App/fullstyle_aplication/ios/Runner/Base.lproj/Main.storyboard"
+    },
+    {
+      "sha256": "20fecc8481a725bdcb9f7aad40683216b961c1d9ce6c688a03699f3791adf7d8",
+      "path": "FullStyle-App/fullstyle_aplication/ios/Runner.xcodeproj/project.pbxproj"
+    },
+    {
+      "sha256": "7f3b00b5c3fdb45242d7b87e1e5c4e25d1fa8129a16c94295ecc4e8ea2235c5f",
+      "path": "FullStyle-App/fullstyle_aplication/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata"
+    },
+    {
+      "sha256": "dfa0f9bb85b95ccba9c6811adadf8cb407fb5d52088e89db83ebc308ec448542",
+      "path": "FullStyle-App/fullstyle_aplication/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist"
+    },
+    {
+      "sha256": "11b247bc6796892d67c9a821d18604db4dd6a880981b34f38460b9866e6b247f",
+      "path": "FullStyle-App/fullstyle_aplication/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings"
+    },
+    {
+      "sha256": "8f5ff0b49841e952bf5d7d710ad0e3f6c6384a972cd82ac1e8a5929cb5c8162e",
+      "path": "FullStyle-App/fullstyle_aplication/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme"
+    },
+    {
+      "sha256": "46c3c9702ff7c5584e11c954d943cfb6e07fb26e3fbd072ddbc0f388aa352de1",
+      "path": "FullStyle-App/fullstyle_aplication/ios/Runner.xcworkspace/contents.xcworkspacedata"
+    },
+    {
+      "sha256": "dfa0f9bb85b95ccba9c6811adadf8cb407fb5d52088e89db83ebc308ec448542",
+      "path": "FullStyle-App/fullstyle_aplication/ios/Runner.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist"
+    },
+    {
+      "sha256": "11b247bc6796892d67c9a821d18604db4dd6a880981b34f38460b9866e6b247f",
+      "path": "FullStyle-App/fullstyle_aplication/ios/Runner.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings"
+    },
+    {
+      "sha256": "5e8f4908dacea6f29b2a790e4d38bf5fded69096063f9a27a2f21584d62b30c0",
+      "path": "FullStyle-App/fullstyle_aplication/ios/RunnerTests/RunnerTests.swift"
+    },
+    {
+      "sha256": "056ee4ab9581c407086a7a898f9ccc038b8a220e1975475b8cbe31d81f835db5",
+      "path": "FullStyle-App/fullstyle_aplication/lib/firebase_options.dart"
+    },
+    {
+      "sha256": "6b5f0b9415bdb1b0c3d8d38950be5fcafbb55c9ab29efb0958a230a49becf48b",
+      "path": "FullStyle-App/fullstyle_aplication/lib/main.dart"
+    },
+    {
+      "sha256": "1a99435974132ba986481e9e21b5984e8b8f9f4c7c5d365ac18c8bc6a3955c8a",
+      "path": "FullStyle-App/fullstyle_aplication/lib/components/auth_button.dart"
+    },
+    {
+      "sha256": "2a3b7a43aa24664b28ceded1066bcd5438debb5881b1c2b49c6afbb8cbf5829d",
+      "path": "FullStyle-App/fullstyle_aplication/lib/components/auth_textfield.dart"
+    },
+    {
+      "sha256": "b3d247138e72822355e26f4b97f01b5ed6bbcb5b26b982a718a334b49a8a040f",
+      "path": "FullStyle-App/fullstyle_aplication/lib/components/chat_message.dart"
+    },
+    {
+      "sha256": "e4abdc34e054450f97938c8c411ce6c572e491abd6bef9832c05ac6e7247e82b",
+      "path": "FullStyle-App/fullstyle_aplication/lib/components/home_drawer.dart"
+    },
+    {
+      "sha256": "53dd23388d62fc3a9ec23d704960b363d3e02caa8f445b658f7807ae8065b473",
+      "path": "FullStyle-App/fullstyle_aplication/lib/components/link_account_dialog.dart"
+    },
+    {
+      "sha256": "43ba69c1acda833eaff9f48d7801ead0242a3f7ad3258958ac9d9dc4535f33db",
+      "path": "FullStyle-App/fullstyle_aplication/lib/components/mfa_dialog.dart"
+    },
+    {
+      "sha256": "9d07c65af16fbf499b472921a77923eb8b6aab07d6c61bbbaf52ac761507bde7",
+      "path": "FullStyle-App/fullstyle_aplication/lib/components/user_title.dart"
+    },
+    {
+      "sha256": "f0a7ffc26314e517c9711239bffa3551615a389697e3363544841db4a38db2cc",
+      "path": "FullStyle-App/fullstyle_aplication/lib/components/marketing/service_card.dart"
+    },
+    {
+      "sha256": "f09df618f8718f04e34c495a124485d3e89de64e5f6a6f3f498da773adc77f0f",
+      "path": "FullStyle-App/fullstyle_aplication/lib/components/marketing/service_carousel.dart"
+    },
+    {
+      "sha256": "58d41324f93c58c3a19992032ac7793101886c46bca985debcbc88c9696d31fe",
+      "path": "FullStyle-App/fullstyle_aplication/lib/config/app_config.dart"
+    },
+    {
+      "sha256": "59c3b864c8f8c09666eed9199ddf212f9e6d3dcc159249496ac9bf0a4f83e1a8",
+      "path": "FullStyle-App/fullstyle_aplication/lib/models/message.dart"
+    },
+    {
+      "sha256": "f9392002bf91516293760ecb79ba5cebc8b5011285dcd45c6bcaff1fdfdcf72b",
+      "path": "FullStyle-App/fullstyle_aplication/lib/pages/chatbot_page.dart"
+    },
+    {
+      "sha256": "a3fc57370be737c299dd776f815241606a273f71a3d86b3e6d6a16eaa39c0377",
+      "path": "FullStyle-App/fullstyle_aplication/lib/pages/contact_page.dart"
+    },
+    {
+      "sha256": "eb14866015daec57da7bdc085709b52f7478cb03c63a64a8195e801d1aed9d4b",
+      "path": "FullStyle-App/fullstyle_aplication/lib/pages/home_page.dart"
+    },
+    {
+      "sha256": "6aeb3260f7f0f71c26f3f0f28a43566273bf07f9aa2cb24489a34d5241577a90",
+      "path": "FullStyle-App/fullstyle_aplication/lib/pages/login_page.dart"
+    },
+    {
+      "sha256": "7e458a518524d4aee6bcc28e5f25fb118f5a496b12eda999e345db87383ebcfa",
+      "path": "FullStyle-App/fullstyle_aplication/lib/pages/register_page.dart"
+    },
+    {
+      "sha256": "b18f4ef0fda2b8cca553531fa0ea557bf45049d14cc0da1e00c34c41e1e1f1ee",
+      "path": "FullStyle-App/fullstyle_aplication/lib/pages/settings_page.dart"
+    },
+    {
+      "sha256": "7a6f86e9af44ada2a57e51994f860698221fb778c1c8c583bee2a706c9de174e",
+      "path": "FullStyle-App/fullstyle_aplication/lib/services/auth/auth_gate.dart"
+    },
+    {
+      "sha256": "a8a6453ea5e526f938c21ff1ec01017e10f2e6f273b3baf52fb7ff6c269d1ab8",
+      "path": "FullStyle-App/fullstyle_aplication/lib/services/auth/auth_service.dart"
+    },
+    {
+      "sha256": "ff2e0f1a9123bf30c48016e4ddfb4692da1ac584025b7a8f1ff48634969590c1",
+      "path": "FullStyle-App/fullstyle_aplication/lib/services/auth/backend_session.dart"
+    },
+    {
+      "sha256": "03391ce4e4d13beff740062d663b9586553f0ea4b473065a0abef83756288783",
+      "path": "FullStyle-App/fullstyle_aplication/lib/services/auth/select_auth_type.dart"
+    },
+    {
+      "sha256": "5030d277cf7d15f60ea53cae55c34bc1346144355b711150227cd3f0e1f3e9e0",
+      "path": "FullStyle-App/fullstyle_aplication/lib/services/chat/chat_service.dart"
+    },
+    {
+      "sha256": "e8ef752c06de0d6d1c36331e0c7aa6a656e760020937d0b05c82d5d3312a32ce",
+      "path": "FullStyle-App/fullstyle_aplication/lib/services/chatbot/chatbot_repository.dart"
+    },
+    {
+      "sha256": "c68a6b24d2bf4060657f5ea9cba4e471c0e9e29c99481dfd40cfd384c93ea566",
+      "path": "FullStyle-App/fullstyle_aplication/lib/themes/dark_mode.dart"
+    },
+    {
+      "sha256": "78170ed3bd639eb69436e230da466638509e4b35ec06b35c607bbf8d86c9b631",
+      "path": "FullStyle-App/fullstyle_aplication/lib/themes/light_mode.dart"
+    },
+    {
+      "sha256": "d459b5f476b212b5b3b98503addb957a07c716cb6e2cf19c8216b5184d532ae0",
+      "path": "FullStyle-App/fullstyle_aplication/lib/themes/theme_provider.dart"
+    },
+    {
+      "sha256": "5ded4f1a9d10d34bf6ee5beb0711d88ee2ef07b0f07ace9ed77935a246e8eb82",
+      "path": "FullStyle-App/fullstyle_aplication/linux/.gitignore"
+    },
+    {
+      "sha256": "2b879720de1a514891f929a54a979a893c0fedc001f583026a34a75e6f707218",
+      "path": "FullStyle-App/fullstyle_aplication/linux/CMakeLists.txt"
+    },
+    {
+      "sha256": "787189e2623313cfee590a0b553338eb9fc68b3af922ddd77c5d39c75f989aeb",
+      "path": "FullStyle-App/fullstyle_aplication/linux/flutter/CMakeLists.txt"
+    },
+    {
+      "sha256": "c824516e905193619e6fdf309231e0da38a8ec9b94ad72f0bb96c68d8d285e22",
+      "path": "FullStyle-App/fullstyle_aplication/linux/flutter/generated_plugin_registrant.cc"
+    },
+    {
+      "sha256": "00f93bb5b1faefdede8f6065df327522900fb0b8efee86bacf424fd947ed14bb",
+      "path": "FullStyle-App/fullstyle_aplication/linux/flutter/generated_plugin_registrant.h"
+    },
+    {
+      "sha256": "973f4d18545f2477cf9ae544f79d8f26482ec223836bea0a95b853e21180b58b",
+      "path": "FullStyle-App/fullstyle_aplication/linux/flutter/generated_plugins.cmake"
+    },
+    {
+      "sha256": "8cdcfd911e770fd7d511c97c7bce6559486a815352a47c953f7ef632e236d2cc",
+      "path": "FullStyle-App/fullstyle_aplication/linux/runner/CMakeLists.txt"
+    },
+    {
+      "sha256": "ea23f7cdf74091d63bba29ef60486370b766157b848f0cfe62bd8b1c1695a0c1",
+      "path": "FullStyle-App/fullstyle_aplication/linux/runner/main.cc"
+    },
+    {
+      "sha256": "ef792ce87ce699be4f9222f1e3762f3ad2fe39b16fa272061461b40f799bb2d9",
+      "path": "FullStyle-App/fullstyle_aplication/linux/runner/my_application.cc"
+    },
+    {
+      "sha256": "a044da4b485c93d0e1a79c62356b22c8856dd2bab537ffb6a9446fc905131316",
+      "path": "FullStyle-App/fullstyle_aplication/linux/runner/my_application.h"
+    },
+    {
+      "sha256": "ffec1a0bbd70547186b82ad4e49089bafab2de309b89de97c776d70debb179fa",
+      "path": "FullStyle-App/fullstyle_aplication/macos/.gitignore"
+    },
+    {
+      "sha256": "802714a37a8fd3065fb3d8e21cbcfbb3147c7ad25f25934b64590085aa9f5b28",
+      "path": "FullStyle-App/fullstyle_aplication/macos/Flutter/Flutter-Debug.xcconfig"
+    },
+    {
+      "sha256": "d575f436f8bab30d7096792396e73b65db242edc01913c4123d2c29e713b3a6d",
+      "path": "FullStyle-App/fullstyle_aplication/macos/Flutter/Flutter-Release.xcconfig"
+    },
+    {
+      "sha256": "70c259870ffcac330c033a458c60f2da57d5fad8c2807f7d23d9849d552708e2",
+      "path": "FullStyle-App/fullstyle_aplication/macos/Flutter/GeneratedPluginRegistrant.swift"
+    },
+    {
+      "sha256": "ce9dbe45a57c59e85519da50a26c471615b9c8cdd85a8f4a39d2e480e62a4af4",
+      "path": "FullStyle-App/fullstyle_aplication/macos/Runner/AppDelegate.swift"
+    },
+    {
+      "sha256": "ebaab2b9992173de422c33e1fbab7f6e31acaa2213956097ac8cefd894a91ac8",
+      "path": "FullStyle-App/fullstyle_aplication/macos/Runner/DebugProfile.entitlements"
+    },
+    {
+      "sha256": "f253e89c512b3a9a81bc5cdd7a14bf932470f835f261654a808ea4549cd94aad",
+      "path": "FullStyle-App/fullstyle_aplication/macos/Runner/Info.plist"
+    },
+    {
+      "sha256": "65c9613c11bcedfa51416b16c975d8ba6ff12b405fc19d60db8755d92e86d9fe",
+      "path": "FullStyle-App/fullstyle_aplication/macos/Runner/MainFlutterWindow.swift"
+    },
+    {
+      "sha256": "b746c74b201e6af4e0864fbd1f4f629f96156a7ec4b7208bc995d0a5089bb592",
+      "path": "FullStyle-App/fullstyle_aplication/macos/Runner/Release.entitlements"
+    },
+    {
+      "sha256": "bc6ba8105ca69651aeeb77358851590de295dca04681a1d58c0f449641c242f3",
+      "path": "FullStyle-App/fullstyle_aplication/macos/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json"
+    },
+    {
+      "sha256": "6232e5815af17e25e0268b2fec7aea9e068cc92ec709e9605c2b31df4ff2a313",
+      "path": "FullStyle-App/fullstyle_aplication/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_1024.png"
+    },
+    {
+      "sha256": "15591f03f31313af6fd644ed0512106cc04365130b8b73244f1cfa6dddfb4400",
+      "path": "FullStyle-App/fullstyle_aplication/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_128.png"
+    },
+    {
+      "sha256": "cc6928b5adfc00dbf526192e2705dd9af641cdf20ab4c6c7ca7cd4936dca59f0",
+      "path": "FullStyle-App/fullstyle_aplication/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_16.png"
+    },
+    {
+      "sha256": "416efd77cde932d42ef34168da24dd428a495b1f4f34bbbd125a18d2add186a2",
+      "path": "FullStyle-App/fullstyle_aplication/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_256.png"
+    },
+    {
+      "sha256": "ae8c4458e41f1e28b1e851ed87d3268d4a0351ceea427fa2a84cc94ddfb6d4c5",
+      "path": "FullStyle-App/fullstyle_aplication/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_32.png"
+    },
+    {
+      "sha256": "0a91c6c1bf242e54ee179e34629e9ef3e8a6d286c0fce01e302280a8be9277e6",
+      "path": "FullStyle-App/fullstyle_aplication/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_512.png"
+    },
+    {
+      "sha256": "6ad229623498e5f1277800db3ab7cb11faf85eb2569e1213f7d8e55003c07b42",
+      "path": "FullStyle-App/fullstyle_aplication/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_64.png"
+    },
+    {
+      "sha256": "be9e9ef8469d3262370e0f0b855ed163cbf9c8362c59e330b2ffe63b86fa42f4",
+      "path": "FullStyle-App/fullstyle_aplication/macos/Runner/Base.lproj/MainMenu.xib"
+    },
+    {
+      "sha256": "0f6fe58d4bfb3ebcd02ce57b39a8b448bb7e2f17198618d031b079bdb6a53be7",
+      "path": "FullStyle-App/fullstyle_aplication/macos/Runner/Configs/AppInfo.xcconfig"
+    },
+    {
+      "sha256": "8067d533ef6593760baad9a9855a786a7a77470fcc3f0925ec04fe43bc1ac4b0",
+      "path": "FullStyle-App/fullstyle_aplication/macos/Runner/Configs/Debug.xcconfig"
+    },
+    {
+      "sha256": "7a6a4b4d973a23052fa0a0388dd261e32d311d7b66ba1bfc3b914b361808ac61",
+      "path": "FullStyle-App/fullstyle_aplication/macos/Runner/Configs/Release.xcconfig"
+    },
+    {
+      "sha256": "0e341a392b16ad302d12890aa3dac9257a6c10ece685437604259a85341645a3",
+      "path": "FullStyle-App/fullstyle_aplication/macos/Runner/Configs/Warnings.xcconfig"
+    },
+    {
+      "sha256": "be2b26b7e40211ef372084c74dc335b5fb9d845d237e6cd93fbae02ff9d90255",
+      "path": "FullStyle-App/fullstyle_aplication/macos/Runner.xcodeproj/project.pbxproj"
+    },
+    {
+      "sha256": "dfa0f9bb85b95ccba9c6811adadf8cb407fb5d52088e89db83ebc308ec448542",
+      "path": "FullStyle-App/fullstyle_aplication/macos/Runner.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist"
+    },
+    {
+      "sha256": "a43ee81eec6b873785f3618c6948f7259f3469b063a49bb59ec14580a7ef7ad4",
+      "path": "FullStyle-App/fullstyle_aplication/macos/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme"
+    },
+    {
+      "sha256": "46c3c9702ff7c5584e11c954d943cfb6e07fb26e3fbd072ddbc0f388aa352de1",
+      "path": "FullStyle-App/fullstyle_aplication/macos/Runner.xcworkspace/contents.xcworkspacedata"
+    },
+    {
+      "sha256": "dfa0f9bb85b95ccba9c6811adadf8cb407fb5d52088e89db83ebc308ec448542",
+      "path": "FullStyle-App/fullstyle_aplication/macos/Runner.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist"
+    },
+    {
+      "sha256": "6bc180bc77c7def7a21d197233e25dff42cc493ab9d294632edafc18fdf0ac44",
+      "path": "FullStyle-App/fullstyle_aplication/macos/RunnerTests/RunnerTests.swift"
+    },
+    {
+      "sha256": "5b37c0c85a9cdc7943d38e29c06f29c6fddad2f4f3aaaf4f352a4f9f715baf46",
+      "path": "FullStyle-App/fullstyle_aplication/test/identity_contract_test.dart"
+    },
+    {
+      "sha256": "7ab2525f4b86b65d3e4c70358a17e5a1aaf6f437f99cbcc046dad73d59bb9015",
+      "path": "FullStyle-App/fullstyle_aplication/web/favicon.png"
+    },
+    {
+      "sha256": "1297108d9a232931960a66748b5c0f767e5979c64c1c009acfc22e330318a056",
+      "path": "FullStyle-App/fullstyle_aplication/web/index.html"
+    },
+    {
+      "sha256": "4fae79ba8b323622c5690c22b625d8e380f0dddfedaea674753625d3c7df9682",
+      "path": "FullStyle-App/fullstyle_aplication/web/manifest.json"
+    },
+    {
+      "sha256": "3dce99077602f70421c1c6b2a240bc9b83d64d86681d45f2154143310c980be3",
+      "path": "FullStyle-App/fullstyle_aplication/web/icons/Icon-192.png"
+    },
+    {
+      "sha256": "baccb205ae45f0b421be1657259b4943ac40c95094ab877f3bcbe12cd544dcbe",
+      "path": "FullStyle-App/fullstyle_aplication/web/icons/Icon-512.png"
+    },
+    {
+      "sha256": "d2c842e22a9f4ec9d996b23373a905c88d9a203b220c5c151885ad621f974b5c",
+      "path": "FullStyle-App/fullstyle_aplication/web/icons/Icon-maskable-192.png"
+    },
+    {
+      "sha256": "6aee06cdcab6b2aef74b1734c4778f4421d2da100b0ff9e52b21b55240202929",
+      "path": "FullStyle-App/fullstyle_aplication/web/icons/Icon-maskable-512.png"
+    },
+    {
+      "sha256": "96345475f1a3c66bd32d28178fba151ab1506b35b1f7857b8f7651863093ea11",
+      "path": "FullStyle-App/fullstyle_aplication/windows/.gitignore"
+    },
+    {
+      "sha256": "ae3e8b0092800d49cd41bd7fb2b4b13c3f262a2014f6e982930abef5725a038a",
+      "path": "FullStyle-App/fullstyle_aplication/windows/CMakeLists.txt"
+    },
+    {
+      "sha256": "1fe418971b6f41bb35ceb3d64113a835f3f6f171ecaa707bf232492b57a588d6",
+      "path": "FullStyle-App/fullstyle_aplication/windows/flutter/CMakeLists.txt"
+    },
+    {
+      "sha256": "5432048b1345bf59ac0402ba6275ba1e34c0a046d1a255d856942ff05aeb89fd",
+      "path": "FullStyle-App/fullstyle_aplication/windows/flutter/generated_plugin_registrant.cc"
+    },
+    {
+      "sha256": "dbc11635d7b1ba1887adf40df5b83d634e9c3ab0bee34510c71528bb4d73602a",
+      "path": "FullStyle-App/fullstyle_aplication/windows/flutter/generated_plugin_registrant.h"
+    },
+    {
+      "sha256": "435da5c76b774e2ceaeafbeed6b7467c54dad3a8a0b4887e33da1c6be0095eeb",
+      "path": "FullStyle-App/fullstyle_aplication/windows/flutter/generated_plugins.cmake"
+    },
+    {
+      "sha256": "34119ec122e36940235ef4bc245fcfb43b6960ed443e28af1a8d833a81209b9e",
+      "path": "FullStyle-App/fullstyle_aplication/windows/runner/CMakeLists.txt"
+    },
+    {
+      "sha256": "69c6761b5796bf5013adea8a852e7474431df89da3d5f705d46aa951cae14fc8",
+      "path": "FullStyle-App/fullstyle_aplication/windows/runner/Runner.rc"
+    },
+    {
+      "sha256": "dd185884c0b5301d400b58f12ebb36b1c8b326531597e531b40e44a6eeb0e943",
+      "path": "FullStyle-App/fullstyle_aplication/windows/runner/flutter_window.cpp"
+    },
+    {
+      "sha256": "38e0fcd3a0b83895852ec295cb70d90179c0dcd40d58f065eb5232a4ecd84898",
+      "path": "FullStyle-App/fullstyle_aplication/windows/runner/flutter_window.h"
+    },
+    {
+      "sha256": "e3e980fb3e95d8ca6a4755b8a8e74b8c244e44778c11d9317d2ff929cb04c2df",
+      "path": "FullStyle-App/fullstyle_aplication/windows/runner/main.cpp"
+    },
+    {
+      "sha256": "1fa98588b04561590ba1cf0521ab86a9db4a878312f21c9d5861d965ddd8d1ae",
+      "path": "FullStyle-App/fullstyle_aplication/windows/runner/resource.h"
+    },
+    {
+      "sha256": "825d243e9fa1542619909c1b72d09b3ed7c1f3b225bb8367c125835e5dc3f8aa",
+      "path": "FullStyle-App/fullstyle_aplication/windows/runner/runner.exe.manifest"
+    },
+    {
+      "sha256": "dc2ee94d43116f959a4abd42557f71d07acc631abbffe03b11489dbeed35bedb",
+      "path": "FullStyle-App/fullstyle_aplication/windows/runner/utils.cpp"
+    },
+    {
+      "sha256": "95a7f7dddb832997cefa937a96f89472332277e75734a5de553610760b744b03",
+      "path": "FullStyle-App/fullstyle_aplication/windows/runner/utils.h"
+    },
+    {
+      "sha256": "9065f31ccf746cf8b390121f958f9e959033af864aed779597066625ed56bc36",
+      "path": "FullStyle-App/fullstyle_aplication/windows/runner/win32_window.cpp"
+    },
+    {
+      "sha256": "7dd03746b19dcf3542829b2f6e8ed40a2714ce5f2cb3b0e23f0118a2fcf62d62",
+      "path": "FullStyle-App/fullstyle_aplication/windows/runner/win32_window.h"
+    },
+    {
+      "sha256": "c098d3fc85cacff98b8e69811b48e9f0d852fcee278132d794411d978869cbf8",
+      "path": "FullStyle-App/fullstyle_aplication/windows/runner/resources/app_icon.ico"
+    },
+    {
+      "sha256": "391f5054382d5cefdca374596ea0676cec859dc6f2787f85a0bf62f2a07ec71d",
+      "path": "FullStyle-Backend/.gitignore"
+    },
+    {
+      "sha256": "0ae3c7137dc5ca58f3cdd349f71a57366d1c0f011828351ab4175b299220333b",
+      "path": "FullStyle-Backend/Dockerfile"
+    },
+    {
+      "sha256": "36dad28340001cd79af8d947b9d4fa2a73b3c3edbcf88cf39714ff22a9d9f5b5",
+      "path": "FullStyle-Backend/README.md"
+    },
+    {
+      "sha256": "66fb6ae14080b6ab1b6ceaf5b8ff4c527462a92f7ee8eebc0c3cdb55e418a503",
+      "path": "FullStyle-Backend/app.py"
+    },
+    {
+      "sha256": "07b2faabab02ff794bd7736d1a06b0ef280b37be7ffee08c68652e7f5fd84e2d",
+      "path": "FullStyle-Backend/dev-requirements.txt"
+    },
+    {
+      "sha256": "95503d1bb5b150e63f5a5ab22ec8f9dd13007ed9caf6efc4dc0adcd3353ee780",
+      "path": "FullStyle-Backend/docker-compose.yaml"
+    },
+    {
+      "sha256": "d0c4c5681bc3a81b3c3ae94c59fdc79bd09020605bb2cbdfc75b1e7664fcb187",
+      "path": "FullStyle-Backend/gunicorn_local.py"
+    },
+    {
+      "sha256": "2acde37554be6a7d08c5aafa6247c87709c97d9d42eded6fd062c136532e9045",
+      "path": "FullStyle-Backend/init_local.py"
+    },
+    {
+      "sha256": "aca97a96441d7e85034e10c8d5f5652e42d35383b320e045ab5074ff2a2a6039",
+      "path": "FullStyle-Backend/maintenance_local.py"
+    },
+    {
+      "sha256": "c8b28b3ec568ca584482be2c220ac09c005bf0d4465d344f3b1b819add421d46",
+      "path": "FullStyle-Backend/migrate_local.py"
+    },
+    {
+      "sha256": "4ba4b66c16a887d0391dd2c99a0fb5b997a8a4b38dda98e3787811494171d3e1",
+      "path": "FullStyle-Backend/pyproject.toml"
+    },
+    {
+      "sha256": "f687812ac7eab711787877867eaeed541af1f058c958fe593c7941514196210f",
+      "path": "FullStyle-Backend/pytest.ini"
+    },
+    {
+      "sha256": "50a637750c6897c004653a8b69177f242c15f3c096cc33ab4ea457822f5ae075",
+      "path": "FullStyle-Backend/requirements-local.lock"
+    },
+    {
+      "sha256": "6aebe63b206cb9b192ce4760279f71cafe0c6ed4127a8bb407b85decd28e1151",
+      "path": "FullStyle-Backend/requirements.txt"
+    },
+    {
+      "sha256": "2aa1f672ac3b746022a427d0e89bb785bb4bf097aee6ea2192df76be7d2481ad",
+      "path": "FullStyle-Backend/rotate_mfa_key.py"
+    },
+    {
+      "sha256": "4619e857581e81bee470c1c10a0ed49456923e6cdaa85bb836d8df3e6f647237",
+      "path": "FullStyle-Backend/config/db_config.py"
+    },
+    {
+      "sha256": "347a96be9e1e4d84149958f3560fea23ae3a95638d3047f03b1337a81084be6c",
+      "path": "FullStyle-Backend/config/models_config.py"
+    },
+    {
+      "sha256": "a17b21fd2c6e85356cf9229c89feb0519fe3bec65b379911d4118989fb9c60f0",
+      "path": "FullStyle-Backend/config/rabbitmq_config.py"
+    },
+    {
+      "sha256": "5c81c633c203ff434088226b114d25c48c04958895793ecd86411d0c26ec44cb",
+      "path": "FullStyle-Backend/config/routes_config.py"
+    },
+    {
+      "sha256": "aa62bf95e01ef927eb35d11af71020c946a9866150b96a1cf33dcc6927d931ae",
+      "path": "FullStyle-Backend/config/runtime_config.py"
+    },
+    {
+      "sha256": "f7fdd4eb3c5c5c2c8b0d32d7b64ef4dccd7fc0c30100eb2a81068195733672cc",
+      "path": "FullStyle-Backend/config/server_config.py"
+    },
+    {
+      "sha256": "f4b1d199a110e69705188e8f349017353072f34566536b3240939f22fc9bbb17",
+      "path": "FullStyle-Backend/config/swagger_config.py"
+    },
+    {
+      "sha256": "e49b32ffcb6c77364e91bf1f27e9409417218a9d61c4b9331298a52f8450f178",
+      "path": "FullStyle-Backend/migrations/0001_phase5.json"
+    },
+    {
+      "sha256": "4eedd922d030ae145b3ec7f20506608d192a4fb87b40c529fc388c798c6bfcc6",
+      "path": "FullStyle-Backend/migrations/0001_phase5.sql"
+    },
+    {
+      "sha256": "9917aad5715e16af133c44131484cd1b45688e65d44ea0382146acff579dc90e",
+      "path": "FullStyle-Backend/migrations/0002_account_security.sql"
+    },
+    {
+      "sha256": "9014ae54b4f9333a4701f4693f36f6555ca92b30c8072a8b93a40f8ff1aad0c2",
+      "path": "FullStyle-Backend/migrations/0003_legacy_booking_terms.sql"
+    },
+    {
+      "sha256": "875719b111f7248020a3b1368c781334ef1990f23c7669da145e8e1e8108d6a0",
+      "path": "FullStyle-Backend/migrations/0004_worker_schedule_index.sql"
+    },
+    {
+      "sha256": "28a20df478fd893ebe25c80adb8885676665d372677a7c2fa9d378fc8cd1d4f4",
+      "path": "FullStyle-Backend/migrations/0005_local_completion.sql"
+    },
+    {
+      "sha256": "2222083477c6d4216fee219079c600ed940aee9684547ef096333ddf4f93eb87",
+      "path": "FullStyle-Backend/models/account_security_model.py"
+    },
+    {
+      "sha256": "85e9f7723c6b08b1418243fae67c2d4daddf931d7f871be662c1d44b87f9be10",
+      "path": "FullStyle-Backend/models/appointment_model.py"
+    },
+    {
+      "sha256": "8a747ffc4942d4a9f852c5f8c945b037863d06d90e10ac698958612fde790b11",
+      "path": "FullStyle-Backend/models/availability_model.py"
+    },
+    {
+      "sha256": "5a9f299e8d77e26de43add8920396ba69ca5a11921aaa82a5ffedc87b797ce1f",
+      "path": "FullStyle-Backend/models/category_model.py"
+    },
+    {
+      "sha256": "4e11f731b706b8cdabd0336ba76c3f61592c7666cbb56c497626a555699d5b9f",
+      "path": "FullStyle-Backend/models/client_model.py"
+    },
+    {
+      "sha256": "69f1e0e69855817fbb267566130523f0a61eb343e3d5946036ef4ecabfd052b1",
+      "path": "FullStyle-Backend/models/completion_model.py"
+    },
+    {
+      "sha256": "0dc65e71cdda15e2b4023a9e42aaa5cd5b613f6c606dd29d29ae6d538c970c76",
+      "path": "FullStyle-Backend/models/consistency_model.py"
+    },
+    {
+      "sha256": "d36f860c5db3ec413096c4207812b091c170c216f0c5f962f847e194374b1744",
+      "path": "FullStyle-Backend/models/days_off_model.py"
+    },
+    {
+      "sha256": "6c5e4df2e02c566b1266ef37b03408688888a0e06b2755ccc276d71717c16ee8",
+      "path": "FullStyle-Backend/models/detail_model.py"
+    },
+    {
+      "sha256": "9550221a713d9cb9bfc6de3b036a50cb12a189b0d0037c59b4ad434979574a5f",
+      "path": "FullStyle-Backend/models/manager_model.py"
+    },
+    {
+      "sha256": "711e9746d0bd4e3a7469f3344ac9b43ae7b211727a472de18b42477d366f1aa1",
+      "path": "FullStyle-Backend/models/notification_model.py"
+    },
+    {
+      "sha256": "9140100159f9300bf1d2af669895b00d32bfaa66bb555acaf5494ecab4de30ba",
+      "path": "FullStyle-Backend/models/payment_model.py"
+    },
+    {
+      "sha256": "c010887d3920fa289bb0c9d85701721d47cac556051147cd2671b58a05808289",
+      "path": "FullStyle-Backend/models/reliability_model.py"
+    },
+    {
+      "sha256": "a8ea1036c0c685c41f958c68f933f385e73156bd281e88207f248dfc14d5eabc",
+      "path": "FullStyle-Backend/models/seasonal_schedule_model.py"
+    },
+    {
+      "sha256": "86fe0bee289bcdd4f0bc5b5f16dc53976aafeb8b8e6cbde525c5b0802086cf1c",
+      "path": "FullStyle-Backend/models/service_model.py"
+    },
+    {
+      "sha256": "02432efb397ef81cf525ad9f5c190709a628b4bde11f59dc13362a19357cd9c6",
+      "path": "FullStyle-Backend/models/session_model.py"
+    },
+    {
+      "sha256": "f705a115be62f2abde2d42e270cfaec4e6e960946b8d59b27d2c4200c50827c7",
+      "path": "FullStyle-Backend/models/site_has_category_model.py"
+    },
+    {
+      "sha256": "62e6465e5ce5cc2ca841eb2ae4c21e1e04aa22694668f2c06ebd0df913110e95",
+      "path": "FullStyle-Backend/models/site_model.py"
+    },
+    {
+      "sha256": "906d38ae90a1e37782c6ceb9faf27d769bbab98f4545f35258924ee8e8589240",
+      "path": "FullStyle-Backend/models/token_blocklist_model.py"
+    },
+    {
+      "sha256": "6a591dbf8baf85f7dbd4eb35116be6e475fc50a497c9b87c0d203a8bd7f972fb",
+      "path": "FullStyle-Backend/models/user_model.py"
+    },
+    {
+      "sha256": "15016e2b10781f6da51aa1dd00f1f74d220acf1453635d405df519cb0d68898e",
+      "path": "FullStyle-Backend/models/worker_has_service_model.py"
+    },
+    {
+      "sha256": "dd0f1d45ac6927546d4db3e9989f5f493ffea219d5ceda4f06e560547a953020",
+      "path": "FullStyle-Backend/models/worker_model.py"
+    },
+    {
+      "sha256": "e359af5591362164b50354aaaa180c4912d3dd282dadc4cab390e1bc336363a9",
+      "path": "FullStyle-Backend/routes/appointment_route.py"
+    },
+    {
+      "sha256": "ddc2ad121bef1f0798d515a4fa18d58f595568980e48c61bef5d3b7d5cd4eb76",
+      "path": "FullStyle-Backend/routes/auth_route.py"
+    },
+    {
+      "sha256": "d392a56f071d95b5635ac9e7011d1cf9ba538199dc6072c4f30ab9dfba953ca7",
+      "path": "FullStyle-Backend/routes/availability_route.py"
+    },
+    {
+      "sha256": "f6c8e46086b8378ce509175934ac9f1cd7acb5d5fb568da5c07207e84bf725c4",
+      "path": "FullStyle-Backend/routes/cache_route.py"
+    },
+    {
+      "sha256": "024630d558b96ec9f4cae31134230d8bd143316fceeeaa9c2bbc792235ae3d04",
+      "path": "FullStyle-Backend/routes/category_route.py"
+    },
+    {
+      "sha256": "caa91def1a1c0be44411b7fa9eb8d503895581bd2241ccd35f256dd264331b83",
+      "path": "FullStyle-Backend/routes/days_off_route.py"
+    },
+    {
+      "sha256": "d98eb26bab4ca1f47f16d46eb704ce15fb0ed3397eb8bf4e6c41d55be6c0af29",
+      "path": "FullStyle-Backend/routes/detail_route.py"
+    },
+    {
+      "sha256": "4f243c8d7839cd47ff6ee5aafb76adf88c5f7545c2d1ac80b44fa41014cf6501",
+      "path": "FullStyle-Backend/routes/log_route.py"
+    },
+    {
+      "sha256": "dcaf8f39a7afd10e803617bed3acb39216c044932d3f4bf4df1501a8c337cbc0",
+      "path": "FullStyle-Backend/routes/manager_route.py"
+    },
+    {
+      "sha256": "1e11148cc8bc9aae96855f11f124bf8418926a7add8b030be2a36204001650ad",
+      "path": "FullStyle-Backend/routes/notification_route.py"
+    },
+    {
+      "sha256": "321f5298b4c0f2c7f4a97c4fa43cd72b6a8b2cf90b3f560c47d852dcad4839d3",
+      "path": "FullStyle-Backend/routes/payment_route.py"
+    },
+    {
+      "sha256": "c26bbd5decf2cdb77f953e7eaab8ba2ede71ac7398b8a3338ab9f918b4994cdd",
+      "path": "FullStyle-Backend/routes/seasonal_schedule_route.py"
+    },
+    {
+      "sha256": "0370f92ba298d771eadaae28fd8bca87f515643f4ae03c0d010a6f53ae15d689",
+      "path": "FullStyle-Backend/routes/service_route.py"
+    },
+    {
+      "sha256": "b8361b71982f49fa60f52cd1050db2cddf51be6910672776cda2f7be237e0c4a",
+      "path": "FullStyle-Backend/routes/site_has_category_route.py"
+    },
+    {
+      "sha256": "cef1f67442d403e35066bf482d18df3e06dc31427ab6b1b46544b6b11bfd2d5d",
+      "path": "FullStyle-Backend/routes/site_route.py"
+    },
+    {
+      "sha256": "0d335f5a5f9a9a50871d6c9a67b608c6334dcfbc20c4434329c3c085d2edc208",
+      "path": "FullStyle-Backend/routes/user_route.py"
+    },
+    {
+      "sha256": "f61cb463205b011cf360e18d07593c43911d89a0bab16a32421a8f8f1cb1c53f",
+      "path": "FullStyle-Backend/routes/worker_has_service_route.py"
+    },
+    {
+      "sha256": "6ccfecd220212c501a5f6a5d8c70b50bc941c7f8131d36140eb2c3714fed3ca5",
+      "path": "FullStyle-Backend/routes/worker_route.py"
+    },
+    {
+      "sha256": "de76a3859c49a48ff82378d42e3ffc2b30d066b24a9af42558f1ecf7770c9949",
+      "path": "FullStyle-Backend/services/appointment_service.py"
+    },
+    {
+      "sha256": "e7999982232a4e3e7d1c220dc13b781916e36cb25b9f3a780f9b94d430b28869",
+      "path": "FullStyle-Backend/services/availability_service.py"
+    },
+    {
+      "sha256": "9bb9988e87cff7645d798487daec990a20567a38afa0ea6f1064da66160d3fd9",
+      "path": "FullStyle-Backend/services/cache_service.py"
+    },
+    {
+      "sha256": "54f928d5d6b364e20e2f2a4f87d7e05fda6ac05311011e2895feaee051893ddf",
+      "path": "FullStyle-Backend/services/category_service.py"
+    },
+    {
+      "sha256": "4a659059462fb8b1e22cfff6ab847c7dc631d1853596cc39350e9ed8589fa626",
+      "path": "FullStyle-Backend/services/completion_service.py"
+    },
+    {
+      "sha256": "ca1aad7acf097202851a168f7113c1c7bc6c5e779d17e716ff3c6eedb3c05d15",
+      "path": "FullStyle-Backend/services/days_off_service.py"
+    },
+    {
+      "sha256": "c5fa081ed627185dc315c29bcdce5f4d8d3227c715f7dfb6a5dd99a0dd75c0b9",
+      "path": "FullStyle-Backend/services/detail_service.py"
+    },
+    {
+      "sha256": "e8dd637d96b89197817ff07606b81cbe3a34534cd782d8d0755364df7ac2553a",
+      "path": "FullStyle-Backend/services/email_producer.py"
+    },
+    {
+      "sha256": "98c5c1f2bd0570eb947a0eed19e484698f4a7ca6fcf043c95bce39acf4bc96ba",
+      "path": "FullStyle-Backend/services/identity_service.py"
+    },
+    {
+      "sha256": "9d789937869217708b32b44283ae4bde181148e55ade9696937def100fa001cb",
+      "path": "FullStyle-Backend/services/integration_service.py"
+    },
+    {
+      "sha256": "f791d4829cb3ac74878694abb964f8b559a8a5238215f4a4264768477a7e5db2",
+      "path": "FullStyle-Backend/services/local_finance.py"
+    },
+    {
+      "sha256": "494356223722e0e5ad9acda5be5190acdaf124f82399289e5e606d13cb3a8137",
+      "path": "FullStyle-Backend/services/log_service.py"
+    },
+    {
+      "sha256": "eb5d26c6bc3fd22cefbdecc7abfefc6ffb8c529f94aec6bde08223a9e21a6215",
+      "path": "FullStyle-Backend/services/manager_service.py"
+    },
+    {
+      "sha256": "e65eed7cb5e06646a0a72537a1de5b3800bc2ee45e3bb70e38318ebbdb59bdfd",
+      "path": "FullStyle-Backend/services/mfa_service.py"
+    },
+    {
+      "sha256": "de75a201df5ad7e1a940b885efc655a335ecfbdd5ab729c6b3f5688fc3e6b28a",
+      "path": "FullStyle-Backend/services/notification_service.py"
+    },
+    {
+      "sha256": "db083ae22d618d4467fa7ebd4e5b0b7856fdcd497da926a32a730f9c58ebb053",
+      "path": "FullStyle-Backend/services/payment_service.py"
+    },
+    {
+      "sha256": "8d308afc78397cbaee31d62f813af011c8f3b09f20b81aa2035378fcfb628d92",
+      "path": "FullStyle-Backend/services/payment_workflow.py"
+    },
+    {
+      "sha256": "d2687bec6666133944b9a34931207dab87d2f4a95500b23f5630365205ecdea8",
+      "path": "FullStyle-Backend/services/seasonal_schedule_service.py"
+    },
+    {
+      "sha256": "daa4876f783612079d0bb2bc90e737a9a7787769381a658dfa627e4ba0317acf",
+      "path": "FullStyle-Backend/services/service_service.py"
+    },
+    {
+      "sha256": "77bde45ac2ddb6d8fceb12feef197494b939f3a748e699ea473bcc83f7f8fb74",
+      "path": "FullStyle-Backend/services/session_service.py"
+    },
+    {
+      "sha256": "9f882e365120466a11fa1a5c975faedb684fa26b1f4fca5f67d4a64df15f4116",
+      "path": "FullStyle-Backend/services/site_has_category_service.py"
+    },
+    {
+      "sha256": "510face1acdc86fa5b8d182c8a6d0ecbccac1dd8beee6eb307df5667b6184b8b",
+      "path": "FullStyle-Backend/services/site_service.py"
+    },
+    {
+      "sha256": "9b4e2277d48a14dabed179cb273cf05ced7f108a336b5c0050a502189c16128c",
+      "path": "FullStyle-Backend/services/user_service.py"
+    },
+    {
+      "sha256": "c65658df153d07f215e4a68aafe6d687b4ecd9010609a25f9d3a5276e2323e31",
+      "path": "FullStyle-Backend/services/worker_has_service_service.py"
+    },
+    {
+      "sha256": "d65e804498f8f741394d1d3acd496daf85c3fc65566fa252f377fec44b9de929",
+      "path": "FullStyle-Backend/services/worker_service.py"
+    },
+    {
+      "sha256": "30c9f3c37268aed7b0b6c14370a6bc01ba882afe5c343fc6029ba6d15373f5a5",
+      "path": "FullStyle-Backend/swagger/swagger.yaml"
+    },
+    {
+      "sha256": "40208f4929726b62b8d7ccb44c4d12d243143aeab6907f36e596b15c1a5c3387",
+      "path": "FullStyle-Backend/templates/emails/appointment_canceled.html"
+    },
+    {
+      "sha256": "e0a802affb51126bc6ebbaa0ff0cfec8dab7979aa6d21203e7e20494449000ad",
+      "path": "FullStyle-Backend/templates/emails/appointment_fullpaid.html"
+    },
+    {
+      "sha256": "d52421dbb79c49fc5672f1ccc6024c90d4325e74d8062749475056e46595208c",
+      "path": "FullStyle-Backend/templates/emails/appointment_partialpaid.html"
+    },
+    {
+      "sha256": "01c4b3a3d7629d28177b3c0da45e7fc236181fdd56967748fc643d754b3e7938",
+      "path": "FullStyle-Backend/templates/emails/appointment_rejected.html"
+    },
+    {
+      "sha256": "26ec0eaee51839656e790868ab99e32a3d3b7991fbda0f0252c7eff3e5fd399a",
+      "path": "FullStyle-Backend/templates/emails/contact.html"
+    },
+    {
+      "sha256": "616f6039d22080ff7baa64e3fe6c40dc0bd3261d553cf37c9df1ac0cbbea9548",
+      "path": "FullStyle-Backend/templates/emails/reset_password.html"
+    },
+    {
+      "sha256": "a05e05fd1d138989ef1b6960469e919469a29e588b9ba5a0ed84b79836e5321e",
+      "path": "FullStyle-Backend/templates/emails/response_contact.html"
+    },
+    {
+      "sha256": "401d9ed458cce6e829c83db6960be9aaa48632265137460bed7a4e958b483f92",
+      "path": "FullStyle-Backend/templates/emails/subscription.html"
+    },
+    {
+      "sha256": "08d0898118a71e079f90392f9259cd3758aa905f980c5feb27fbb0a143556133",
+      "path": "FullStyle-Backend/tests/auth_integration_test.py"
+    },
+    {
+      "sha256": "a458fb2af73255ddb6f36bd2c21cff12723cebcb0325023cd61551cf5fe8e679",
+      "path": "FullStyle-Backend/tests/conftest.py"
+    },
+    {
+      "sha256": "4b860d21d035b5311de7b824d7df91374df90764d5ea993a41f4a2ea2c53ba13",
+      "path": "FullStyle-Backend/tests/test_app.py"
+    },
+    {
+      "sha256": "836f26d4b520cc2ef03392c66bdde99212561b2334324caa9ba4070fd09b3882",
+      "path": "FullStyle-Backend/tests/test_completion.py"
+    },
+    {
+      "sha256": "7cb147eebc8ecf4853ba5e1ec3c275136a24c2ea139dc26bb1e5bf179f1dd6e3",
+      "path": "FullStyle-Backend/tests/test_completion_operations.py"
+    },
+    {
+      "sha256": "05f75f8ddbfff84b0e2d4a56ecee96918a458c05efdf847272f8c758e88be02f",
+      "path": "FullStyle-Backend/tests/test_local_finance.py"
+    },
+    {
+      "sha256": "de1a501f1406b1bc62e5e083667f4bac3e18c6b456369485885e862937062a14",
+      "path": "FullStyle-Backend/tests/test_migrations.py"
+    },
+    {
+      "sha256": "c474ab50c1a4edf0043b341c194a10dbfc2e36016d66e2a87e3f135147ffd8d8",
+      "path": "FullStyle-Backend/tests/test_security_policy.py"
+    },
+    {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "path": "FullStyle-Backend/tests/unit/appointment_tests.py"
+    },
+    {
+      "sha256": "9ab86a35b74d41c57de9a2f5f56df9dd21595555936de29c5793d0d6e78e6313",
+      "path": "FullStyle-Backend/utils/account_security.py"
+    },
+    {
+      "sha256": "034032c0dc0d943dc5563e6239f1dfb2b06069ea493522d3ee9adb3c32e4fdc8",
+      "path": "FullStyle-Backend/utils/authorization.py"
+    },
+    {
+      "sha256": "27c4826c5ad905a0c67ad0761403d4cb5af06342cfd25d99ff929c4d4342ce8e",
+      "path": "FullStyle-Backend/utils/booking_consistency.py"
+    },
+    {
+      "sha256": "38c26e142819c06fab30c17fff2579b0d69157ce85069c96ccf983778c49bb15",
+      "path": "FullStyle-Backend/utils/cache_helper.py"
+    },
+    {
+      "sha256": "5e5740c2ce5c1ce3999ba8c3872a03d74c97b0ad134b412b169a86c1d7235ffd",
+      "path": "FullStyle-Backend/utils/encryption.py"
+    },
+    {
+      "sha256": "b081429a6aa14c1cb97b3e9240a1dd9e129f93c2b64882a12f63775d1b87951f",
+      "path": "FullStyle-Backend/utils/helpers.py"
+    },
+    {
+      "sha256": "bbd480d80253653972ce11a83fb9b6059ba47c05e00b1d2fad8668b5386646ab",
+      "path": "FullStyle-Backend/utils/keyring.py"
+    },
+    {
+      "sha256": "f0fbcac8b8dd81c986d9e1d7ad90ccf51fef423cc83785c8d2b7546e25652893",
+      "path": "FullStyle-Backend/utils/mail_outbox.py"
+    },
+    {
+      "sha256": "336eef8c162587c1751ba33ccb0834c9b114bf99b1c84134519bcf7e3a1fef38",
+      "path": "FullStyle-Backend/utils/mfa_recovery.py"
+    },
+    {
+      "sha256": "b4b94d483acdda8abb06ac7a3e05fd48fea53e571fd581f3228f0feea812b7c2",
+      "path": "FullStyle-Backend/utils/observability.py"
+    },
+    {
+      "sha256": "2338ee11dfe6e72b97ce0976182b9461889cc169351416dc69218994b641051f",
+      "path": "FullStyle-Backend/utils/send_email.py"
+    },
+    {
+      "sha256": "b430f1f3b4fc59e520c5df4a91bd302b8d44624dd10700704178fe6d8b2dbc16",
+      "path": "FullStyle-Backend/utils/sessions.py"
+    },
+    {
+      "sha256": "82ea186b04aaa9fff554691213b87bdcb7cdfd79299067ff0f410929a10a981d",
+      "path": "FullStyle-Backend-Go/.dockerignore"
+    },
+    {
+      "sha256": "26fa281b767bb2518edc63419172df87e040661bbee182fa364e63c5432bb5f4",
+      "path": "FullStyle-Backend-Go/.gitignore"
+    },
+    {
+      "sha256": "e6d7c387724a9da4f419e344f1e17e9d95d85e8c4784d5c4558009b56b35820e",
+      "path": "FullStyle-Backend-Go/Dockerfile"
+    },
+    {
+      "sha256": "ed6f1197692ef94e6e24318f13084b928417cb952f1bb16546e081bd63669d00",
+      "path": "FullStyle-Backend-Go/README.md"
+    },
+    {
+      "sha256": "95503d1bb5b150e63f5a5ab22ec8f9dd13007ed9caf6efc4dc0adcd3353ee780",
+      "path": "FullStyle-Backend-Go/docker-compose.yml"
+    },
+    {
+      "sha256": "184979cb155e1b3928005a1b4dfabcfe9cb803093ab5b184e24a5220e1697811",
+      "path": "FullStyle-Backend-Go/go.mod"
+    },
+    {
+      "sha256": "ba9f326c01d71c7f291d7fb25b3faf88b5d34a2e7f13d55159620dfadaec1c51",
+      "path": "FullStyle-Backend-Go/go.sum"
+    },
+    {
+      "sha256": "6c40dc6b5fc7891ab0151a935018057df62c130d02ccbd2950aeeb9e4b6b76c7",
+      "path": "FullStyle-Backend-Go/main.go"
+    },
+    {
+      "sha256": "7fe5ce7cc4363c61c60b83eae874330057157fd802826636489dbd99e8335b18",
+      "path": "FullStyle-Backend-Go/docs/docs.go"
+    },
+    {
+      "sha256": "c468e5b6a19c12aed925e47768d93eb89fc297d5614b7d3866a4fc7d0e4f6f06",
+      "path": "FullStyle-Backend-Go/docs/swagger.json"
+    },
+    {
+      "sha256": "9a12e7cb731116ea07ff378044ab41ce805ec9727e897589083d718e850d7110",
+      "path": "FullStyle-Backend-Go/docs/swagger.yaml"
+    },
+    {
+      "sha256": "e6c6e7a1610f068989ff4e7e35e3347744d45fe5e8119b6e4e9169c833b6bbd8",
+      "path": "FullStyle-Backend-Go/internal/config/config.go"
+    },
+    {
+      "sha256": "6414356a191b5c95fb4f7c7c524e39d216885da65309148b13e568403c130a7a",
+      "path": "FullStyle-Backend-Go/internal/handlers/swagger_handlers.go"
+    },
+    {
+      "sha256": "2a07ebc35cf0b4a9740793e962995ef42ec388d2858b1ec98b908915db0832d7",
+      "path": "FullStyle-Backend-Go/internal/models/client.go"
+    },
+    {
+      "sha256": "723c51a7d485e221984ec60b96b0db0988bf2d79bdaa58c54896fc10e10ef588",
+      "path": "FullStyle-Backend-Go/internal/models/manager.go"
+    },
+    {
+      "sha256": "1663b2e42061be5b94d36a44384918ccee7aa7b5aa47ba4c84c78679f7b58bf8",
+      "path": "FullStyle-Backend-Go/internal/models/models.go"
+    },
+    {
+      "sha256": "1e659a5df03733f88334b85f83c584033fe17d0f8bcb039c7333763969ad023e",
+      "path": "FullStyle-Backend-Go/internal/models/swagger.go"
+    },
+    {
+      "sha256": "1e0605d834d49106b272c8eff33ada34268cbf6ec47b3211040de396160318b6",
+      "path": "FullStyle-Backend-Go/internal/models/user.go"
+    },
+    {
+      "sha256": "ae11f10b31999792ea0cd0d396f0fa9847e466fbdac20803219e0dc3833d3127",
+      "path": "FullStyle-Backend-Go/internal/routes/auth_route.go"
+    },
+    {
+      "sha256": "437bce7606a4e98076ee746aa8c438a722f3a1f5f396af56318177db9d8fc38b",
+      "path": "FullStyle-Backend-Go/internal/routes/mfa_bridge.go"
+    },
+    {
+      "sha256": "81dedc3b3830a4d7490263f1fbc50713eab7f3c1eb1b1eedb9e62966f624b4cd",
+      "path": "FullStyle-Backend-Go/internal/routes/routes.go"
+    },
+    {
+      "sha256": "a30ea2f7b4ebcb48c63f68a75b750e1e713826a492d052571e03d7badf3c81f2",
+      "path": "FullStyle-Backend-Go/internal/services/account_security.go"
+    },
+    {
+      "sha256": "0d9585faf2da92e2af9efcba640f3059ceb6e7059a204fdb17a372ce6e96177a",
+      "path": "FullStyle-Backend-Go/internal/services/manager_service.go"
+    },
+    {
+      "sha256": "be885d70fd06c734d9056e98cb6f56d1e471a986e0ae5bc1b383ff9a97626669",
+      "path": "FullStyle-Backend-Go/internal/services/password.go"
+    },
+    {
+      "sha256": "832f14bd68d344ba8e8194d1fd8a0ebcff63f8fb5305e7a5ece20a7385c38950",
+      "path": "FullStyle-Backend-Go/internal/services/session_test.go"
+    },
+    {
+      "sha256": "55f1c745d760e24c26cb5e14bee15d90f7780b36a887ca06fa9ca9367199f0c5",
+      "path": "FullStyle-Backend-Go/internal/services/user_service.go"
+    },
+    {
+      "sha256": "7c59176be8c261c41a8a98d213ef7c0b3d9ea6c9e2cec387a50ccfcf3da153a4",
+      "path": "FullStyle-Backend-Go/internal/utils/utils.go"
+    },
+    {
+      "sha256": "fa300cdf6aebc7127b456a8568737c41d3c08c777ab4b007a299946e62d438c9",
+      "path": "FullStyle-Backend-Go/test/login_integration_test.go"
+    },
+    {
+      "sha256": "34df7961ea165da09bdb5ca09825813c947da8df3f1728fa5300dc4c9076d0a1",
+      "path": "FullStyle-Backend-Go/test/register_integration_test.go"
+    },
+    {
+      "sha256": "3a3c51fe72062ce6511bba9a42f3b88cee731a509ab0d116b45eac0b148048d0",
+      "path": "FullStyle-Backend-Go/test/register_manager_integration_test.go"
+    },
+    {
+      "sha256": "42f8d7906e384263136f7baf4e18058f3044c2490382cd71560d88d0304f427e",
+      "path": "FullStyle-Backend-Go/test/session_policy_integration_test.go"
+    },
+    {
+      "sha256": "e699fa21dec49250d5a0d7448f56e30e3169c7c3f7f70df9e6995e8d08a8c9e3",
+      "path": "FullStyle-Backend-Go/test/test-utils.go"
+    },
+    {
+      "sha256": "c00f64eae965a3b29e24387f2476669d117ce8fcb106c3bb0c62e32ecd39af88",
+      "path": "FullStyle-Chatbot/.gitignore"
+    },
+    {
+      "sha256": "048c0803fa55bf507ba53884486a3b43df0db07c3d58c9ee1581dd4bfa1b5aac",
+      "path": "FullStyle-Chatbot/.pre-commit-config.yaml"
+    },
+    {
+      "sha256": "3223c091231c414797a5216b08da7de88397dbb132aa338134f9daa5ccaedd16",
+      "path": "FullStyle-Chatbot/Dockerfile"
+    },
+    {
+      "sha256": "490ec94a0b4a0b1ade51c1fd294bf91779a104d5cb61aff2f6bb7ad303eabb60",
+      "path": "FullStyle-Chatbot/README.md"
+    },
+    {
+      "sha256": "95503d1bb5b150e63f5a5ab22ec8f9dd13007ed9caf6efc4dc0adcd3353ee780",
+      "path": "FullStyle-Chatbot/docker-compose.yml"
+    },
+    {
+      "sha256": "f668a783f5e0d0aceae9e4192d26d7289afc94125cdffb0b1fb8c65c583d0240",
+      "path": "FullStyle-Chatbot/openapi.yaml"
+    },
+    {
+      "sha256": "f318ac2667844d3a37bef6514f825fd0012da94278c9384040342c036e3ea101",
+      "path": "FullStyle-Chatbot/pyproject.toml"
+    },
+    {
+      "sha256": "ec715894b5038d3ddde1725a134f29cb85a8855d62740d1e368413422740e099",
+      "path": "FullStyle-Chatbot/pytest.ini"
+    },
+    {
+      "sha256": "662c6f1fe183cb4199550e266b50028eabd4b51bd4143f96fd3b088d206b26b0",
+      "path": "FullStyle-Chatbot/requirements-dev.txt"
+    },
+    {
+      "sha256": "cc918778835ba4a48f9cb0fab39bdf8e6ecffcf20b6d1ca0c27a599b6b3709ed",
+      "path": "FullStyle-Chatbot/requirements-local.lock"
+    },
+    {
+      "sha256": "5b088e9d2e1001e15029337757cd4c8c7c438b6985b72107913ca0b6c505f561",
+      "path": "FullStyle-Chatbot/requirements-local.txt"
+    },
+    {
+      "sha256": "826f1fce40e7b478f0cdd21c72f7253b1ce7d5df358df6278c6eb931773479ba",
+      "path": "FullStyle-Chatbot/requirements.txt"
+    },
+    {
+      "sha256": "90539bd91247ad31de2efaec0ca4cc2e9f8ad077d4e7b26fc6182a5f90e40889",
+      "path": "FullStyle-Chatbot/run_tests.bat"
+    },
+    {
+      "sha256": "7ed29caf825104b223e0475e6a117ebe7f3960c3b0f0e91ab84dc3ee98e49fc8",
+      "path": "FullStyle-Chatbot/run_tests.ps1"
+    },
+    {
+      "sha256": "8fe34a08da3fc7cbf1f5e063782f1d7ee29bc5ed22c16ae52fd8a69b6c4edd24",
+      "path": "FullStyle-Chatbot/.code_quality/.flake8"
+    },
+    {
+      "sha256": "cdba206c85530c24a807fe5be3913fb65bab4d4066bcc5e8309d6e8229b46be2",
+      "path": "FullStyle-Chatbot/.code_quality/.pylintrc"
+    },
+    {
+      "sha256": "9c38c91206250c17c1db1c05e203462d47dc806d8387b427eb8bcbe30f888f03",
+      "path": "FullStyle-Chatbot/.code_quality/bandit.yml"
+    },
+    {
+      "sha256": "085fd7b738acf77ad303a0d615efe35f026128c90c243bc6c2524836730c0c39",
+      "path": "FullStyle-Chatbot/app/__init__.py"
+    },
+    {
+      "sha256": "d89048d4c8871b65c24652fc20efdb7ce0f42ce00eb3e727e43a978fef637f85",
+      "path": "FullStyle-Chatbot/app/main.py"
+    },
+    {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "path": "FullStyle-Chatbot/app/api/__init__.py"
+    },
+    {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "path": "FullStyle-Chatbot/app/api/v1/__init__.py"
+    },
+    {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "path": "FullStyle-Chatbot/app/api/v1/endpoints/__init__.py"
+    },
+    {
+      "sha256": "9638e8785a50991ec1e0d12df69567fb5db95a8169c8ebf0aa8e1e88a97cbeb7",
+      "path": "FullStyle-Chatbot/app/api/v1/endpoints/chat_handler.py"
+    },
+    {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "path": "FullStyle-Chatbot/app/core/__init__.py"
+    },
+    {
+      "sha256": "26fe6bf394951cdbc70a19c22e888978961a678949955c65a9a4052d805fd596",
+      "path": "FullStyle-Chatbot/app/core/config.py"
+    },
+    {
+      "sha256": "c410712db2204f2bba5dd57757ba348c6c0e0d606d49f983a5e557168e3989f3",
+      "path": "FullStyle-Chatbot/app/core/identity.py"
+    },
+    {
+      "sha256": "962b13b00b1db37081398d6a72b8e84fa573574ef239510edd3fbbcc67414d6a",
+      "path": "FullStyle-Chatbot/app/core/reliability.py"
+    },
+    {
+      "sha256": "6f272f0aa744dcfe7fb3be6732c8bb1e2159cfcfec9874f2ad3ee6f8b5a2cac3",
+      "path": "FullStyle-Chatbot/app/core/tracing.py"
+    },
+    {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "path": "FullStyle-Chatbot/app/domain/__init__.py"
+    },
+    {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "path": "FullStyle-Chatbot/app/domain/models/__init__.py"
+    },
+    {
+      "sha256": "5169081e411e43cf38d1e0dd29f59637807f738f3723c1ce4051aac3d9b877d4",
+      "path": "FullStyle-Chatbot/app/domain/models/chat_models.py"
+    },
+    {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "path": "FullStyle-Chatbot/app/domain/prompts/__init__.py"
+    },
+    {
+      "sha256": "1b1ffdd1c36bdaf2d19b93d3a8eb5a96ee73993a5d014f866930f3937112d2d8",
+      "path": "FullStyle-Chatbot/app/domain/prompts/templates.py"
+    },
+    {
+      "sha256": "4ca221b5bee664a64596eeac0807ad04d58bb6a5537eb487ed86859726499194",
+      "path": "FullStyle-Chatbot/app/domain/tools/__init__.py"
+    },
+    {
+      "sha256": "aa182986772b6638909845e3c8b67d8e75a8f13176a9b01f4a1fd4cfcee27361",
+      "path": "FullStyle-Chatbot/app/domain/tools/common.py"
+    },
+    {
+      "sha256": "af45b3b59a09925c61b55375cf38499db437959fe8f766448a05173756bf1d89",
+      "path": "FullStyle-Chatbot/app/domain/tools/additional_utils/get_notification.py"
+    },
+    {
+      "sha256": "e3816e2413f7408e1afdb66ae6dc7e190a53b860d6b1aedaffd952ca736760d0",
+      "path": "FullStyle-Chatbot/app/domain/tools/additional_utils/get_worker.py"
+    },
+    {
+      "sha256": "72d599f10f2d8c4eee63a15ea483a3efdeed789bc965d6f8a00d1cfe7fb6245a",
+      "path": "FullStyle-Chatbot/app/domain/tools/additional_utils/get_worker_has_service.py"
+    },
+    {
+      "sha256": "e658b0040fa125997e7a4b389dfeb916079f8076add1ea8f12630319cf3a5b8f",
+      "path": "FullStyle-Chatbot/app/domain/tools/additional_utils/post_notification.py"
+    },
+    {
+      "sha256": "f7975745b24603d45b2fd437980ae3027d6b16dac09f28c31bc4f956da455983",
+      "path": "FullStyle-Chatbot/app/domain/tools/appointment_management/delete_appointment.py"
+    },
+    {
+      "sha256": "c79b3ca99b74f3e7df0dceeed31f0429f1b01e8a199fb662bd4960b0df964b39",
+      "path": "FullStyle-Chatbot/app/domain/tools/appointment_management/get_appointment.py"
+    },
+    {
+      "sha256": "a9c9d68905929407a8997930d7a8d72e08e4fffd431664abca9852f5d29ae051",
+      "path": "FullStyle-Chatbot/app/domain/tools/appointment_management/get_appointmentdetail.py"
+    },
+    {
+      "sha256": "7483aba5898f698ca1c7bc69f13c6a6eb39b48be656c78399639179fd8b85748",
+      "path": "FullStyle-Chatbot/app/domain/tools/appointment_management/post_appointment.py"
+    },
+    {
+      "sha256": "e81e999a2ba6741c808851a46e9c112fe481a68eec85e6debf9e07f46daf6299",
+      "path": "FullStyle-Chatbot/app/domain/tools/appointment_management/put_appointment.py"
+    },
+    {
+      "sha256": "9b68c0dbdcc653f945183adbbd6e7a802ed1f446c590f67de2e7e7031730887f",
+      "path": "FullStyle-Chatbot/app/domain/tools/appointment_management/validate_appointment.py"
+    },
+    {
+      "sha256": "86f1edd8273fedb0c12c3f1ead85c9a3981402b66897a90eed9ee4446ba376b1",
+      "path": "FullStyle-Chatbot/app/domain/tools/site_and_services/get_category.py"
+    },
+    {
+      "sha256": "c128311bc19366d8e0cafb0d5cdad1261f3a127792fe7c2cbe1436448f221c4b",
+      "path": "FullStyle-Chatbot/app/domain/tools/site_and_services/get_detail.py"
+    },
+    {
+      "sha256": "ed8a63314a9ddceb9bd722ac223abe9f6f292c993e22722def47051259539144",
+      "path": "FullStyle-Chatbot/app/domain/tools/site_and_services/get_service.py"
+    },
+    {
+      "sha256": "6ae866261feeac306857509a00065b03b412670ffe6a2d866ecc5a51debd58d7",
+      "path": "FullStyle-Chatbot/app/domain/tools/site_and_services/get_site.py"
+    },
+    {
+      "sha256": "b52f5bab3a664dc8e9682a37bfe6a29dba18dba122ddcaf954960defdeea92c9",
+      "path": "FullStyle-Chatbot/app/domain/tools/site_and_services/get_site_has_category.py"
+    },
+    {
+      "sha256": "a5b87f70bb70d8e3f0f8b11bb4d1dc45bb1b724224b573a6218ea1d12e434ee8",
+      "path": "FullStyle-Chatbot/app/domain/tools/time_and_schedule/get_availability.py"
+    },
+    {
+      "sha256": "9fc5e2ec4ec728dfc1fb7b4392207cf1f66e01665d66a2caa82408d939897ccd",
+      "path": "FullStyle-Chatbot/app/domain/tools/time_and_schedule/get_worker_daily_schedule.py"
+    },
+    {
+      "sha256": "5774b5cb90480b74cebaa513ee47d63d229f9aac6f42d796874e5353816bacdb",
+      "path": "FullStyle-Chatbot/app/domain/tools/time_and_schedule/get_worker_weekly_schedule.py"
+    },
+    {
+      "sha256": "35b69ca1063b69dabf1dc4444796f0d3d170fe418eb2b1e4a40b2472bca3238a",
+      "path": "FullStyle-Chatbot/app/infrastructure/__init__.py"
+    },
+    {
+      "sha256": "93937a942d54d41e33f7865641e61c7be57e46f1afb71e9df322971d3949c6f5",
+      "path": "FullStyle-Chatbot/app/infrastructure/clients/__init__.py"
+    },
+    {
+      "sha256": "60204aa59ec2a26d1d52f41ca3826f0777d08208434cfdb1593653deef5ba1df",
+      "path": "FullStyle-Chatbot/app/infrastructure/clients/business_logic_client.py"
+    },
+    {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "path": "FullStyle-Chatbot/app/infrastructure/clients/mixins/__init__.py"
+    },
+    {
+      "sha256": "18dc38eeaaf510d7de2dcebc1ebc58339ed2e5a155744b28fc1532b420f1f200",
+      "path": "FullStyle-Chatbot/app/infrastructure/clients/mixins/appointment_mixin.py"
+    },
+    {
+      "sha256": "3a73888974a02cb04d3eb526a2de2dcda947225a22606cbf50bf7b47bc0a7dcc",
+      "path": "FullStyle-Chatbot/app/infrastructure/clients/mixins/availability_mixin.py"
+    },
+    {
+      "sha256": "daefe5fa718d9a1f2ebb623907d1a81e38af0ab902d0729ff06a3240e2506487",
+      "path": "FullStyle-Chatbot/app/infrastructure/clients/mixins/category_mixin.py"
+    },
+    {
+      "sha256": "2679c0846ba4ab1cb516c112af2ffddcda858ad94f232f44e10e26639505ed92",
+      "path": "FullStyle-Chatbot/app/infrastructure/clients/mixins/detail_mixin.py"
+    },
+    {
+      "sha256": "ab72c272d660157a825eeb9ec53054402638f3714dd88462110d3f6e2a633b89",
+      "path": "FullStyle-Chatbot/app/infrastructure/clients/mixins/service_mixin.py"
+    },
+    {
+      "sha256": "388777c66d8b6b5aebf114eded1ab0aa31905a78dbc309591bc010373e5d00fd",
+      "path": "FullStyle-Chatbot/app/infrastructure/clients/mixins/site_has_category_mixin.py"
+    },
+    {
+      "sha256": "60d6c73d40b77069337294694343e1f62fb8dd34307b2155662c205aed302be2",
+      "path": "FullStyle-Chatbot/app/infrastructure/clients/mixins/site_mixin.py"
+    },
+    {
+      "sha256": "f984872669e7082008f96fbeaf40e9a78058006e1d374c987469e14e4c4b8e40",
+      "path": "FullStyle-Chatbot/app/infrastructure/clients/mixins/worker_has_service_mixin.py"
+    },
+    {
+      "sha256": "c36a8d0e574ebcbd128ad52797ffd2ef9699c3ec02c93ae955fb637c1c75cdc6",
+      "path": "FullStyle-Chatbot/app/infrastructure/clients/mixins/worker_mixin.py"
+    },
+    {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "path": "FullStyle-Chatbot/app/repositories/__init__.py"
+    },
+    {
+      "sha256": "febd7a2ec0fefb1a5f99cf79e47e2cb1281a350645e2158fcb0315868f3f005b",
+      "path": "FullStyle-Chatbot/app/repositories/chat_store.py"
+    },
+    {
+      "sha256": "425fc6b0af5792979b86c75817119424597c336d87cf3e0354c4db90b0ad3fa9",
+      "path": "FullStyle-Chatbot/app/repositories/knowledge_repository.py"
+    },
+    {
+      "sha256": "867b64b93e8da709e0de5cb4940e2e67ddd1ccc0ffaf984a43c3be6fed55bbfb",
+      "path": "FullStyle-Chatbot/app/services/llm_service.py"
+    },
+    {
+      "sha256": "55d02070d6ffcb7729459a8d1bb35ff7f284423a2f663e589090286a428986de",
+      "path": "FullStyle-Chatbot/app/services/local_agent.py"
+    },
+    {
+      "sha256": "7ca1474fe4fcab7b3a08efab9cfd10b598e03deb1b8309b9a02011cec8f3577b",
+      "path": "FullStyle-Chatbot/app/services/minimal_tfidf_service.py"
+    },
+    {
+      "sha256": "0ee98e59ac696e8b5156631ad15bceaa507b5e41e48abd59a202aea350416961",
+      "path": "FullStyle-Chatbot/models/tfidf_vectorizer_only.pkl"
+    },
+    {
+      "sha256": "57083d8b77b6802fab1b9d6a1b8b4fc31163c97d3840a3967ad711398df24fd9",
+      "path": "FullStyle-Chatbot/tests/README.md"
+    },
+    {
+      "sha256": "cba91b50f54e8f378f108d8f37c2214af362c090f0b92e5e338535e9d1b89d9e",
+      "path": "FullStyle-Chatbot/tests/__init__.py"
+    },
+    {
+      "sha256": "369dd56e7c9b79dd4e258a09cb3f0fb9d97a6b60c4a51c31c6244c6f08c3995b",
+      "path": "FullStyle-Chatbot/tests/conftest.py"
+    },
+    {
+      "sha256": "af24b0771b78e5709cb33abaa3c4778d1beda6d266c5b5169319a32005f05821",
+      "path": "FullStyle-Chatbot/tests/integration/__init__.py"
+    },
+    {
+      "sha256": "103feddf77a8a7c90b79d2eadcb8d8ee7e58b9c186590fbe1be68ec3c503c77b",
+      "path": "FullStyle-Chatbot/tests/integration/test_backend_connection.py"
+    },
+    {
+      "sha256": "8d0208c7205478ca3c10c1c2f1cf9e629aad8b1cf431e4a6f7c94fcf36a509d9",
+      "path": "FullStyle-Chatbot/tests/integration/test_business_logic_client.py"
+    },
+    {
+      "sha256": "39ab6c94aa7ee261ad30eecebbe5ee8b291780d8df656859a2d74aa6dcb8b01f",
+      "path": "FullStyle-Chatbot/tests/integration/test_llm_service.py"
+    },
+    {
+      "sha256": "73e419a719307914cfa4711bc0d8efa284e4d210dbfcb7ed71d71451144392ff",
+      "path": "FullStyle-Chatbot/tests/integration/test_local_tfidf.py"
+    },
+    {
+      "sha256": "c01c89108e5739cb6f7546233a13745a1e2eb504a3434f49ebb410996059f228",
+      "path": "FullStyle-Chatbot/tests/unit/__init__.py"
+    },
+    {
+      "sha256": "35c4017bc808d22f6cf4ea0fe6fc28d766c6e1578e54046d28261b9a12a0d45e",
+      "path": "FullStyle-Chatbot/tests/unit/test_chat_message.py"
+    },
+    {
+      "sha256": "36b9fd09c5e0c621493f0b05265977cf1cfb5d953681b0f0a64fa4695df3b5f6",
+      "path": "FullStyle-Chatbot/tests/unit/test_chat_session.py"
+    },
+    {
+      "sha256": "7e9f95a1fc3ac6b1c07bfdaa087a2296db7e4c5d771c239c6cd8f483f03bc972",
+      "path": "FullStyle-Email-Service/.gitignore"
+    },
+    {
+      "sha256": "33146c0d65cc990611f436dd3bca916084dd2ba02c7afcd2d16a99e72c791d07",
+      "path": "FullStyle-Email-Service/Dockerfile"
+    },
+    {
+      "sha256": "b4f20c16b240f558f11340ac569a206968a48ac5dc2644e08ec060aa9ebdb852",
+      "path": "FullStyle-Email-Service/README.md"
+    },
+    {
+      "sha256": "f05a9affca537b1a001ce570ca8a070642a7327fa8ac4ba97fa4f2ee6f73c109",
+      "path": "FullStyle-Email-Service/app.py"
+    },
+    {
+      "sha256": "95503d1bb5b150e63f5a5ab22ec8f9dd13007ed9caf6efc4dc0adcd3353ee780",
+      "path": "FullStyle-Email-Service/docker-compose.yaml"
+    },
+    {
+      "sha256": "2300f2f865e0bcde2151908b8ce447a0d8aa5b39cc0cb18848172a459d484fe3",
+      "path": "FullStyle-Email-Service/pyproject.toml"
+    },
+    {
+      "sha256": "b34fd99a208ebcbc60702691a901a12ecac14dc6e2a74a8322dce2665e43a85c",
+      "path": "FullStyle-Email-Service/requirements-local.lock"
+    },
+    {
+      "sha256": "aaef50b78eb245dfee38460ee8d6d3f83622dbc0c3b063cca865da88d0a921b7",
+      "path": "FullStyle-Email-Service/requirements-local.txt"
+    },
+    {
+      "sha256": "cba732b829021ae8e7ce74b2a555a6b27ec73856e581bc39d6af0069bf904dd3",
+      "path": "FullStyle-Email-Service/requirements.txt"
+    },
+    {
+      "sha256": "6b4134b960888cbfec779b47a6331241005a99a43d435d8ac6f7f4cd56b626cc",
+      "path": "FullStyle-Email-Service/config/identity.py"
+    },
+    {
+      "sha256": "f16cab3a590600f108fcdbd92023ae25aeee1a09373c4ce4794324ea91ed9a84",
+      "path": "FullStyle-Email-Service/config/rabbitmq_config.py"
+    },
+    {
+      "sha256": "d8197da224f2a593c00d021b77f83f4f9c27897b15c3b1d461880b5cc9506ae1",
+      "path": "FullStyle-Email-Service/config/server_config.py"
+    },
+    {
+      "sha256": "ecd3052e3d5328df858a1c027842dd8f2eb4da334ef592a3864b05b0b42c2f0c",
+      "path": "FullStyle-Email-Service/routes/email_routes.py"
+    },
+    {
+      "sha256": "2ee9c42a954870831181f3166dc554893ae33330557e372ca9b09c6f4a5ebcf9",
+      "path": "FullStyle-Email-Service/services/durable_mail.py"
+    },
+    {
+      "sha256": "c98b571cd9d7d9b5ed74803fc995b569064cbf43d0a884ef0f7375d56bdd9c65",
+      "path": "FullStyle-Email-Service/services/email_service.py"
+    },
+    {
+      "sha256": "eeff5a8e83a864039aee61dd8e20b48170b065f08e781bf34f60219c5a5a2836",
+      "path": "FullStyle-Email-Service/templates/emails/appointment_canceled.html"
+    },
+    {
+      "sha256": "43bccb5837db622ef8213df47cafbd0cf496661ff59456f8e83d23fd0af1cfbe",
+      "path": "FullStyle-Email-Service/templates/emails/appointment_fullpaid.html"
+    },
+    {
+      "sha256": "e51877530f9a1bb3e27158ff6888d8f92f8f8a720fa928359509039c590aaedb",
+      "path": "FullStyle-Email-Service/templates/emails/appointment_partialpaid.html"
+    },
+    {
+      "sha256": "52278906ae5f8cf7ba147c29db2b97420d195d52238d08061713d74419de6d72",
+      "path": "FullStyle-Email-Service/templates/emails/appointment_rejected.html"
+    },
+    {
+      "sha256": "6fc00f955562fa6d6cbbb589f344c7999e35fc78e945f47aa1e5dd36f78d2294",
+      "path": "FullStyle-Email-Service/templates/emails/contact.html"
+    },
+    {
+      "sha256": "c4831ccc0d6a42cafd6d227751b51c1a485c7ec1c47d9966b87ac4373b3f6ecd",
+      "path": "FullStyle-Email-Service/templates/emails/reset_password.html"
+    },
+    {
+      "sha256": "a3c26c3382788f24c36faafe781dc5b6ff92f0e086f2d9fbb8d15637cb686fbc",
+      "path": "FullStyle-Email-Service/templates/emails/response_contact.html"
+    },
+    {
+      "sha256": "45fead81228e9b9c9b48e4978a3744480bede5d099dcac1d3c71da622b27ccb1",
+      "path": "FullStyle-Email-Service/templates/emails/subscription.html"
+    },
+    {
+      "sha256": "ca12f6accfb6696fda542a055410f62eb5350d1452d8b90942616fee029e1d98",
+      "path": "FullStyle-Email-Service/workers/email_worker.py"
+    },
+    {
+      "sha256": "5dde66b818a0177ca56e1f4ab82fa8c7b63dbe2fd0a99b27be7b0a419bc0363b",
+      "path": "FullStyle-Frontend/.dockerignore"
+    },
+    {
+      "sha256": "916ffb599ce71071f809f2557d432a8bf59cc7e9b2c56bdd536584afae872c4f",
+      "path": "FullStyle-Frontend/.eslintrc-tools.cjs"
+    },
+    {
+      "sha256": "450ce3f102a6aba55092d583333be406f371bf4228235352a886c6278deb49c1",
+      "path": "FullStyle-Frontend/.eslintrc.json"
+    },
+    {
+      "sha256": "af060020dc59c5fed43e32c0665c3f31a09a7e2d5f21faccff3a495b4543c971",
+      "path": "FullStyle-Frontend/.gitignore"
+    },
+    {
+      "sha256": "126123e0c5777fbcae267dab3db337af246147855ba2d4a6677c4960c6229722",
+      "path": "FullStyle-Frontend/.prettierrc"
+    },
+    {
+      "sha256": "0c974dade6c0b7baf55c47ac357acc54896e4e5a9b02a15790eee19fefb035d2",
+      "path": "FullStyle-Frontend/Dockerfile"
+    },
+    {
+      "sha256": "f7db043651b6b938897af35d6d5fae2801b228a2ffeb9afc0ed6622b9f8f5f46",
+      "path": "FullStyle-Frontend/README.md"
+    },
+    {
+      "sha256": "5a6f01364f2c73bd74c11e0bd072b057677cf5fe989f135c4d340ae4602ea28b",
+      "path": "FullStyle-Frontend/components.json"
+    },
+    {
+      "sha256": "95503d1bb5b150e63f5a5ab22ec8f9dd13007ed9caf6efc4dc0adcd3353ee780",
+      "path": "FullStyle-Frontend/docker-compose.yml"
+    },
+    {
+      "sha256": "6d7fc3a8ff3244903a205486d0586fb601bb02d697bac2715c61007970457422",
+      "path": "FullStyle-Frontend/env.d.ts"
+    },
+    {
+      "sha256": "9a964c445118d72402f630b029a9f48cb1b5682c49df14ec08e66513096929ec",
+      "path": "FullStyle-Frontend/next-env.d.ts"
+    },
+    {
+      "sha256": "4c31b552b4cdf83ef8ca91c9b67b0c1ea4ead2c7d55a28e05bf1598caee62e3e",
+      "path": "FullStyle-Frontend/next.config.ts"
+    },
+    {
+      "sha256": "07a9ff35d8813f4aea891b636e412dc5ec7b330d3310c6d6301c97119eacd5f9",
+      "path": "FullStyle-Frontend/package-lock.json"
+    },
+    {
+      "sha256": "0d8b44a4fd0507a619490557446377293ed8b458bbff312871df8a04a6413aeb",
+      "path": "FullStyle-Frontend/package.json"
+    },
+    {
+      "sha256": "f8f0084839f62a6490ccbc0b3d31da03c74d0de40fd50d14613e17d9dd26a6d7",
+      "path": "FullStyle-Frontend/postcss.config.mjs"
+    },
+    {
+      "sha256": "9493d368e84feaebab54bc16db010e7c846a4eb3c632e661091e3b080d78391e",
+      "path": "FullStyle-Frontend/tailwind.config.ts"
+    },
+    {
+      "sha256": "941fbffb3e2f0beffb30083948ae2fd6dff175f3cd06dceb9f44d60640a1329e",
+      "path": "FullStyle-Frontend/tsconfig.json"
+    },
+    {
+      "sha256": "2b67812c325c199a02536cdbeea0c593a72f707d323b72ee3e08dbab06753bd4",
+      "path": "FullStyle-Frontend/public/file.svg"
+    },
+    {
+      "sha256": "b614b9bf183925957661ac851498fe1d8029fd43a62fbfed86f9e2624a57e7cf",
+      "path": "FullStyle-Frontend/public/globe.svg"
+    },
+    {
+      "sha256": "55995dfad6ecb4945a1e856ddca03c5e16aa5bf13fd21b4df6a74ae79357bcfc",
+      "path": "FullStyle-Frontend/public/next.svg"
+    },
+    {
+      "sha256": "f081337b2fee635b455b63275406a3e7f39d6a014e25ad90dab5a67e62a12ac4",
+      "path": "FullStyle-Frontend/public/vercel.svg"
+    },
+    {
+      "sha256": "644768c4aaeb4767bce293344eeb0c125fb804a94d801440424072202d85e3a1",
+      "path": "FullStyle-Frontend/public/window.svg"
+    },
+    {
+      "sha256": "9cd2c0fb79af2807603d0c7cf7df341cd3079bc0f4adc0cfbb4300497bbedb63",
+      "path": "FullStyle-Frontend/public/images/error404.jpg"
+    },
+    {
+      "sha256": "3a4aeae2063d31e721568493124bff470e9a82be20d15d2c7441228d701ca0ce",
+      "path": "FullStyle-Frontend/public/images/login.png"
+    },
+    {
+      "sha256": "47301a9759030c2c9845c57a5a8596a3d619be9c5afba771955d155e7b0efb54",
+      "path": "FullStyle-Frontend/public/images/blog/blog1.png"
+    },
+    {
+      "sha256": "a8f0e630479f8904a74f977773f88a2cca1a8a965c8ea92af0aec1def0f36504",
+      "path": "FullStyle-Frontend/public/images/blog/blog2.png"
+    },
+    {
+      "sha256": "fdafa41dc1f2cc817a56ef1ef42d93e11a706ba1ed1c607a34d980149d78360a",
+      "path": "FullStyle-Frontend/public/images/services/afeitado.jpg"
+    },
+    {
+      "sha256": "87638f6b59dc9c911c9564d5e1694423a703844e97bf28b535616af5fdbbc5d3",
+      "path": "FullStyle-Frontend/public/images/services/coloracion.jpg"
+    },
+    {
+      "sha256": "52c9e1b10d79ced7ecc2c0aaa1a031aaf6d10a1ba4c2b9576a367486d3a591fa",
+      "path": "FullStyle-Frontend/public/images/services/cortes.jpg"
+    },
+    {
+      "sha256": "4753f5ebc5b7d2bff4da3e7e3aa83353aa537fe12a3f774b4cb92f69686a1116",
+      "path": "FullStyle-Frontend/public/images/services/default.webp"
+    },
+    {
+      "sha256": "7a50201b2ffa7d57dfa977ad706a1aaf365cdc00603b823d5cc5397ad4e9046f",
+      "path": "FullStyle-Frontend/public/images/services/depilacion.jpg"
+    },
+    {
+      "sha256": "9bee435320f8cd1e96f124adf5fcc0a3ce092cda578fab3e67eb632ba9f8f8b6",
+      "path": "FullStyle-Frontend/public/images/services/extensiones.jpg"
+    },
+    {
+      "sha256": "2e50776015d31aa3aa51aa1a1dfa46c3a206a27869c8d3e84ce0cc117d51a10b",
+      "path": "FullStyle-Frontend/public/images/services/manicure.jpg"
+    },
+    {
+      "sha256": "e8dfaa227d64395e409622c0785541719ae6996fa7525e30a13bd9d8cf175e41",
+      "path": "FullStyle-Frontend/public/images/services/peinados.jpg"
+    },
+    {
+      "sha256": "f18155b5707a78134f377b8ff507b45669c3b07dbeb28d20437226cfe151abcd",
+      "path": "FullStyle-Frontend/public/images/services/tratamientos-capilares.jpg"
+    },
+    {
+      "sha256": "fe631b5dd3d4bc302ad52e255050d995436733b2a786c4f803f9936dab36bff9",
+      "path": "FullStyle-Frontend/public/images/services/tratamientos-faciales.jpg"
+    },
+    {
+      "sha256": "a7df6fd16e55ade7a1fa43d69ef4b68b2dad15ecfd55da4714856769d5e2d1d0",
+      "path": "FullStyle-Frontend/public/images/sites/site-example.png"
+    },
+    {
+      "sha256": "d4645764146ca8c36009206536d1184eb3d1b4280d2e7f530b5a0185463c1093",
+      "path": "FullStyle-Frontend/public/images/sites/site.jpg"
+    },
+    {
+      "sha256": "25ac1f44bc58acf36593078e90da7bb637bca532df044636bc755afd0c348026",
+      "path": "FullStyle-Frontend/scripts/prepare-standalone.cjs"
+    },
+    {
+      "sha256": "c59cfc34b30f3d5b37e03621f851191d898af162a88069d95769d5d6fab66687",
+      "path": "FullStyle-Frontend/src/middleware.ts"
+    },
+    {
+      "sha256": "23ee2841d8e2d08cb78360c45cd7750a7486c1108fcc8adcd2013e73774157ef",
+      "path": "FullStyle-Frontend/src/app/favicon.ico"
+    },
+    {
+      "sha256": "a8e2539c34d98bc3ad3993ac1e9abd87588d1853fbb1c6ba1649ac9e292f58d1",
+      "path": "FullStyle-Frontend/src/app/globals.css"
+    },
+    {
+      "sha256": "6832957fae6efb9fd69b18a8b114486987563eeffbaefb49ce822b0af3fde498",
+      "path": "FullStyle-Frontend/src/app/layout.tsx"
+    },
+    {
+      "sha256": "6d8cd63ea81332ca9f6c10faa89daa6fd55c3214d435992a76939805ae21c376",
+      "path": "FullStyle-Frontend/src/app/not-found.tsx"
+    },
+    {
+      "sha256": "e99839f6b5786205716c4f9d63caa457c85513ee46d40a17d7962d04bc8857e4",
+      "path": "FullStyle-Frontend/src/app/page.tsx"
+    },
+    {
+      "sha256": "71295e5f052e2cf7eb12447a926049b139099e8f79bf2d392eae6973bf9c3a0d",
+      "path": "FullStyle-Frontend/src/app/providers.tsx"
+    },
+    {
+      "sha256": "d8c58418d200713c2d3f55ef437059cb9eece2d6e1cafa94013f7b40a5cb12f5",
+      "path": "FullStyle-Frontend/src/app/about-us/layout.tsx"
+    },
+    {
+      "sha256": "ffe33e889d49cbe459ff3a8fa3e27deb862744684be4d02a030a7bebdcfbc5b1",
+      "path": "FullStyle-Frontend/src/app/about-us/page.tsx"
+    },
+    {
+      "sha256": "9dfc5d4e803b7120f9d8a18cbcfcd0ff12d1d12f12ec78c59bfb9dcfe40af8ee",
+      "path": "FullStyle-Frontend/src/app/api/UploadMedia/route.ts"
+    },
+    {
+      "sha256": "5e6d89dffeb81c374b1a02bad10a9cb9e7095a69dae77b85822896afdf4b83e7",
+      "path": "FullStyle-Frontend/src/app/api/auth/[...nextauth]/route.ts"
+    },
+    {
+      "sha256": "48c20eef3529c6c830dfb8ba063ecd74b25f689a28a96f1e8509a70dbe9fb473",
+      "path": "FullStyle-Frontend/src/app/api/geocode/route.ts"
+    },
+    {
+      "sha256": "e77472e73ef18708c422e9c8c6a35047979cad4ae08b4fbf1facdec02ec3c9f0",
+      "path": "FullStyle-Frontend/src/app/api/health/route.ts"
+    },
+    {
+      "sha256": "bb052ad753af15a8798c0355f34baa71244fffe83c0bde67ed3f1c2f0e2e9caa",
+      "path": "FullStyle-Frontend/src/app/api/media/[userId]/[filename]/route.ts"
+    },
+    {
+      "sha256": "1b757e6cd357e3a790bb4a9954c2dc0c8f670d8364dacb8a0c74f84ac91fcd59",
+      "path": "FullStyle-Frontend/src/app/api/recaptcha/route.ts"
+    },
+    {
+      "sha256": "d8f417adfa08a40dbaa56fe5b59c40c1df53a79d4bf18f5dffa1915a1b0fe28d",
+      "path": "FullStyle-Frontend/src/app/api/sendEmail/appointmenRejected/route.ts"
+    },
+    {
+      "sha256": "f501604bd22a5f1cb6b1e07216aa0ff2c566e7e9dc269036733c16d702fae678",
+      "path": "FullStyle-Frontend/src/app/api/sendEmail/appointmentCanceled/route.ts"
+    },
+    {
+      "sha256": "20b6158ae79696912a6313091728ab90b99386aae6bc7551595b7fc056e15414",
+      "path": "FullStyle-Frontend/src/app/api/sendEmail/appointmentFullPaid/route.ts"
+    },
+    {
+      "sha256": "738b68064724a1f9b2488738fdf949b8aae32414c6465eee150748d1c84b886d",
+      "path": "FullStyle-Frontend/src/app/api/sendEmail/appointmentPartialPaid/route.ts"
+    },
+    {
+      "sha256": "cbee03d62a2f3009fdb88aa0b3f3c06f79a3df380e46949c4a9f60ed87f21c35",
+      "path": "FullStyle-Frontend/src/app/api/sendEmail/contact/route.ts"
+    },
+    {
+      "sha256": "0fe647c34257bb519de055f6c50a0bd70ca198c73386ed4a41458dea021b0c87",
+      "path": "FullStyle-Frontend/src/app/api/sendEmail/resetPassword/route.ts"
+    },
+    {
+      "sha256": "72c7ac181fd075a9ce66c3b9f8915b3be519e38ced1370f7e1e6bcecf39e1893",
+      "path": "FullStyle-Frontend/src/app/api/sendEmail/subscription/route.ts"
+    },
+    {
+      "sha256": "0d9662e95b4fbda6e1c410a796e545386ddffc93c155a27771e1f2b8967556b0",
+      "path": "FullStyle-Frontend/src/app/api/wompi/route.ts"
+    },
+    {
+      "sha256": "70f10a628844fae58f5f2f95a416d12e57286476aacea7707cccfe5baef47cc3",
+      "path": "FullStyle-Frontend/src/app/api/wompi/webhook/route.ts"
+    },
+    {
+      "sha256": "7d19f0f4d7e6faaf0c4ded34f0e696ae1c6ddbeb9f17bc1bf890e8e257db89d0",
+      "path": "FullStyle-Frontend/src/app/blog/layout.tsx"
+    },
+    {
+      "sha256": "2d9150b0bfab256891ab43a66e221a92b8af8f321841f03745a261f205e7ff53",
+      "path": "FullStyle-Frontend/src/app/blog/[id]/page.tsx"
+    },
+    {
+      "sha256": "b91ba0da027216b7fca39736805a03097ed5b27d9428c42bcf435844d88aa4c9",
+      "path": "FullStyle-Frontend/src/app/chatbot/page.tsx"
+    },
+    {
+      "sha256": "002166924e4890915f8c67b53054de74fc005040d0bb019560e75f92fca08465",
+      "path": "FullStyle-Frontend/src/app/customer/layout.tsx"
+    },
+    {
+      "sha256": "92955e489a65ea30b5aebd61a86f3993e7ca9f693bedbc9423c00246a031e28d",
+      "path": "FullStyle-Frontend/src/app/customer/page.tsx"
+    },
+    {
+      "sha256": "58e12c21de86d9aeb4071114b8e4ee005f40d9978a72580db2248fcf1644e8f1",
+      "path": "FullStyle-Frontend/src/app/customer/appointments/page.tsx"
+    },
+    {
+      "sha256": "2c4b9c3a5c868e39eff6cc722cf1348ef11c59c933a10bd57a0795328272e2a2",
+      "path": "FullStyle-Frontend/src/app/customer/profile/page.tsx"
+    },
+    {
+      "sha256": "31e495b760450fb9d0abacd85dff1d7d7c7205168a1933f45e45deb29ab963ed",
+      "path": "FullStyle-Frontend/src/app/customer/service/page.tsx"
+    },
+    {
+      "sha256": "a8ddaba1be2a960609a3bad1f0462afe9ad0271944350752f5f84637509428c0",
+      "path": "FullStyle-Frontend/src/app/customer/service/[id]/page.tsx"
+    },
+    {
+      "sha256": "30ba2dabf88b3cba503cc7c93d62709ae2ebfb45aae94cc1a46a738f3811d334",
+      "path": "FullStyle-Frontend/src/app/customer/service/[id]/[site]/page.tsx"
+    },
+    {
+      "sha256": "9b37d919e07714bd679af9b4d0939673d718198655eb431b19e986a756fe05c1",
+      "path": "FullStyle-Frontend/src/app/delete/bussines/page.tsx"
+    },
+    {
+      "sha256": "935904798823a32efd9df2951a81f30aad49d0ee4efe2481107df5d3f7ef4e8c",
+      "path": "FullStyle-Frontend/src/app/delete/customer/page.tsx"
+    },
+    {
+      "sha256": "de3f4e08fb08f37765eff03c234130b27a72fd4347857e899c14b0eee8fb2f60",
+      "path": "FullStyle-Frontend/src/app/delete/worker/page.tsx"
+    },
+    {
+      "sha256": "9816776b86aa906edd8fdf37dfd9fb6fcd2034098153bd9eaa32d82596b76fcf",
+      "path": "FullStyle-Frontend/src/app/edit/customer/page.tsx"
+    },
+    {
+      "sha256": "30a03eb143e35c246cbc557485684714434187ab7603afc1df193e95d6f61040",
+      "path": "FullStyle-Frontend/src/app/edit/worker/page.tsx"
+    },
+    {
+      "sha256": "d8c58418d200713c2d3f55ef437059cb9eece2d6e1cafa94013f7b40a5cb12f5",
+      "path": "FullStyle-Frontend/src/app/legal/layout.tsx"
+    },
+    {
+      "sha256": "af79f75f2ec986903d4afd27a1f62c7a4a74545e96a1d6093a45de1ff19ba909",
+      "path": "FullStyle-Frontend/src/app/legal/page.tsx"
+    },
+    {
+      "sha256": "eaae513cbe824a575b4c163559244a475103400e9956a0488d819bcbd326c3bf",
+      "path": "FullStyle-Frontend/src/app/legal/habeas-data/page.tsx"
+    },
+    {
+      "sha256": "16585ea4369d3546922a3e59496b8dd430dd1ed4a81f00e83f6d3deb99a1f129",
+      "path": "FullStyle-Frontend/src/app/login/page.tsx"
+    },
+    {
+      "sha256": "12b7940786fa47d818195bc033d1c6ed40fbb3fe1167f67f950469d73a582468",
+      "path": "FullStyle-Frontend/src/app/login/2fa/page.tsx"
+    },
+    {
+      "sha256": "32a2ea9bd24a46318b19d7d459921d3a05007dff10b9328e863f8402b22b891f",
+      "path": "FullStyle-Frontend/src/app/operations/page.tsx"
+    },
+    {
+      "sha256": "f125667c082c9c5d392d1ede00b204fa7b9fc07cd31481c5691ecf9b5661ca2a",
+      "path": "FullStyle-Frontend/src/app/owner/layout.tsx"
+    },
+    {
+      "sha256": "0830bf0b8ad406ee9d23a66c8fc99183d51a236a42c6a10a822e8cdb0f26a018",
+      "path": "FullStyle-Frontend/src/app/owner/page.tsx"
+    },
+    {
+      "sha256": "ac282f9338c0b6ee45348a31bf0e58c06d107b953783c03fa78dcbc596487831",
+      "path": "FullStyle-Frontend/src/app/owner/business/page.tsx"
+    },
+    {
+      "sha256": "7f7f713d75d1d450bd292f351b92856026c291802baa20946f21d84d307c8275",
+      "path": "FullStyle-Frontend/src/app/owner/employees/page.tsx"
+    },
+    {
+      "sha256": "50b4a7f16c9e6c481db580e0de0ba913a5cb3c4905c247974fb6694ae9418a8f",
+      "path": "FullStyle-Frontend/src/app/owner/profile/page.tsx"
+    },
+    {
+      "sha256": "a699c9b4d059b08b4dd1e3160b3b0249b1607782ca6529fe7d82fd39af0f7da0",
+      "path": "FullStyle-Frontend/src/app/owner/services/page.tsx"
+    },
+    {
+      "sha256": "a9d9f246d5eba293735ec841f3d65c0aa12d4e411d42895a975a516a6ca724d9",
+      "path": "FullStyle-Frontend/src/app/password_reset/page.tsx"
+    },
+    {
+      "sha256": "dba110ba1605bbf60fe2be97ba68b66aa318b915bc2a85026fc25fe87876c242",
+      "path": "FullStyle-Frontend/src/app/plans/data.ts"
+    },
+    {
+      "sha256": "33ffd2b6b6273ddcf5ffbcd1faf7f95e369c29cb810cb0260d08b8d78b04d289",
+      "path": "FullStyle-Frontend/src/app/plans/layout.tsx"
+    },
+    {
+      "sha256": "4b09acd67a99a3ac29ac5af109985a8e7a4f2d113df044aa34786a9c7e810fa3",
+      "path": "FullStyle-Frontend/src/app/plans/page.tsx"
+    },
+    {
+      "sha256": "d3b18d54b67326413b99945954addbe5ffa360bbffc0d3589587db40f426f4c1",
+      "path": "FullStyle-Frontend/src/app/plans/[id]/page.tsx"
+    },
+    {
+      "sha256": "a29572fa08229477dc59ebfdaeb14477de887049d06a86473cbc425075aa830a",
+      "path": "FullStyle-Frontend/src/app/register/page.tsx"
+    },
+    {
+      "sha256": "b728bf5fd96f9c723384671de8d545c7d3e43d5b5b1aaeeac0eec0f86a8c9c9b",
+      "path": "FullStyle-Frontend/src/app/register/business/page.tsx"
+    },
+    {
+      "sha256": "351f6ce1f5bbc5a311249ae818748b1a73554509a9517efe7d9a8c3485fb4c23",
+      "path": "FullStyle-Frontend/src/app/register/categories/page.tsx"
+    },
+    {
+      "sha256": "3ba95ad4efcce42c99c814145d53665d96e1855c8c8f35259b932afc9eeed6e9",
+      "path": "FullStyle-Frontend/src/app/register/customer/page.tsx"
+    },
+    {
+      "sha256": "f63e892151a331cdd9595e8d70bd010fdd4a9dcf8d4f4663d0041fb2ff4171ba",
+      "path": "FullStyle-Frontend/src/app/register/owner/page.tsx"
+    },
+    {
+      "sha256": "de8fb2588a90a3caf9c2c0cb88e8580bcba72f15678f17026aee505e71d6b905",
+      "path": "FullStyle-Frontend/src/app/register/services/page.tsx"
+    },
+    {
+      "sha256": "40bf32fb5ce2cb3951567615f861e7134f0ed19b4c8ee431cbc17e27089112d1",
+      "path": "FullStyle-Frontend/src/app/register/worker/page.tsx"
+    },
+    {
+      "sha256": "754086da43a06e581dbfa3590f3bddb697a73b97548f294d232cc78d19140b2a",
+      "path": "FullStyle-Frontend/src/components/TimeRangeInput.tsx"
+    },
+    {
+      "sha256": "de698392cc6c4122a5b2e7e8eed5e0440aa79d29509acd7bb4a20856a80d2f72",
+      "path": "FullStyle-Frontend/src/components/app-sidebar.tsx"
+    },
+    {
+      "sha256": "5164c416b455a1eb3a51286554d20c9d33406fa9ef048ff75db2757ee5d9af6d",
+      "path": "FullStyle-Frontend/src/components/blog-card.tsx"
+    },
+    {
+      "sha256": "a3776ca662bd4072e3bfd96118b1188aef9fda407ece64b65043eefb15411ab8",
+      "path": "FullStyle-Frontend/src/components/blog-section.tsx"
+    },
+    {
+      "sha256": "ff739d95af5164c1a6ebb5a2238631f3d6166b16ac056f891d6c0b8dc4c6857d",
+      "path": "FullStyle-Frontend/src/components/card-plans.tsx"
+    },
+    {
+      "sha256": "72a42fdf2482f7f7db9b41b56de943ca5097c537fea518a82eae0e53f3dc6ac3",
+      "path": "FullStyle-Frontend/src/components/contact-section.tsx"
+    },
+    {
+      "sha256": "a23d173a32ff1e64bf627487455994b97f360601a25446630509e775c007ee7b",
+      "path": "FullStyle-Frontend/src/components/delete-customer.tsx"
+    },
+    {
+      "sha256": "7dc5d9cf6ad52987ed40ac2ad9fee15de483fcc59412fded600875143386ed63",
+      "path": "FullStyle-Frontend/src/components/edit-customer-form.tsx"
+    },
+    {
+      "sha256": "02a9d3cf4ca2aa32bcc8d28a18a890bd16bba7f5447d81c26897c02f1ba773bc",
+      "path": "FullStyle-Frontend/src/components/footer.tsx"
+    },
+    {
+      "sha256": "d52328800a04b35d26f9f57ea05763fd71dcea85850d315c883c53ac9a5a3a06",
+      "path": "FullStyle-Frontend/src/components/hero-section.tsx"
+    },
+    {
+      "sha256": "f2ff1be2d6321ed320ae55cd181b7576ecad845a6cb08fc7db42d3cc5071114b",
+      "path": "FullStyle-Frontend/src/components/instance-info.tsx"
+    },
+    {
+      "sha256": "bcba470d468b931109b10ff8adbfa9515bb109941bbcd8ff241534ba43f2efbb",
+      "path": "FullStyle-Frontend/src/components/logout-button.tsx"
+    },
+    {
+      "sha256": "6ae0f7d2ce804148e14a4607588bb4539948d2f3f0cf55aff02696f8bd794940",
+      "path": "FullStyle-Frontend/src/components/map.tsx"
+    },
+    {
+      "sha256": "5acc88fa4d9008ceefe43f7416f41f2e5c80b651d6d181e067b93c9c6288868d",
+      "path": "FullStyle-Frontend/src/components/nav-bar.tsx"
+    },
+    {
+      "sha256": "9b9f4b9abefe55aef1f692f3cf98a310084f407301ab468165e1d0fafc9c3d70",
+      "path": "FullStyle-Frontend/src/components/operation-result.tsx"
+    },
+    {
+      "sha256": "25deccd4a0ec2accee159eb33a4852bbc2f1698489bd17d0ae20d8c8fc90095d",
+      "path": "FullStyle-Frontend/src/components/register-nav-bar.tsx"
+    },
+    {
+      "sha256": "77638e92454424350e7678baa700ace66f5ce1169ff96339cd03d99b913e6e53",
+      "path": "FullStyle-Frontend/src/components/scheduler.tsx"
+    },
+    {
+      "sha256": "a66b11347dd1735e5a292d32c5ab8214ea8b5dc03d4bd940888ec2f0153d3ec1",
+      "path": "FullStyle-Frontend/src/components/type-register-box.tsx"
+    },
+    {
+      "sha256": "e3f9adc9628f26f2bf9fec3988a6740f9ee08621131ec7e7f95d03d6c2f296e6",
+      "path": "FullStyle-Frontend/src/components/widget-wompi.tsx"
+    },
+    {
+      "sha256": "eb29c008865dbcd642ca31d2dbc3ec42a3492e293eb2eebb2521b2a976cdca30",
+      "path": "FullStyle-Frontend/src/components/email-templates/appointment-canceled.tsx"
+    },
+    {
+      "sha256": "918e51d528ce0b9057f0b7dd87fd1fee9412a499dfee1299e5ccb2cc6ec03393",
+      "path": "FullStyle-Frontend/src/components/email-templates/appointment-fullpaid.tsx"
+    },
+    {
+      "sha256": "8054a546543c3962599cb7dea7d079b57e324e013477f2d917249e8387dcbd8e",
+      "path": "FullStyle-Frontend/src/components/email-templates/appointment-partialpaid.tsx"
+    },
+    {
+      "sha256": "085665d23344436472e3d9c54e4bd9e84874ee99415be94b3fd1725d4fbd5909",
+      "path": "FullStyle-Frontend/src/components/email-templates/appointment-rejected.tsx"
+    },
+    {
+      "sha256": "82fac9a6419b0b9ce4d106ae58c9461c8b8a692909ab43210420dbcdf697b97a",
+      "path": "FullStyle-Frontend/src/components/email-templates/contact.tsx"
+    },
+    {
+      "sha256": "9cf8156c6d05873d28387ad6ba3a0520ffa5feadc68f24380dff62624eef6c27",
+      "path": "FullStyle-Frontend/src/components/email-templates/reset-password.tsx"
+    },
+    {
+      "sha256": "e37d0dadfe582774aa4586ac39293bb281ec9ef1985291eee3dff01ecb263513",
+      "path": "FullStyle-Frontend/src/components/email-templates/response-contact.tsx"
+    },
+    {
+      "sha256": "6e4fe8d9703e6f170a4c68d1e95bd9d92374fe682f6efb1b8c0112f62e7ccec8",
+      "path": "FullStyle-Frontend/src/components/email-templates/subscription.tsx"
+    },
+    {
+      "sha256": "5791258d732128fc8d8daeabdc331cd1358b6dd29e91fe18d3aa986370c61590",
+      "path": "FullStyle-Frontend/src/components/icons/LogosGoogleIcon.tsx"
+    },
+    {
+      "sha256": "8993ffb9b3bcc554257720c3f2907fdc6878e9ee899f523143c3d6fc8eede310",
+      "path": "FullStyle-Frontend/src/components/icons/appointment-icon.tsx"
+    },
+    {
+      "sha256": "e87cc81258f2deb10955984b19e0527c76102d27be29dc89d50b1222276f2aa3",
+      "path": "FullStyle-Frontend/src/components/icons/burger-icon.tsx"
+    },
+    {
+      "sha256": "260e8a0ac6d2be5b0a1e33b1e081621e26737a48f4d44704bc861628aaf13d9b",
+      "path": "FullStyle-Frontend/src/components/icons/employees-icon.tsx"
+    },
+    {
+      "sha256": "9ead42708f647c268a741f564c40b8056f0357bdf5f4978b522501618afb5556",
+      "path": "FullStyle-Frontend/src/components/icons/facebook.tsx"
+    },
+    {
+      "sha256": "95e4c2e963a34c79ddc107223fe1aaac1b93dba69f29ce93c53a4054acf2cf1b",
+      "path": "FullStyle-Frontend/src/components/icons/fullstyle.tsx"
+    },
+    {
+      "sha256": "ac1acfed16b4a27fbb50ac5729272c1ff4048876140015462b3badea8d965275",
+      "path": "FullStyle-Frontend/src/components/icons/linkedin.tsx"
+    },
+    {
+      "sha256": "f0005c1f9a18e70a31182584fa94bfb7fd9c584546955f5a1d56aa62dcafd411",
+      "path": "FullStyle-Frontend/src/components/icons/payment-icon.tsx"
+    },
+    {
+      "sha256": "1bfff5e42259cec29b942dd30d47aaa6f2df8910f9d5d436e8e576fb7dbbd2ef",
+      "path": "FullStyle-Frontend/src/components/icons/ranking-icon.tsx"
+    },
+    {
+      "sha256": "6184329601c45ad1f3e3b40148ebe06314c5b4ce101d3d5662300d1b8f73d31f",
+      "path": "FullStyle-Frontend/src/components/icons/svg-interface.tsx"
+    },
+    {
+      "sha256": "44d59fbb7a90340785341fc7356465853c26d483afa0a9de960ff5c8c511b316",
+      "path": "FullStyle-Frontend/src/components/icons/twitter.tsx"
+    },
+    {
+      "sha256": "60e5637c8a22fc1144dded9f528700a0f520658ec63e5890d4beebdf2c196ea1",
+      "path": "FullStyle-Frontend/src/components/icons/user.tsx"
+    },
+    {
+      "sha256": "8a231b26980346e06ccf8f28827b0089d4937e35da5749c457cd0398acc3e78a",
+      "path": "FullStyle-Frontend/src/components/ui/alert-dialog.tsx"
+    },
+    {
+      "sha256": "3abcc02b382ae02032da3d587d12ad6ccf45de2662debe49c8ca2fc86975a2d7",
+      "path": "FullStyle-Frontend/src/components/ui/alert.tsx"
+    },
+    {
+      "sha256": "496af5016d04bf3f490cdc1e275257890ebf024e051b77840a377c6012b28bd0",
+      "path": "FullStyle-Frontend/src/components/ui/avatar.tsx"
+    },
+    {
+      "sha256": "92d50cc637507fc3156766ee5bce30b3af7e598bb327f0fe47ce123ac615b08a",
+      "path": "FullStyle-Frontend/src/components/ui/badge.tsx"
+    },
+    {
+      "sha256": "0953f8bdd5f98f77114d104afc0e579d6a6f418811a6e0cd0785f3c4693c14eb",
+      "path": "FullStyle-Frontend/src/components/ui/button.tsx"
+    },
+    {
+      "sha256": "a5fb11bbf2a40ac3ad6d38e4f72fc6fe14edf9b299025480e1f39407386a288b",
+      "path": "FullStyle-Frontend/src/components/ui/card.tsx"
+    },
+    {
+      "sha256": "5955c9a1e583c4d66788734c27bf7e20f1d49595c7761d4185363a760d0c0009",
+      "path": "FullStyle-Frontend/src/components/ui/checkbox.tsx"
+    },
+    {
+      "sha256": "9a10702e7919bf60637256e441876a4deb661f189560d4a72410e6e9c692dd85",
+      "path": "FullStyle-Frontend/src/components/ui/collapsible.tsx"
+    },
+    {
+      "sha256": "8ed028640f67d847399800e599f40aa6c623c966d48cd3d87634cd24540f1d4a",
+      "path": "FullStyle-Frontend/src/components/ui/dialog-event.tsx"
+    },
+    {
+      "sha256": "4d2410a4a5469dc8b63235df66e4879450a741213b51a48a3fc330e24e225198",
+      "path": "FullStyle-Frontend/src/components/ui/dialog.tsx"
+    },
+    {
+      "sha256": "dda0896af9f75ba4cafd60a96e7b2cc43f584981e2a9e98e2f9aab34186ff600",
+      "path": "FullStyle-Frontend/src/components/ui/full-calendar.tsx"
+    },
+    {
+      "sha256": "7f83a1100c135e150494b3a718c6b06e26bd7591f838ff45d00e57709a2bcf29",
+      "path": "FullStyle-Frontend/src/components/ui/input-otp.tsx"
+    },
+    {
+      "sha256": "1afb082ad0741bf3bb4b4f38c742cfc2e32e377ca5fb210f1747f74cb987fb88",
+      "path": "FullStyle-Frontend/src/components/ui/input.tsx"
+    },
+    {
+      "sha256": "15cc22fc2c1e4933e248d535a1610cdf35d8a05757877c3d3574f3ce6702a258",
+      "path": "FullStyle-Frontend/src/components/ui/label.tsx"
+    },
+    {
+      "sha256": "ac0b29ab006b7c73a5991a9609cc7998b5dece1f16b1fa4d250603a8ec7cc932",
+      "path": "FullStyle-Frontend/src/components/ui/pagination.tsx"
+    },
+    {
+      "sha256": "a70f9be1c02724cf655add5fa78a8c9b2f5133f6146c842dc7729df263acf2e6",
+      "path": "FullStyle-Frontend/src/components/ui/popover.tsx"
+    },
+    {
+      "sha256": "c2ef5b19f7a221ac233ab2721b2add9900c8d3520a528ff9f519a0c5bb79de5b",
+      "path": "FullStyle-Frontend/src/components/ui/scroll-area.tsx"
+    },
+    {
+      "sha256": "45f12eac24ce91e05f927c1f59638261749ced3280f334b39a9beb0dc6d6ad6f",
+      "path": "FullStyle-Frontend/src/components/ui/select.tsx"
+    },
+    {
+      "sha256": "d3e307e96d42f693a7575c003c199e252b67c3152e1514f0f336967d2f6ad031",
+      "path": "FullStyle-Frontend/src/components/ui/separator.tsx"
+    },
+    {
+      "sha256": "79ac47cd2e669f4149e62c1e489b0ce39fd1418e49dd79274c8e09a23f0b7d7b",
+      "path": "FullStyle-Frontend/src/components/ui/sheet.tsx"
+    },
+    {
+      "sha256": "6cfdbadfdb8e4159d9e50145a58e0bca23482cbb045b9ed933267a590d8b5395",
+      "path": "FullStyle-Frontend/src/components/ui/sidebar.tsx"
+    },
+    {
+      "sha256": "864c74065c963685504b2bb1034961dda7d1d2ae483d5673ceed15458c69d59b",
+      "path": "FullStyle-Frontend/src/components/ui/skeleton.tsx"
+    },
+    {
+      "sha256": "00bda0ba4d54ef5a07e617dd06af6d9ce51bf9121fbd14695de6312c3ee0cd7c",
+      "path": "FullStyle-Frontend/src/components/ui/sonner.tsx"
+    },
+    {
+      "sha256": "b2aedeb826f418c2624db885ce91f5b46798e017a4229e1b4bf5694993f4a11a",
+      "path": "FullStyle-Frontend/src/components/ui/tabs.tsx"
+    },
+    {
+      "sha256": "b8276b34a93ec7ae807576a739fad6abe18ec555e1a321ffce169c5f3f2022a5",
+      "path": "FullStyle-Frontend/src/components/ui/textarea.tsx"
+    },
+    {
+      "sha256": "83d1bc82e3385ed655dc232125761cd9fb51a1e29311f672f3180386e4be0557",
+      "path": "FullStyle-Frontend/src/components/ui/toast.tsx"
+    },
+    {
+      "sha256": "1bf0fda1a93849302c8b54d4eb334f7176bb464eaef9fa4427575a1463bd8716",
+      "path": "FullStyle-Frontend/src/components/ui/toaster.tsx"
+    },
+    {
+      "sha256": "f5dc0b0f9c0ad1093e963be3beee6bebcb0243d8f746d31f439bbac28e08ee8e",
+      "path": "FullStyle-Frontend/src/components/ui/tooltip.tsx"
+    },
+    {
+      "sha256": "face804d4dd1f42d4b01823a71984c9d0087a60b556674a92d3046e5db274f34",
+      "path": "FullStyle-Frontend/src/context/search-context.tsx"
+    },
+    {
+      "sha256": "8e17a30eb306288f492b0427022ee171e4febc90fff546d40c8a1ebfb1a5b6f9",
+      "path": "FullStyle-Frontend/src/data/articles.ts"
+    },
+    {
+      "sha256": "8706d467b626ba61b3dbc377520304402daad18a32351a36ee28ea244a2e8cd5",
+      "path": "FullStyle-Frontend/src/features/appointments/api/appointmentApi.ts"
+    },
+    {
+      "sha256": "0ebddf5c1df5818767a3a05ea197ac0adc73d2c90fdb3d79c4f7518743c47f9b",
+      "path": "FullStyle-Frontend/src/features/appointments/components/AppoinmentConfirmation.tsx"
+    },
+    {
+      "sha256": "3f649440091abea45c7735c7d21234e9c9471fe3598cf2f2535469a9f8c1651a",
+      "path": "FullStyle-Frontend/src/features/appointments/components/ScheduleService.tsx"
+    },
+    {
+      "sha256": "eab1c93a51b333b21c0470844a07522f09fcae82817dba3a99b6d532b0611ff1",
+      "path": "FullStyle-Frontend/src/features/appointments/components/ServiceCard.tsx"
+    },
+    {
+      "sha256": "8cff6cb18442477371e9cb446598503c23005fe0b79a3275809f96776200ea86",
+      "path": "FullStyle-Frontend/src/features/appointments/components/ServiceResults.tsx"
+    },
+    {
+      "sha256": "87f1b0553b28e41a261ada40af35de3f5ecc06c27336e11cb07c359811297aeb",
+      "path": "FullStyle-Frontend/src/features/appointments/components/ServiceSearch.tsx"
+    },
+    {
+      "sha256": "b4e3d3c79b33fdcabc0317c3d6fbed6ea039b1a783d3ad1b631b2873e5422362",
+      "path": "FullStyle-Frontend/src/features/appointments/components/SiteCard.tsx"
+    },
+    {
+      "sha256": "195f311b539e70d11cf50453c4586c00a3d0598b426f0c7b2e2b2ee38d94c5b4",
+      "path": "FullStyle-Frontend/src/features/appointments/components/SiteResults.tsx"
+    },
+    {
+      "sha256": "a955ceeec041df59b61aecf1bcb4d861dae46518bdde758331bcf6a72044f131",
+      "path": "FullStyle-Frontend/src/features/appointments/components/SiteSearch.tsx"
+    },
+    {
+      "sha256": "2551832abeb3126a291b6a9b8390847964d41e3a97fb827cfb7c5934f36dc892",
+      "path": "FullStyle-Frontend/src/features/appointments/components/WeeklyCalendar.tsx"
+    },
+    {
+      "sha256": "2b5c20b14f7c7917c7c31a883cb82d810494c92b8504c19ea0eda12430dce08c",
+      "path": "FullStyle-Frontend/src/features/appointments/types/constants.ts"
+    },
+    {
+      "sha256": "c3b26b5e0611afab625c49d4d43fc116bcddde4e100fe0a76ea5c173bec7a533",
+      "path": "FullStyle-Frontend/src/features/appointments/types/schemas.ts"
+    },
+    {
+      "sha256": "349ff255cf874aa3e92056f0a9f7882b0cb315337332a9a92536f424678898a5",
+      "path": "FullStyle-Frontend/src/features/appointments/types/types.ts"
+    },
+    {
+      "sha256": "238e555b555f04c2b34d48cb73a334f67d09087f2fe48f56d101e882ac8f575b",
+      "path": "FullStyle-Frontend/src/features/auth/api/authApi.ts"
+    },
+    {
+      "sha256": "db009f1efffcfceae39274fea824a5a2023e0c8aa0957b10234ddc6357c7d11d",
+      "path": "FullStyle-Frontend/src/features/auth/components/LoginForm.tsx"
+    },
+    {
+      "sha256": "0d591b0588330fb36b59e3b818649b7d757612027d837777a5af2499eede536c",
+      "path": "FullStyle-Frontend/src/features/auth/components/RegisterCustomerForm.tsx"
+    },
+    {
+      "sha256": "b5ee207694ef755dc648dcedecced732c5b8c7a9d3def7582db4af554fb81c7c",
+      "path": "FullStyle-Frontend/src/features/auth/components/RegisterOwnerForm.tsx"
+    },
+    {
+      "sha256": "f4f30c3dee20772baf1ec4beac56e3753dbcf79de42cfda483349a013ac9ef7f",
+      "path": "FullStyle-Frontend/src/features/auth/components/ResetPassword.tsx"
+    },
+    {
+      "sha256": "3653d945b50d182b0f96d4f78037657e45ac7a50b92939f37a8579e0a3b5982a",
+      "path": "FullStyle-Frontend/src/features/auth/components/ResetPasswordRequest.tsx"
+    },
+    {
+      "sha256": "3ab4c0046164148f980134364e919ceff501fe74cec55f44d972d8ab9ada9a91",
+      "path": "FullStyle-Frontend/src/features/auth/components/TwoFactorAuth.tsx"
+    },
+    {
+      "sha256": "b18e967f8391bfa219e8047780e0548f7afce25080cf26a012c6a1d8b4571ac5",
+      "path": "FullStyle-Frontend/src/features/auth/types/constants.ts"
+    },
+    {
+      "sha256": "fecb1bc5662c72585d80ad14f181e6f7a3ba59b84bb20c06b664403fb222a625",
+      "path": "FullStyle-Frontend/src/features/auth/types/schemas.ts"
+    },
+    {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "path": "FullStyle-Frontend/src/features/auth/types/types.ts"
+    },
+    {
+      "sha256": "d0d6db7f244694938358c83769628ac227de300b72c479df5461767939e465b1",
+      "path": "FullStyle-Frontend/src/features/business/api/businessApi.ts"
+    },
+    {
+      "sha256": "c8327a57d7c36d70d68c040d494c5804c59c506539c9c265eaea2287e9c2041c",
+      "path": "FullStyle-Frontend/src/features/business/components/DeleteBussines.tsx"
+    },
+    {
+      "sha256": "9eeee27c7340ad9f65767a24f88958d6c5ea157d312e8315a086c509bdddafb7",
+      "path": "FullStyle-Frontend/src/features/business/components/MultiStepRegister.tsx"
+    },
+    {
+      "sha256": "af21a143476ec7f7d5e9061d0a8649d67035d4227d6e41183e5cebd8ce28673b",
+      "path": "FullStyle-Frontend/src/features/business/components/RegisterBusinessForm.tsx"
+    },
+    {
+      "sha256": "bb702dd41c58d72619c7acdff48c7e6ec793d4274e80ec0e05ceea1d816b288d",
+      "path": "FullStyle-Frontend/src/features/business/components/RegisterCategoriesForm.tsx"
+    },
+    {
+      "sha256": "756cdd9f8269204f7304e2433b92632b6a85de17b2a883fcb3c2050a2e86c498",
+      "path": "FullStyle-Frontend/src/features/business/types/constants.ts"
+    },
+    {
+      "sha256": "615f2552f4a98110b030e83ffe964f66ec9d321961ed54160b644540a2f560cb",
+      "path": "FullStyle-Frontend/src/features/business/types/schemas.ts"
+    },
+    {
+      "sha256": "0c211c1338e49f2a010bf102f27f3924d25642182b1f201b0fb9d3cd300b4289",
+      "path": "FullStyle-Frontend/src/features/business/types/types.ts"
+    },
+    {
+      "sha256": "0754deac74b1fdad8fb74a0e3b3b8372fa0347257c14e811f80cf6ece2a7d6d1",
+      "path": "FullStyle-Frontend/src/features/dashboard/api/dashboardApi.ts"
+    },
+    {
+      "sha256": "dc8afd88c95ac4b3e2973ea8b4b281ec444a3cd6294cf5882b4507735f1166fc",
+      "path": "FullStyle-Frontend/src/features/dashboard/components/BookingsChart.tsx"
+    },
+    {
+      "sha256": "41b48b291e25a0a32bbf4d434e38bbce2358b931581941fe514b986190531156",
+      "path": "FullStyle-Frontend/src/features/dashboard/components/Dashboard.tsx"
+    },
+    {
+      "sha256": "7ab6d1846037ae4e664e43264d3041c28ee8328b47f5f67e77bd8670ad2be92c",
+      "path": "FullStyle-Frontend/src/features/dashboard/components/SalesChart.tsx"
+    },
+    {
+      "sha256": "09a145c21f20aaa3fee63743aac9ed4e6226ca2aacf0b1326d3c91545104fcef",
+      "path": "FullStyle-Frontend/src/features/dashboard/components/StatCard.tsx"
+    },
+    {
+      "sha256": "1e2864a4f9f6044df7774a9358cb0387a2da7833d4e899bf8f00e325ff68bade",
+      "path": "FullStyle-Frontend/src/features/dashboard/components/skeletons/ChartSkeleton.tsx"
+    },
+    {
+      "sha256": "396be1fffe8fab2c3d25ca2e7ca7b7112bb494970cda8441c2c206b7db30f7e0",
+      "path": "FullStyle-Frontend/src/features/dashboard/components/skeletons/StatSkeleton.tsx"
+    },
+    {
+      "sha256": "32237c348da0d5409c705efc802fb3399bbb61eeadd9f4affcb13eb90a620ffb",
+      "path": "FullStyle-Frontend/src/features/dashboard/types/types.ts"
+    },
+    {
+      "sha256": "4d9e71e046aa10abb66a4ebb2d438b405c85b13dfa4126a67fd39aab389c15e3",
+      "path": "FullStyle-Frontend/src/features/employees/api/workerApi.ts"
+    },
+    {
+      "sha256": "21f8992d54f58586b6f89bacd1233e37c052bd2e859a1f7d9a704b5eb2123523",
+      "path": "FullStyle-Frontend/src/features/employees/components/AddWorkerDialog.tsx"
+    },
+    {
+      "sha256": "176cbe93a0646ef654e61e095de932d7462c706e903e83e0472870b2d2e664b7",
+      "path": "FullStyle-Frontend/src/features/employees/components/AddWorkerForm.tsx"
+    },
+    {
+      "sha256": "77c37f1a80fef3478eb4957b2e53567d7ece51d169c98fa5422070f7aadb848e",
+      "path": "FullStyle-Frontend/src/features/employees/components/DeleteWorker.tsx"
+    },
+    {
+      "sha256": "18fee553926c972b27e08a5c842ed92c53fa25846cb0566c85a68c918777267d",
+      "path": "FullStyle-Frontend/src/features/employees/components/EditWorker.tsx"
+    },
+    {
+      "sha256": "e8728b0b612e66ccc4dc4d30370d7167abdd156b8a9ef5e1dd0c4fd81c60808e",
+      "path": "FullStyle-Frontend/src/features/employees/components/SelectWorker.tsx"
+    },
+    {
+      "sha256": "560c9a3ef2d3dfdef36588b627de56199a69a80fed98de69f54868b7f71a14e6",
+      "path": "FullStyle-Frontend/src/features/employees/components/WorkerCard.tsx"
+    },
+    {
+      "sha256": "75a71a424b7c8b22ac329260cbd5a84f8d7f10e7c6d546311f2334ba3b490d25",
+      "path": "FullStyle-Frontend/src/features/employees/components/WorkerScheduleForm.tsx"
+    },
+    {
+      "sha256": "a26084abbebc8e2235a9355c44b5fd95fcced5ac245293dcf3b83aae2f2edfc0",
+      "path": "FullStyle-Frontend/src/features/employees/types/constants.ts"
+    },
+    {
+      "sha256": "5719cea26c7f4c5a21fc064bdfdab37dca0f8573c7b23e153fa4157baf7095f5",
+      "path": "FullStyle-Frontend/src/features/employees/types/schemas.ts"
+    },
+    {
+      "sha256": "3732a942f182ec13346828d5c96949d30780c653ba00bb21452b62d9c15dcc73",
+      "path": "FullStyle-Frontend/src/features/employees/types/types.ts"
+    },
+    {
+      "sha256": "95ab364b684fa02b92547bdd973c7416f85a9fe87023f49ebd82f4d6f84abf83",
+      "path": "FullStyle-Frontend/src/features/plans/components/CardPlans.tsx"
+    },
+    {
+      "sha256": "6500aa7b1faf898881224668cb5ad33df89debc5c67711a5722a3e09aa56e147",
+      "path": "FullStyle-Frontend/src/features/plans/components/CheckoutDialog.tsx"
+    },
+    {
+      "sha256": "44c131be2f0fcdd104aeee24f3041b92ef659c7c1f73b23f101b1561feac635b",
+      "path": "FullStyle-Frontend/src/features/plans/types/types.ts"
+    },
+    {
+      "sha256": "dcee4b68aa2625e785923b7927e2357e853bbeecb0784245cbcebef2bc99b8c1",
+      "path": "FullStyle-Frontend/src/features/profile/api/profileApi.ts"
+    },
+    {
+      "sha256": "c1f2d427bae39cf55aecea093ee20c5418f902f578a93584303b552dadf0d9a8",
+      "path": "FullStyle-Frontend/src/features/profile/components/ProfilePasswordForm.tsx"
+    },
+    {
+      "sha256": "86195d1e88ef849dfb97c3a222fa4e2180a131dcc0f77cecfdb5197926694d2e",
+      "path": "FullStyle-Frontend/src/features/profile/types/schemas.ts"
+    },
+    {
+      "sha256": "ccc0182ac22c7a415974040780a2048e5b5070aab1ff58e72519fcb5d14cffb2",
+      "path": "FullStyle-Frontend/src/features/services/api/servicesApi.ts"
+    },
+    {
+      "sha256": "6c81709fe37c9563417d14588a6a1c0bacf330620ab9873dfc5e710c647d4246",
+      "path": "FullStyle-Frontend/src/features/services/components/AddServiceDialog.tsx"
+    },
+    {
+      "sha256": "19ba9e62e09da4d42133f33b50afe8889ce4805616c6b9de5a37d2e50726883f",
+      "path": "FullStyle-Frontend/src/features/services/components/EditServiceForm.tsx"
+    },
+    {
+      "sha256": "0ddb6e5a7e8cabbca62d12f57e9c296994d9f8162781db52c46b850a1e1d112c",
+      "path": "FullStyle-Frontend/src/features/services/components/RegisterServicesForm.tsx"
+    },
+    {
+      "sha256": "a25338820e49b6bd1dfabfaf5a5945f106338c0b2990ea1e7c2f0cd6e3e781ba",
+      "path": "FullStyle-Frontend/src/features/services/components/ServiceList.tsx"
+    },
+    {
+      "sha256": "414aac5dba4e48f97777e28c9d8ca34b704c7e07f88424dfa6a6a9b369e499fc",
+      "path": "FullStyle-Frontend/src/features/services/components/ServicesSection.tsx"
+    },
+    {
+      "sha256": "cd74fbfa5e08db0f55f365bcfb334d196aa4e531e9622b50cc584b22aabb164b",
+      "path": "FullStyle-Frontend/src/features/services/types/constants.tsx"
+    },
+    {
+      "sha256": "6399473fc2babee9a0f79c8c0513e218554b67b28334458c49e85667aad748b5",
+      "path": "FullStyle-Frontend/src/features/services/types/schemas.ts"
+    },
+    {
+      "sha256": "f28bd2256290bdb9d6afd1f99a2e395dbe4c1c5d966822c566d44d17b50e2723",
+      "path": "FullStyle-Frontend/src/features/services/types/types.ts"
+    },
+    {
+      "sha256": "28d92b6e1501812b7c0d2d0a1707edf69bd49e1f917e81cf55f45c87e9881245",
+      "path": "FullStyle-Frontend/src/features/shared/components/EmptyState.tsx"
+    },
+    {
+      "sha256": "7e1bc45edbdc3bf728d866c45b770f43147b3f7481197bf55885e2adddeebc0b",
+      "path": "FullStyle-Frontend/src/features/shared/components/LoadingSpinner.tsx"
+    },
+    {
+      "sha256": "3719920913097049ecd4a15728dcbe29edee22b8d3eefcaf18262e474a897e49",
+      "path": "FullStyle-Frontend/src/features/shared/components/form.tsx"
+    },
+    {
+      "sha256": "5fb6053ddab09c08d45e846275114b8c558a0430252b3eb5ed7e57bbd7074bb9",
+      "path": "FullStyle-Frontend/src/hooks/use-mobile.tsx"
+    },
+    {
+      "sha256": "ab9f92344b53d95af24bc382a9908bdc5f95c03fc76ec6b1ac2deecac1ffa9fa",
+      "path": "FullStyle-Frontend/src/hooks/use-toast.ts"
+    },
+    {
+      "sha256": "76db4720b8835194b5bb3c6e4f1049914e39a24121dee582eca62039c8c16dfb",
+      "path": "FullStyle-Frontend/src/lib/utils.ts"
+    },
+    {
+      "sha256": "59eba33f062cbc8739a3f6de668c8edc2971c1af6a541031c34948fc322d2b05",
+      "path": "FullStyle-Frontend/src/types/constants.ts"
+    },
+    {
+      "sha256": "e75133b0e6d2c733a17e52b4d48fa4a0999e1406f397838a3c69e77d7be23006",
+      "path": "FullStyle-Frontend/src/types/contact.template.ts"
+    },
+    {
+      "sha256": "ddb773e97e98b5d891a8f0404888ebad93b6876775fcd0ca7c51018eb8d28d77",
+      "path": "FullStyle-Frontend/src/types/next-auth.d.ts"
+    },
+    {
+      "sha256": "eab3a450e95ec20b55a3f90dfe72405e2f04f462cb1fd3d89964a3af10ca0661",
+      "path": "FullStyle-Frontend/src/types/reset-password.template.ts"
+    },
+    {
+      "sha256": "9eebca5779e88e0c3d475fd977058b74b95b4209a0142f0c29991d103ad30cb7",
+      "path": "FullStyle-Frontend/src/utils/apiClient.ts"
+    },
+    {
+      "sha256": "faed2d31dd5b80d449f79c9d9efecde2fb0c39ce7630a9f42af78eab9d742cd3",
+      "path": "FullStyle-Frontend/src/utils/authOptions.ts"
+    },
+    {
+      "sha256": "4da6454ad5f6b0167acbf462db3584f55ed1137bc1d00c4dd5b3e30baf1e30b2",
+      "path": "FullStyle-Frontend/src/utils/formUtils.ts"
+    },
+    {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "path": "FullStyle-Frontend/src/utils/graphqlClient.ts"
+    },
+    {
+      "sha256": "40b6a75722a8b6e6c06b329bc2a1be4d365d53eaf30951421502d1d8bc8016b6",
+      "path": "FullStyle-Frontend/src/utils/imagesUpload.ts"
+    },
+    {
+      "sha256": "8706664db374ad431f492d40a09d70aafd0c1506bdf58724c6dd693e49de2122",
+      "path": "FullStyle-Frontend/src/utils/localMedia.ts"
+    },
+    {
+      "sha256": "9a50b6ae0318c662fce07bf2f81a581a512ae8e0db5c17c36f106e84bb591730",
+      "path": "FullStyle-Frontend/src/utils/operationContracts.ts"
+    },
+    {
+      "sha256": "0fa527aff5b4935735ae2ca28769ce969118a2056fbe1f0ef1d7db4f05a607fd",
+      "path": "FullStyle-Frontend/src/utils/providerBoundary.ts"
+    },
+    {
+      "sha256": "db2b5bb0d4bd4d660f622939d6d1079fce0d23575f7387058a9d4d1b035b3580",
+      "path": "FullStyle-Frontend/src/utils/servicesUtils.ts"
+    },
+    {
+      "sha256": "e62e2e0c5b8dbde9a16021b1d238c323aef8d0e2d0f38471523a06ad8262ecb1",
+      "path": "FullStyle-Frontend/src/utils/sessionOptions.ts"
+    },
+    {
+      "sha256": "91013172cfddb3990c3ac1d69f9fd384139b8c9e6a999243df4d4c61fc2a3d2c",
+      "path": "FullStyle-Frontend/src/utils/wompiEvent.ts"
+    },
+    {
+      "sha256": "14683f22aa5235626fb9fb11e18820a5d0e031170521d0c4dc92cb572c9c7426",
+      "path": "FullStyle-Frontend/tests/provider-contracts.cjs"
+    },
+    {
+      "sha256": "9b63b2ddd471e48ea8b2911cf23bdb50deedd584522b564f29381211e709684c",
+      "path": "FullStyle-ReverseProxy/.gitignore"
+    },
+    {
+      "sha256": "0ac48535aebd106d142e696e788202c2aa1c8c7617aca2faaf07f06171dd2590",
+      "path": "FullStyle-ReverseProxy/Dockerfile"
+    },
+    {
+      "sha256": "5b6a99287ac8043d1575fb70c462ea5fa594e1f66f6d7fed6b9be2fb0c494520",
+      "path": "FullStyle-ReverseProxy/LICENSE"
+    },
+    {
+      "sha256": "e4f4b8823503a8399f970ba59c5d1b1de5b9e02e8e43cc9eebdb87c0291575be",
+      "path": "FullStyle-ReverseProxy/README.md"
+    },
+    {
+      "sha256": "1ee28cbf1fa450557e86b0f99ce6906d5f5ee315885e542536ca75d2537d55ee",
+      "path": "FullStyle-ReverseProxy/nginx-lb-basic.conf"
+    },
+    {
+      "sha256": "377cfe619f352ea6148d0fee1ee12c69ada3f9e3239e8e44e398815cafd0610e",
+      "path": "FullStyle-ReverseProxy/nginx.conf"
+    },
+    {
+      "sha256": "2c33fc4a0c459c1cd4af6706c5ae80ffbf279423d04ec343b9b6b66ab54d40bd",
+      "path": "FullStyle-ReverseProxy/ssl/fullstyle.crt"
+    },
+    {
+      "sha256": "f06c2aeeecd0973e64a2f5e4000558f8432ecd155664c2684d0f1fcc3033113c",
+      "path": "docker/Auth.Dockerfile"
+    },
+    {
+      "sha256": "7d8f1c3f96a5f7e9c1fbb75fe1391c2fdff0d2f14be84a47c3116f2dec1d7396",
+      "path": "docker/Backend.Dockerfile"
+    },
+    {
+      "sha256": "ceef5c6cc1b9dd1911d6ebe2986e48cff89973df16052231cb53114bccef5356",
+      "path": "docker/Chatbot.Dockerfile"
+    },
+    {
+      "sha256": "949f8dd3ed8474aec79182929806c91668569c9051bb34e1fd4f821935052762",
+      "path": "docker/Email.Dockerfile"
+    },
+    {
+      "sha256": "cdec07859f4cafe6f42f7561a3ee0bda3c913979eb2185dbe31442985cbef600",
+      "path": "docker/Firebase.Dockerfile"
+    },
+    {
+      "sha256": "780e95f240baf2976d80d6d51155e3acbfe3c549e81efac31358c73513295cd1",
+      "path": "docker/Frontend.Dockerfile"
+    },
+    {
+      "sha256": "809e87761cb6b845667870ed994e3afb9bccc849198f3c18d81721bf787434cb",
+      "path": "docker/Gateway.Dockerfile"
+    },
+    {
+      "sha256": "54aa7343cbc6590d069dd676372fe551b2ccb2fc4e6dc3c771a74761e9ddef5c",
+      "path": "docker/Proxy.Dockerfile"
+    },
+    {
+      "sha256": "a875067c8e77c82c6bfe89053c6cd7b2156c0309129e2138a1fb63d50fd98c38",
+      "path": "docker/firebase.json"
+    },
+    {
+      "sha256": "f9bbabefb354ee62a7c8f69f86399a03f2a52157ebdecdc8f37b7ec18f4ac0bf",
+      "path": "docker/firestore.rules"
+    },
+    {
+      "sha256": "e905a81969e98674cd7d17bbe55e064358b9a399e901ac5f06782e29ab601fd5",
+      "path": "docker/local-contract.json"
+    },
+    {
+      "sha256": "3cf3fabf6371364085b4d4e8aba51c03891a64220fe37edf7f1ed04fcf47ee2d",
+      "path": "tests/phase3/test_runtime.py"
+    },
+    {
+      "sha256": "ed1e00f30708c05a41b89561685d9a36627d5a1debfa4ed338041ec5e13362e2",
+      "path": "tests/phase4/test_consistency.py"
+    },
+    {
+      "sha256": "e954d1d539d927ffade54c9d781f2a809f9d67f2de089a6d84800f3fe91f5c3c",
+      "path": "tests/phase5/chat_replica.py"
+    },
+    {
+      "sha256": "691ef93cd3c7d2c025207c920d349554dfde47713fac1364a31a281029e14c10",
+      "path": "tests/phase5/check_network.py"
+    },
+    {
+      "sha256": "ee23e0d671804dfe173e96bcca7c8bae1837c7df93928b093a3676ea158a8892",
+      "path": "tests/phase5/fixture.py"
+    },
+    {
+      "sha256": "039323d8e50c2f997592b9b285aab406673f07873696adbeaca4b6aef0391270",
+      "path": "tests/phase5/test_http_retry.py"
+    },
+    {
+      "sha256": "60c64238f09786fa38b044d9d838a6596996b9d1c3f277441aeb70647041da67",
+      "path": "tests/phase5/test_mail.py"
+    },
+    {
+      "sha256": "6d875b618e8ec72c130256223c0fef89ab561ce0127d19c676b6827189b47194",
+      "path": "tests/phase6/benchmark.py"
+    },
+    {
+      "sha256": "dab0432a2cb3f3bce10b610b94a6aac4590b938c94d5a485ffa4371f4d56fc19",
+      "path": "tests/phase6/contracts.py"
+    },
+    {
+      "sha256": "1bc3540ae87d13df3802efb023eecb765fbdd8504ddf53fba6d15eb9e0b15105",
+      "path": "tests/phase6/firebase_backup_probe.py"
+    },
+    {
+      "sha256": "dcdbe9df0063a6069415e9151d0bf09815266d2650a2842255a347683ea29efa",
+      "path": "tests/phase6/local-budgets.json"
+    },
+    {
+      "sha256": "d2c53dcf4eb794d863e3679acd06bcdedc0e4f2ee02cb93395d7ea9eba556134",
+      "path": "tests/phase7/browser.cjs"
+    },
+    {
+      "sha256": "f2be45573f7c0f799e16fb80123cd59edee9afbffb7bc2f3578fe013a6a35856",
+      "path": "tests/phase7/package-lock.json"
+    },
+    {
+      "sha256": "74f2b0218e566f1603efd78db95aba89aa2e9f221f598af3ee7e3341d83d7d19",
+      "path": "tests/phase7/package.json"
+    },
+    {
+      "sha256": "34f959a1e15fb31f390c9028e8a9b3fbe900c4570d080f825d938abcf53dfb55",
+      "path": "tests/security/Dockerfile"
+    },
+    {
+      "sha256": "bf79f701f83710f5811e63ed94201e1bb40c306e624b7fd922c911a260baf1e1",
+      "path": "tests/security/requirements.lock"
+    },
+    {
+      "sha256": "db3bc73abc43a14ac50dd89201800e86f229cb5cad7a6da79d03210a7dc56575",
+      "path": "tests/security/requirements.txt"
+    },
+    {
+      "sha256": "276b9423ec9f442d22add51149f5f2728709ee0e61a6271d28d1196e46f5953c",
+      "path": "tests/security/test_delegation.py"
+    },
+    {
+      "sha256": "c691acdee536fa3d211434ce8796d93efb6018e92de598fac0215b9f5c3f9070",
+      "path": "tests/security/test_resources.py"
+    },
+    {
+      "sha256": "2550d8e23135e1e966974b0475772dfe6cf0e463a35f714959decb1ec261abf5",
+      "path": "docker-compose.yaml"
+    },
+    {
+      "sha256": "36f45aa12099025e8b96d6303eaa58bf9dd2a19e98230032d33b549a683183d4",
+      "path": "compose.local.yaml"
+    },
+    {
+      "sha256": "09058c2273caa7a867ec332492e0c268d7a08899e43f4253872e0b96337c06a6",
+      "path": ".dockerignore"
+    },
+    {
+      "sha256": "ed728d6d4f296ca1adc7106f18aac06694830fbc3e163653115f3216790524cf",
+      "path": "pyproject.toml"
+    },
+    {
+      "sha256": "961e237d04fba3880201dd0c5aa1f518af2c9600e6b8ef2432d0b2bdad0dbb97",
+      "path": "requirements-quality.txt"
+    },
+    {
+      "sha256": "9d0b3647128acee92eebb04f523071ceafcbe81d34d8d0d45ddc088c38a12a7b",
+      "path": "scripts/audit_dependencies.py"
+    },
+    {
+      "sha256": "40a4c616ecfe66c6b4aeca2a07e1c28d84e6a93b3b26d44c1d0a8dc6aa9602c5",
+      "path": "scripts/backup_firebase_local.py"
+    },
+    {
+      "sha256": "e691777bd83b3efb3bd4799d66c661c5c386b2e24767ed9e18e9dc2083594f8b",
+      "path": "scripts/backup_local.py"
+    },
+    {
+      "sha256": "389b249839dbaebd5df4a30c54395b51b60a405264d8a0d288f1d43547cea1fc",
+      "path": "scripts/check_isolation.py"
+    },
+    {
+      "sha256": "1e3f2aab82be369e2863edb26aa95961814dd378740872e9d81189a826567c86",
+      "path": "scripts/check_local_stack.py"
+    },
+    {
+      "sha256": "248bd01f7f02e0bf737c855f95839d4a3ddca0925e02b423614cf74d21dee294",
+      "path": "scripts/ci.py"
+    },
+    {
+      "sha256": "ce3e7d45ff8c4fd7f7ac839b363fad15243ac092871fbd7e05d3565837ff514a",
+      "path": "scripts/observe_local.py"
+    },
+    {
+      "sha256": "071291338659f61490102e6f95147160bbd277c063681386d5bd93071c541f05",
+      "path": "scripts/prove_contract_regression.py"
+    },
+    {
+      "sha256": "2447495df4f470473477f8cc6af0e31660b965018e5ce8a6419655e48a2be34a",
+      "path": "scripts/quality.py"
+    },
+    {
+      "sha256": "4eb4f24fc9c0db6e9678588a947f2283b90f978260ac4901c04eeac1c726c530",
+      "path": "scripts/release_gate.py"
+    },
+    {
+      "sha256": "922cb44538428cb399ae540491e682c0276f40c2c2a6e72e12e326c85e4e481f",
+      "path": "scripts/reproduce_clean.py"
+    },
+    {
+      "sha256": "f628ba4cf827e10e4d5bc4dd4103ac46ec98cb86d0427ddf37e7ea1b83a66955",
+      "path": "scripts/run_browser_smoke.py"
+    },
+    {
+      "sha256": "257b71c3c19147dfc64f9c7d87260934cccdac26b5c014b31bc41095b61b4231",
+      "path": "scripts/run_go_integration.py"
+    },
+    {
+      "sha256": "6468bc4d2c7b5a4efbd942a0e6acc3d463016b760cb45d750cb7c8e5e2b83c45",
+      "path": "scripts/run_phase3.py"
+    },
+    {
+      "sha256": "6c99e1f05b8d5ce6f0a8a6d31b6f3e11ae3658549995f090b5fd2e5972fbf527",
+      "path": "scripts/run_phase4.py"
+    },
+    {
+      "sha256": "625253a9e30bf648195be39e8378a73f56d18023792e2d1114a38b74551e6c99",
+      "path": "scripts/run_phase5.py"
+    },
+    {
+      "sha256": "41543b4f52728be63b328b5e373d90ba7297f56fb340e23d57381ae64da8205c",
+      "path": "scripts/run_phase6.py"
+    },
+    {
+      "sha256": "879082ff5e04cceba7366a22c3cf2613b0cf70413f64fd665c798e1d9afe2608",
+      "path": "scripts/run_security_tests.py"
+    },
+    {
+      "sha256": "d8c32de952c7bc8b15992044e2a5d7ff1118c349780adc4c11ce810d345ee858",
+      "path": "scripts/start_local.py"
+    },
+    {
+      "sha256": "88608814c17fae9a6f59b3c4a79dca078cbf4520875b38e9278687cb69463a17",
+      "path": "scripts/test_isolation.py"
+    },
+    {
+      "sha256": "d1db73497f702b2781c77359b87c3d59b49a2012c2151df04ae22609cddd2eca",
+      "path": "scripts/test_local_stack.py"
+    }
+  ]
+}

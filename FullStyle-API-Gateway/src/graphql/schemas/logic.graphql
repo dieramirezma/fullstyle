@@ -1,0 +1,155 @@
+type GenericResponse {
+  status: Boolean!
+  message: String
+}
+
+type User {
+  id: Int!
+  name: String!
+  email: String!
+  active: Boolean!
+}
+
+type ManagerSubscription {
+  id: Int!
+  subscriptionactive: Boolean!
+  subscriptionstartdate: String!
+  subscriptiontype: String!
+  subscriptionfinishdate: String!
+}
+
+type Appointment {
+  id: Int!
+  appointmenttime: String!
+  status: String
+  worker_id: Int
+  site_id: Int
+  service_id: Int
+  client_id: Int
+}
+
+type Payment {
+  message: String
+  id: Int
+  timestamp: String
+  amount: Int
+  paymentmethod: String
+  status: String
+  appointment_id: Int
+  reference: String
+  currency: String
+  amount_in_cents: Float
+}
+
+type Site {
+  id: Int!
+  name: String!
+  address: String!
+  phone: Int!
+  manager_id: Int!
+}
+
+type Worker {
+  id: Int!
+  user_id: Int!
+  site_id: Int!
+}
+
+type Service {
+  id: Int!
+  name: String!
+  category_id: Int!
+}
+
+type Detail {
+  # Generic object
+  data: JSON
+}
+
+scalar JSON
+
+type Query {
+  getUser(id: Int!): User!
+  deleteUser(id: Int!): GenericResponse!
+
+  getAppointments(
+    id: Int
+    status: String
+    worker_id: Int
+    site_id: Int
+    service_id: Int
+    client_id: Int
+  ): [Appointment]!
+
+  getAppointmentDetails(
+    id: Int
+    worker_id: Int
+    site_id: Int
+    service_id: Int
+    status: String
+    client_id: Int
+  ): [Appointment]!
+
+  getSiteAppointmentsStatistics(
+    site_id: Int
+    period: String
+    count_periods: Int
+  ): [JSON]!
+
+  getSites(
+    id: Int
+    name: String
+    address: String
+    manager_id: Int
+    category_id: Int
+    service_id: Int
+  ): [Site]!
+
+  getWorkers(id: Int, name: String, site_id: Int, service_id: Int): [Worker]!
+
+  getWorkerWeeklySchedule(worker_id: Int!): JSON!
+
+  getServices(id: Int, name: String, category_id: Int): [Service]!
+
+  getDetails(
+    site_id: Int
+    service_id: Int
+    name: String
+    price: Int
+    category_id: Int
+  ): [Detail]!
+}
+
+type Mutation {
+  updateSubscription(
+    id: Int!
+    subscriptionactive: Boolean!
+    subscriptionstartdate: String
+    subscriptiontype: String
+    subscriptionfinishdate: String
+  ): ManagerSubscription!
+
+  createAppointment(input: AppointmentInput!): GenericResponse!
+  deleteAppointment(id: Int!): GenericResponse!
+
+  createPayment(input: PaymentInput!): Payment!
+
+  # Add other mutations: createSite, updateSite etc. if needed
+}
+
+input AppointmentInput {
+  appointmenttime: String!
+  status: String
+  worker_id: Int!
+  site_id: Int!
+  service_id: Int!
+  client_id: Int!
+  request: Boolean
+}
+
+input PaymentInput {
+  amount: Int
+  paymentmethod: String
+  status: String
+  appointment_id: Int
+}

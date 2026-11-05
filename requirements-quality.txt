@@ -1,0 +1,5 @@
+# Local validation, encrypted backup and focused static typing tooling.
+ruff==0.14.3
+cryptography==50.0.2
+mypy==1.19.1
+pip-audit==2.9.0

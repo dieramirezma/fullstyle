@@ -1,0 +1,22 @@
+{
+  "services": [
+    {
+      "id": "1",
+      "title": "Corte de Cabello",
+      "description": "Servicio profesional de corte y estilo para todo tipo de cabello",
+      "imageUrl": "assets/images/image3.jpg"
+    },
+    {
+      "id": "2",
+      "title": "Manicure & Pedicure",
+      "description": "Cuidado completo para tus manos y pies con los mejores productos",
+      "imageUrl": "assets/images/image2.jpg"
+    },
+    {
+      "id": "3",
+      "title": "Tratamientos Faciales",
+      "description": "Rejuvenece tu piel con los mejores tratamientos especializados",
+      "imageUrl": "assets/images/image1.jpg"
+    }
+  ]
+}

@@ -1,0 +1,537 @@
+{
+  "name": "fullstyle-portfolio",
+  "services": {
+    "postgres": {
+      "image": "postgres:16-alpine",
+      "environment": {
+        "POSTGRES_DB": "fullstyle_synthetic",
+        "POSTGRES_USER": "synthetic",
+        "POSTGRES_PASSWORD": "local-synthetic-only"
+      },
+      "ports": [
+        "127.0.0.1:35432:5432"
+      ],
+      "volumes": [
+        "postgres_synthetic:/var/lib/postgresql/data"
+      ],
+      "networks": [
+        "sandbox"
+      ],
+      "healthcheck": {
+        "test": [
+          "CMD-SHELL",
+          "pg_isready -U synthetic -d fullstyle_synthetic"
+        ],
+        "interval": "5s",
+        "timeout": "3s",
+        "retries": 10
+      }
+    },
+    "redis": {
+      "image": "redis:7-alpine",
+      "volumes": [
+        "redis_synthetic:/data"
+      ],
+      "ports": [
+        "127.0.0.1:36379:6379"
+      ],
+      "networks": [
+        "sandbox"
+      ],
+      "healthcheck": {
+        "test": [
+          "CMD",
+          "redis-cli",
+          "ping"
+        ],
+        "interval": "5s",
+        "timeout": "3s",
+        "retries": 10
+      }
+    },
+    "rabbitmq": {
+      "image": "rabbitmq:3-management",
+      "environment": {
+        "RABBITMQ_DEFAULT_USER": "synthetic",
+        "RABBITMQ_DEFAULT_PASS": "local-synthetic-only"
+      },
+      "ports": [
+        "127.0.0.1:35672:5672",
+        "127.0.0.1:35673:15672"
+      ],
+      "volumes": [
+        "rabbitmq_synthetic:/var/lib/rabbitmq"
+      ],
+      "networks": [
+        "sandbox"
+      ],
+      "healthcheck": {
+        "test": [
+          "CMD",
+          "rabbitmq-diagnostics",
+          "ping"
+        ],
+        "interval": "10s",
+        "timeout": "5s",
+        "retries": 10
+      }
+    },
+    "backend": {
+      "image": "fullstyle-portfolio-backend:phase3",
+      "build": {
+        "context": ".",
+        "dockerfile": "docker/Backend.Dockerfile"
+      },
+      "environment": {
+        "LOCAL_RUNTIME": "true",
+        "HOST": "0.0.0.0",
+        "PORT": "5000",
+        "ENV": "local",
+        "DATABASE_URL": "postgresql://synthetic:local-synthetic-only@postgres/fullstyle_synthetic",
+        "SECRET_KEY": "synthetic-phase3-flask-secret",
+        "JWT_SECRET_KEY": "synthetic-phase3-jwt-signing-key-32bytes-minimum",
+        "INTEGRATION_SECRET": "synthetic-phase3-service-key-separated-from-users",
+        "REDIS_HOST": "redis",
+        "REDIS_PORT": "6379",
+        "APP_WEB_URL": "http://localhost:38080/",
+        "EMAIL_SERVICE_URL": "http://email:5002",
+        "WOMPI_EVENTS_KEY": "synthetic-wompi-events-local-only",
+        "FIREBASE_AUTH_EMULATOR_HOST": "firebase:9099",
+        "GCLOUD_PROJECT": "demo-fullstyle"
+      },
+      "networks": [
+        "sandbox"
+      ],
+      "read_only": true,
+      "tmpfs": [
+        "/tmp"
+      ],
+      "security_opt": [
+        "no-new-privileges:true"
+      ],
+      "depends_on": {
+        "postgres": {
+          "condition": "service_healthy"
+        },
+        "redis": {
+          "condition": "service_healthy"
+        },
+        "db-init": {
+          "condition": "service_completed_successfully"
+        }
+      },
+      "healthcheck": {
+        "test": [
+          "CMD",
+          "python",
+          "-c",
+          "import urllib.request; urllib.request.urlopen('http://127.0.0.1:5000/ready',timeout=3)"
+        ],
+        "interval": "10s",
+        "timeout": "5s",
+        "retries": 12,
+        "start_period": "20s"
+      }
+    },
+    "db-init": {
+      "image": "fullstyle-portfolio-backend:phase3",
+      "build": {
+        "context": ".",
+        "dockerfile": "docker/Backend.Dockerfile"
+      },
+      "environment": {
+        "LOCAL_RUNTIME": "true",
+        "HOST": "0.0.0.0",
+        "PORT": "5000",
+        "ENV": "local",
+        "DATABASE_URL": "postgresql://synthetic:local-synthetic-only@postgres/fullstyle_synthetic",
+        "SECRET_KEY": "synthetic-phase3-flask-secret",
+        "JWT_SECRET_KEY": "synthetic-phase3-jwt-signing-key-32bytes-minimum",
+        "INTEGRATION_SECRET": "synthetic-phase3-service-key-separated-from-users",
+        "REDIS_HOST": "redis",
+        "REDIS_PORT": "6379",
+        "APP_WEB_URL": "http://localhost:38080/",
+        "EMAIL_SERVICE_URL": "http://email:5002",
+        "WOMPI_EVENTS_KEY": "synthetic-wompi-events-local-only",
+        "FIREBASE_AUTH_EMULATOR_HOST": "firebase:9099",
+        "GCLOUD_PROJECT": "demo-fullstyle"
+      },
+      "networks": [
+        "sandbox"
+      ],
+      "read_only": true,
+      "tmpfs": [
+        "/tmp"
+      ],
+      "security_opt": [
+        "no-new-privileges:true"
+      ],
+      "depends_on": {
+        "postgres": {
+          "condition": "service_healthy"
+        },
+        "redis": {
+          "condition": "service_healthy"
+        }
+      },
+      "command": [
+        "python",
+        "init_local.py"
+      ]
+    },
+    "auth": {
+      "image": "fullstyle-portfolio-auth:phase3",
+      "build": {
+        "context": ".",
+        "dockerfile": "docker/Auth.Dockerfile"
+      },
+      "environment": {
+        "DATABASE_URL": "postgresql://synthetic:local-synthetic-only@postgres/fullstyle_synthetic",
+        "JWT_SECRET_KEY": "synthetic-phase3-jwt-signing-key-32bytes-minimum",
+        "PORT": "5001",
+        "GIN_MODE": "release"
+      },
+      "networks": [
+        "sandbox"
+      ],
+      "read_only": true,
+      "tmpfs": [
+        "/tmp"
+      ],
+      "security_opt": [
+        "no-new-privileges:true"
+      ],
+      "depends_on": {
+        "backend": {
+          "condition": "service_healthy"
+        }
+      },
+      "healthcheck": {
+        "test": [
+          "CMD",
+          "/auth",
+          "--healthcheck"
+        ],
+        "interval": "10s",
+        "timeout": "5s",
+        "retries": 12
+      }
+    },
+    "chatbot": {
+      "image": "fullstyle-portfolio-chatbot:phase3",
+      "build": {
+        "context": ".",
+        "dockerfile": "docker/Chatbot.Dockerfile"
+      },
+      "environment": {
+        "LOCAL_RUNTIME": "true",
+        "CHAT_MODE": "local",
+        "API_BASE_URL": "http://backend:5000",
+        "DATABASE_URL": "postgresql://synthetic:local-synthetic-only@postgres/fullstyle_synthetic"
+      },
+      "networks": [
+        "sandbox"
+      ],
+      "read_only": true,
+      "tmpfs": [
+        "/tmp"
+      ],
+      "security_opt": [
+        "no-new-privileges:true"
+      ],
+      "depends_on": {
+        "backend": {
+          "condition": "service_healthy"
+        },
+        "db-init": {
+          "condition": "service_completed_successfully"
+        }
+      },
+      "healthcheck": {
+        "test": [
+          "CMD",
+          "python",
+          "-c",
+          "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8080/health',timeout=3)"
+        ],
+        "interval": "10s",
+        "timeout": "5s",
+        "retries": 12,
+        "start_period": "20s"
+      }
+    },
+    "email": {
+      "image": "fullstyle-portfolio-email:phase3",
+      "build": {
+        "context": ".",
+        "dockerfile": "docker/Email.Dockerfile"
+      },
+      "environment": {
+        "LOCAL_RUNTIME": "true",
+        "DELIVERY_MODE": "local",
+        "INTEGRATION_SECRET": "synthetic-phase3-service-key-separated-from-users",
+        "RABBITMQ_URL": "amqp://synthetic:local-synthetic-only@rabbitmq:5672/%2F",
+        "DATABASE_URL": "postgresql://synthetic:local-synthetic-only@postgres/fullstyle_synthetic"
+      },
+      "networks": [
+        "sandbox"
+      ],
+      "read_only": true,
+      "tmpfs": [
+        "/tmp"
+      ],
+      "security_opt": [
+        "no-new-privileges:true"
+      ],
+      "depends_on": {
+        "rabbitmq": {
+          "condition": "service_healthy"
+        },
+        "redis": {
+          "condition": "service_healthy"
+        },
+        "db-init": {
+          "condition": "service_completed_successfully"
+        }
+      },
+      "healthcheck": {
+        "test": [
+          "CMD",
+          "python",
+          "-c",
+          "import urllib.request; urllib.request.urlopen('http://127.0.0.1:5002/ready',timeout=3)"
+        ],
+        "interval": "10s",
+        "timeout": "5s",
+        "retries": 12,
+        "start_period": "20s"
+      }
+    },
+    "email-worker": {
+      "image": "fullstyle-portfolio-email:phase3",
+      "build": {
+        "context": ".",
+        "dockerfile": "docker/Email.Dockerfile"
+      },
+      "environment": {
+        "LOCAL_RUNTIME": "true",
+        "DELIVERY_MODE": "local",
+        "INTEGRATION_SECRET": "synthetic-phase3-service-key-separated-from-users",
+        "RABBITMQ_URL": "amqp://synthetic:local-synthetic-only@rabbitmq:5672/%2F",
+        "DATABASE_URL": "postgresql://synthetic:local-synthetic-only@postgres/fullstyle_synthetic"
+      },
+      "networks": [
+        "sandbox"
+      ],
+      "read_only": true,
+      "tmpfs": [
+        "/tmp"
+      ],
+      "security_opt": [
+        "no-new-privileges:true"
+      ],
+      "depends_on": {
+        "email": {
+          "condition": "service_healthy"
+        },
+        "db-init": {
+          "condition": "service_completed_successfully"
+        }
+      },
+      "command": [
+        "python",
+        "workers/email_worker.py"
+      ]
+    },
+    "gateway": {
+      "image": "fullstyle-portfolio-gateway:phase3",
+      "build": {
+        "context": ".",
+        "dockerfile": "docker/Gateway.Dockerfile"
+      },
+      "environment": {
+        "AUTH_BASE_URL": "http://auth:5001/api",
+        "LOGIC_BASE_URL": "http://backend:5000/api",
+        "CHAT_BASE_URL": "http://chatbot:8080/api/v1"
+      },
+      "networks": [
+        "sandbox"
+      ],
+      "read_only": true,
+      "tmpfs": [
+        "/tmp"
+      ],
+      "security_opt": [
+        "no-new-privileges:true"
+      ],
+      "depends_on": {
+        "auth": {
+          "condition": "service_healthy"
+        },
+        "backend": {
+          "condition": "service_healthy"
+        },
+        "chatbot": {
+          "condition": "service_healthy"
+        }
+      },
+      "healthcheck": {
+        "test": [
+          "CMD",
+          "node",
+          "-e",
+          "fetch('http://127.0.0.1:4000/',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({query:'{__typename}'})}).then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))"
+        ],
+        "interval": "10s",
+        "timeout": "5s",
+        "retries": 12,
+        "start_period": "20s"
+      }
+    },
+    "frontend": {
+      "image": "fullstyle-portfolio-frontend:phase3",
+      "build": {
+        "context": ".",
+        "dockerfile": "docker/Frontend.Dockerfile"
+      },
+      "environment": {
+        "LOCAL_RUNTIME": "true",
+        "BUSINESS_URL": "http://backend:5000/api",
+        "INTERNAL_GRAPHQL_URL": "http://gateway:4000",
+        "INTERNAL_CHAT_URL": "http://chatbot:8080/api/v1/chat",
+        "NEXTAUTH_URL": "http://localhost:38080",
+        "NEXTAUTH_SECRET": "synthetic-phase3-nextauth-secret-32characters",
+        "INTEGRATION_SECRET": "synthetic-phase3-service-key-separated-from-users",
+        "WOMPI_EVENTS_KEY": "synthetic-wompi-events-local-only",
+        "NEXT_TELEMETRY_DISABLED": "1"
+      },
+      "networks": [
+        "sandbox"
+      ],
+      "read_only": true,
+      "tmpfs": [
+        "/tmp"
+      ],
+      "security_opt": [
+        "no-new-privileges:true"
+      ],
+      "depends_on": {
+        "gateway": {
+          "condition": "service_healthy"
+        },
+        "email": {
+          "condition": "service_healthy"
+        }
+      },
+      "healthcheck": {
+        "test": [
+          "CMD",
+          "node",
+          "-e",
+          "fetch('http://127.0.0.1:3000/api/health').then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))"
+        ],
+        "interval": "10s",
+        "timeout": "5s",
+        "retries": 12,
+        "start_period": "20s"
+      }
+    },
+    "firebase": {
+      "image": "fullstyle-portfolio-firebase:phase3",
+      "build": {
+        "context": ".",
+        "dockerfile": "docker/Firebase.Dockerfile"
+      },
+      "environment": {
+        "GCLOUD_PROJECT": "demo-fullstyle",
+        "FIREBASE_CLI_DISABLE_UPDATE_CHECK": "1",
+        "XDG_CONFIG_HOME": "/tmp/config"
+      },
+      "networks": [
+        "sandbox"
+      ],
+      "read_only": true,
+      "tmpfs": [
+        "/tmp"
+      ],
+      "security_opt": [
+        "no-new-privileges:true"
+      ],
+      "depends_on": {},
+      "working_dir": "/tmp",
+      "command": [
+        "firebase",
+        "emulators:start",
+        "--config",
+        "/emulators/firebase.json",
+        "--only",
+        "auth,firestore",
+        "--project",
+        "demo-fullstyle"
+      ],
+      "healthcheck": {
+        "test": [
+          "CMD",
+          "node",
+          "-e",
+          "Promise.all([fetch('http://127.0.0.1:9099/'),fetch('http://127.0.0.1:8085/')]).catch(()=>process.exit(1))"
+        ],
+        "interval": "10s",
+        "timeout": "5s",
+        "retries": 15,
+        "start_period": "30s"
+      }
+    },
+    "proxy": {
+      "image": "fullstyle-portfolio-proxy:phase3",
+      "build": {
+        "context": ".",
+        "dockerfile": "docker/Proxy.Dockerfile"
+      },
+      "ports": [
+        "127.0.0.1:38080:80"
+      ],
+      "networks": [
+        "sandbox",
+        "ingress"
+      ],
+      "depends_on": {
+        "frontend": {
+          "condition": "service_healthy"
+        },
+        "gateway": {
+          "condition": "service_healthy"
+        },
+        "chatbot": {
+          "condition": "service_healthy"
+        },
+        "firebase": {
+          "condition": "service_healthy"
+        }
+      },
+      "healthcheck": {
+        "test": [
+          "CMD",
+          "wget",
+          "-q",
+          "--spider",
+          "http://127.0.0.1/health"
+        ],
+        "interval": "10s",
+        "timeout": "5s",
+        "retries": 10
+      }
+    }
+  },
+  "volumes": {
+    "redis_synthetic": {},
+    "postgres_synthetic": {},
+    "rabbitmq_synthetic": {}
+  },
+  "networks": {
+    "sandbox": {
+      "internal": true
+    },
+    "ingress": {}
+  }
+}

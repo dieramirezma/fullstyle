@@ -1,0 +1,11 @@
+title = "FullStyle publication checks"
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "Unpublished local tools, dependencies and generated artifacts"
+paths = ['''(^|/)(\.quality|\.venv|node_modules|\.next|\.dart_tool|build|dist|\.git)(/|$)''']
+
+[[allowlists]]
+description = "Explicit synthetic signing keys in isolated regression fixtures"
+regexes = ['''synthetic-go-test-signing-secret-32characters''', '''synthetic-test-secret-with-32-characters''']

@@ -1,0 +1,39 @@
+name: fullstyle_aplication
+description: "A new Flutter project."
+publish_to: "none"
+version: 0.1.0
+
+environment:
+  sdk: ^3.7.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+  firebase_core: ^3.13.1
+  firebase_auth: ^5.5.4
+  cloud_firestore: ^5.6.8
+  provider: ^6.1.2
+  http: ^1.1.0
+  url_launcher: ^6.3.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+  flutter_launcher_icons: ^0.14.4
+
+# Configuración para generar los íconos de la aplicación
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/logo-fullstyle.png"
+  adaptive_icon_background: "#ffffff"
+  adaptive_icon_foreground: "assets/images/logo-fullstyle.png"
+  remove_alpha_ios: true
+  min_sdk_android: 21
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
+    - assets/data/

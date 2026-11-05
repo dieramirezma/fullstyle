@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <div style="
+        font-family: Arial, sans-serif; 
+        max-width: 600px; 
+        margin: 0 auto; 
+        padding: 20px; 
+        border: 1px solid #ddd; 
+        border-radius: 8px; 
+        background-color: #f9f9f9; 
+        text-align: left;">
+
+            <h2 style="color: #28a745; text-align: center">🎉 ¡Bienvenido a FullStyle!</h2>
+            <p>Hola <strong>{{ owner_name }}</strong>,</p>
+            <p>Nos alegra darte la bienvenida a FullStyle. Has completado con éxito el pago de tu suscripción y ahora tu perfil está activo en nuestra plataforma.</p>
+            
+            <div style="background-color: #fff; padding: 15px; border-radius: 8px; border: 1px solid #ddd;">
+                <h3 style="margin-bottom: 5px; color: #28a745;">Detalles de tu Suscripción</h3>
+                
+                <hr style="margin: 10px 0;">
+                
+                <p><strong>📅 Fecha de pago:</strong> {{ payment_date }}</p>
+                <p><strong>📋 Plan seleccionado:</strong> {{ subscription_plan }}</p>
+                <p><strong>📅 Fecha de renovacion:</strong> {{ finish_date }}</p>
+                
+                <hr style="margin: 10px 0;">
+                
+                <p>Puedes gestionar tu negocio desde tu panel de administración:</p>
+                <p style="text-align: center;">
+                    <a href="https://full-style.com/owner" style="display: inline-block; padding: 10px 15px; background-color: #007bff; color: #fff; text-decoration: none; border-radius: 5px; font-weight: bold;">
+                        Ir al Panel de Control
+                    </a>
+                </p>
+            </div>
+            
+            <p style="font-size: 14px; color: #666; margin-top: 20px;">
+                Si tienes alguna pregunta, no dudes en contactarnos.
+            </p>
+            
+            <p style="font-size: 16px; font-weight: bold; color: #007bff; text-align: center;">
+                — El equipo de FullStyle
+            </p>
+        </div>
+    </body>
+</html>

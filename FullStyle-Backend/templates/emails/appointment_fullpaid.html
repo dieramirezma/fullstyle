@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <div style="
+        font-family: Arial, sans-serif;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background-color: #f9f9f9;
+        text-align: left">
+
+        <h2 style="color: #333; text-align: center">Confirmación de tu Cita</h2>
+        <p>Hola <strong>{{customerName}}</strong>,</p>
+        <p>Tu cita ha sido confirmada con éxito. Aquí están los detalles:</p>
+
+        <div style="background-color: #fff; padding: 15px; border-radius: 8px; border: 1px solid #ddd">
+            <h3 style="margin-bottom: 5px; color: #007bff">{{serviceName}}</h3>
+            <p style="font-size: 14px; color: #555">{% if serviceDescription %}{{serviceDescription}}{% else %}Sin descripción{% endif %}</p>
+
+            <hr style="margin: 10px 0" />
+
+            <p><strong>📅 Fecha:</strong> {{appointmentDate}}</p>
+            <p><strong>⏰ Hora:</strong> {{appointmentTime}} hrs</p>
+            <p><strong>👤 Profesional:</strong> {{workerName}}</p>
+            <p><strong>⏳ Duración:</strong> {{serviceDuration}} minutos</p>
+
+            <hr style="margin: 10px 0" />
+
+            <h4 style="margin-bottom: 5px; color: #333">📍 Ubicación</h4>
+            <p>{{siteName}}</p>
+            <p>{{siteAddress}}</p>
+            <p>📞 {{sitePhone}}</p>
+
+        <hr style="margin: 10px 0" />
+
+        <h4 style="margin-bottom: 5px; color: #333">💰 Cantidad pagada</h4>
+        <p style="font-size: 18px; font-weight: bold; color: #007bff">${{servicePrice}}</p>
+      </div>
+
+      <p style="font-size: 14px; color: #666; margin-top: 20px">
+        Si tienes alguna duda, no dudes en contactarnos.
+      </p>
+
+      <p style="font-size: 16px; font-weight: bold; color: #007bff; text-align: center">
+        — El equipo de FullStyle
+      </p>
+    </div>
+    </body>
+</html>

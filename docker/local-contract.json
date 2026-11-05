@@ -1,0 +1,113 @@
+{
+  "environment": {
+    "backend": {
+      "LOCAL_RUNTIME": "true",
+      "HOST": "0.0.0.0",
+      "PORT": "5000",
+      "ENV": "local",
+      "DATABASE_URL": "postgresql://synthetic:local-synthetic-only@postgres/fullstyle_synthetic",
+      "SECRET_KEY": "synthetic-phase3-flask-secret",
+      "JWT_SECRET_KEY": "synthetic-phase3-jwt-signing-key-32bytes-minimum",
+      "INTEGRATION_SECRET": "synthetic-phase3-service-key-separated-from-users",
+      "REDIS_HOST": "redis",
+      "REDIS_PORT": "6379",
+      "APP_WEB_URL": "http://localhost:38080/",
+      "EMAIL_SERVICE_URL": "http://email:5002",
+      "WOMPI_EVENTS_KEY": "synthetic-wompi-events-local-only",
+      "FIREBASE_AUTH_EMULATOR_HOST": "firebase:9099",
+      "GCLOUD_PROJECT": "demo-fullstyle"
+    },
+    "db-init": {
+      "LOCAL_RUNTIME": "true",
+      "HOST": "0.0.0.0",
+      "PORT": "5000",
+      "ENV": "local",
+      "DATABASE_URL": "postgresql://synthetic:local-synthetic-only@postgres/fullstyle_synthetic",
+      "SECRET_KEY": "synthetic-phase3-flask-secret",
+      "JWT_SECRET_KEY": "synthetic-phase3-jwt-signing-key-32bytes-minimum",
+      "INTEGRATION_SECRET": "synthetic-phase3-service-key-separated-from-users",
+      "REDIS_HOST": "redis",
+      "REDIS_PORT": "6379",
+      "APP_WEB_URL": "http://localhost:38080/",
+      "EMAIL_SERVICE_URL": "http://email:5002",
+      "WOMPI_EVENTS_KEY": "synthetic-wompi-events-local-only",
+      "FIREBASE_AUTH_EMULATOR_HOST": "firebase:9099",
+      "GCLOUD_PROJECT": "demo-fullstyle"
+    },
+    "auth": {
+      "DATABASE_URL": "postgresql://synthetic:local-synthetic-only@postgres/fullstyle_synthetic",
+      "JWT_SECRET_KEY": "synthetic-phase3-jwt-signing-key-32bytes-minimum",
+      "PORT": "5001",
+      "GIN_MODE": "release"
+    },
+    "chatbot": {
+      "LOCAL_RUNTIME": "true",
+      "CHAT_MODE": "local",
+      "API_BASE_URL": "http://backend:5000",
+      "DATABASE_URL": "postgresql://synthetic:local-synthetic-only@postgres/fullstyle_synthetic"
+    },
+    "email": {
+      "LOCAL_RUNTIME": "true",
+      "DELIVERY_MODE": "local",
+      "INTEGRATION_SECRET": "synthetic-phase3-service-key-separated-from-users",
+      "RABBITMQ_URL": "amqp://synthetic:local-synthetic-only@rabbitmq:5672/%2F",
+      "DATABASE_URL": "postgresql://synthetic:local-synthetic-only@postgres/fullstyle_synthetic"
+    },
+    "email-worker": {
+      "LOCAL_RUNTIME": "true",
+      "DELIVERY_MODE": "local",
+      "INTEGRATION_SECRET": "synthetic-phase3-service-key-separated-from-users",
+      "RABBITMQ_URL": "amqp://synthetic:local-synthetic-only@rabbitmq:5672/%2F",
+      "DATABASE_URL": "postgresql://synthetic:local-synthetic-only@postgres/fullstyle_synthetic"
+    },
+    "gateway": {
+      "AUTH_BASE_URL": "http://auth:5001/api",
+      "LOGIC_BASE_URL": "http://backend:5000/api",
+      "CHAT_BASE_URL": "http://chatbot:8080/api/v1"
+    },
+    "frontend": {
+      "LOCAL_RUNTIME": "true",
+      "BUSINESS_URL": "http://backend:5000/api",
+      "INTERNAL_GRAPHQL_URL": "http://gateway:4000",
+      "INTERNAL_CHAT_URL": "http://chatbot:8080/api/v1/chat",
+      "NEXTAUTH_URL": "http://localhost:38080",
+      "NEXTAUTH_SECRET": "synthetic-phase3-nextauth-secret-32characters",
+      "INTEGRATION_SECRET": "synthetic-phase3-service-key-separated-from-users",
+      "WOMPI_EVENTS_KEY": "synthetic-wompi-events-local-only",
+      "NEXT_TELEMETRY_DISABLED": "1"
+    },
+    "firebase": {
+      "GCLOUD_PROJECT": "demo-fullstyle",
+      "FIREBASE_CLI_DISABLE_UPDATE_CHECK": "1",
+      "XDG_CONFIG_HOME": "/tmp/config"
+    },
+    "proxy": {}
+  },
+  "commands": {
+    "backend": null,
+    "db-init": [
+      "python",
+      "init_local.py"
+    ],
+    "auth": null,
+    "chatbot": null,
+    "email": null,
+    "email-worker": [
+      "python",
+      "workers/email_worker.py"
+    ],
+    "gateway": null,
+    "frontend": null,
+    "firebase": [
+      "firebase",
+      "emulators:start",
+      "--config",
+      "/emulators/firebase.json",
+      "--only",
+      "auth,firestore",
+      "--project",
+      "demo-fullstyle"
+    ],
+    "proxy": null
+  }
+}

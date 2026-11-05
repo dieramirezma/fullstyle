@@ -1,0 +1,2621 @@
+swagger: '2.0'
+info:
+  title: FullStyle API
+  description: FullStyle endpoints documentation 
+  version: "1.0.0"
+# host: localhost:5000
+basePath: /api
+schemes:
+  - http
+tags:
+  - name: auth
+    description: Autenticación de usuarios
+  - name: users
+    description: Gestión de usuarios
+  - name: sites
+    description: Gestión de sitios
+  - name: services
+    description: Gestión de servicios
+  - name: categories
+    description: Gestión de categorías
+  - name: appointments
+    description: Gestión de citas
+  - name: workers
+    description: Gestión de trabajadores
+  - name: managers
+    description: Gestión de administradores
+  - name: notifications
+    description: Gestión de notificaciones  
+  - name: payment
+    description: Gestión de pagos y estadísticas de pagos
+  - name: detail
+    description: Gestión de servicios
+  - name: availability
+    description: Gestión de disponibilidad
+  - name: days_off
+    description: Gestión de días libres
+
+securityDefinitions:
+  Bearer:
+    type: apiKey
+    name: Authorization
+    in: header
+    description: 'JWT Authorization header using the Bearer scheme. Have to write "Bearer" before token'
+
+paths:
+  /login:
+    post:
+      tags:
+        - auth
+      summary: Iniciar sesión
+      description: Permite a un usuario iniciar sesión
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          description: Credenciales del usuario
+          required: true
+          schema:
+            type: object
+            required:
+              - email
+              - password
+            properties:
+              email:
+                type: string
+                example: usuario@example.com
+              password:
+                type: string
+                example: contraseña123
+      responses:
+        200:
+          description: Inicio de sesión exitoso
+          schema:
+            type: object
+            properties:
+              user:
+                type: object
+              access_token:
+                type: string
+              refresh_token:
+                type: string
+              manager:
+                type: string
+              subscription_active:
+                type: string
+        400:
+          description: Error en la solicitud
+        401:
+          description: Credenciales inválidas
+
+  /register:
+    post:
+      tags:
+        - auth
+      summary: Registrar usuario
+      description: Permite registrar un nuevo usuario en el sistema
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          description: Datos del nuevo usuario
+          required: true
+          schema:
+            type: object
+            required:
+              - name
+              - email
+              - password
+            properties:
+              name:
+                type: string
+                example: Usuario Ejemplo
+              email:
+                type: string
+                example: usuario@example.com
+              password:
+                type: string
+                example: contraseña123
+      responses:
+        201:
+          description: Usuario registrado exitosamente
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+              user:
+                type: object
+        400:
+          description: Error en la solicitud
+        409:
+          description: El correo electrónico ya está registrado
+
+  /manager_register:
+    post:
+      tags:
+        - auth
+      summary: Registrar administrador
+      description: Permite registrar un nuevo administrador en el sistema
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          description: Datos del nuevo administrador
+          required: true
+          schema:
+            type: object
+            required:
+              - name
+              - email
+              - password
+            properties:
+              name:
+                type: string
+                example: Admin Ejemplo
+              email:
+                type: string
+                example: admin@example.com
+              password:
+                type: string
+                example: contraseña123
+      responses:
+        201:
+          description: Administrador registrado exitosamente
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+              user:
+                type: object
+        400:
+          description: Error en la solicitud
+        409:
+          description: El correo electrónico ya está registrado
+
+  /logout:
+    post:
+      tags:
+        - auth
+      summary: Cerrar sesión
+      description: Permite a un usuario cerrar sesión en el sistema
+      security:
+        - Bearer: []
+      responses:
+        200:
+          description: Sesión cerrada exitosamente
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+        401:
+          description: No autorizado
+
+  /register_google:
+    post:
+      tags:
+        - auth
+      summary: Registrar con Google
+      description: Permite registrar un nuevo usuario utilizando la cuenta de Google
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          description: Token de autenticación de Google
+          required: true
+          schema:
+            type: object
+            required:
+              - token
+            properties:
+              token:
+                type: string
+      responses:
+        201:
+          description: Usuario registrado exitosamente
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+              user:
+                type: object
+        400:
+          description: Error en la solicitud
+        409:
+          description: El usuario ya existe
+
+  /login_google:
+    post:
+      tags:
+        - auth
+      summary: Iniciar sesión con Google
+      description: Permite iniciar sesión utilizando la cuenta de Google
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          description: Token de autenticación de Google
+          required: true
+          schema:
+            type: object
+            required:
+              - token
+            properties:
+              token:
+                type: string
+      responses:
+        200:
+          description: Inicio de sesión exitoso
+          schema:
+            type: object
+            properties:
+              access_token:
+                type: string
+              refresh_token:
+                type: string
+              user:
+                type: object
+        400:
+          description: Error en la solicitud
+        401:
+          description: Credenciales inválidas
+
+  /enable-2fa:
+    post:
+      tags:
+        - auth
+      summary: Habilitar autenticación de dos factores
+      description: Permite habilitar la autenticación de dos factores para un usuario
+      security:
+        - Bearer: []
+      responses:
+        200:
+          description: 2FA habilitado exitosamente
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+              secret:
+                type: string
+              uri:
+                type: string
+        401:
+          description: No autorizado
+  /verify-2fa:
+    post:
+      tags:
+        - auth
+      summary: Verificar código de autenticación de dos factores
+      description: Permite verificar un código de autenticación de dos factores
+      security:
+        - Bearer: []
+      parameters:
+        - in: body
+          name: body
+          description: Código de verificación
+          required: true
+          schema:
+            type: object
+            required:
+              - token
+            properties:
+              token:
+                type: string
+                example: '123456'
+      responses:
+        200:
+          description: Código verificado exitosamente
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+        401:
+          description: Código inválido
+
+  # ======= USER ROUTES =======
+  /user/{id}:
+    get:
+      tags:
+        - users
+      summary: Obtener usuario
+      description: Obtiene la información de un usuario específico
+      security:
+        - Bearer: []
+      parameters:
+        - in: path
+          name: id
+          type: integer
+          required: true
+          description: ID del usuario
+      responses:
+        200:
+          description: Información del usuario
+          schema:
+            type: object
+            properties:
+              id:
+                type: integer
+              name:
+                type: string
+              email:
+                type: string
+              active:
+                type: boolean
+        404:
+          description: Usuario no encontrado
+    put:
+      tags:
+        - users
+      summary: Actualizar usuario
+      description: Actualiza la información de un usuario específico
+      security:
+        - Bearer: []
+      parameters:
+        - in: path
+          name: id
+          type: integer
+          required: true
+          description: ID del usuario
+        - in: body
+          name: body
+          description: Nueva información del usuario
+          required: true
+          schema:
+            type: object
+            properties:
+              password:
+                type: string
+      responses:
+        200:
+          description: Usuario actualizado exitosamente
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+        400:
+          description: Error en la solicitud
+        404:
+          description: Usuario no encontrado
+    delete:
+      tags:
+        - users
+      summary: Eliminar usuario
+      description: Elimina a un usuario específico
+      security:
+        - Bearer: []
+      parameters:
+        - in: path
+          name: id
+          type: integer
+          required: true
+          description: ID del usuario
+      responses:
+        200:
+          description: Usuario eliminado exitosamente
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+        400:
+          description: Error en la solicitud
+        404:
+          description: Usuario no encontrado
+
+  /user/reset-password-request:
+    post:
+      tags:
+        - users
+      summary: Solicitar restablecimiento de contraseña
+      description: Envía un correo electrónico con un enlace para restablecer la contraseña
+      parameters:
+        - in: body
+          name: body
+          description: Correo electrónico del usuario
+          required: true
+          schema:
+            type: object
+            required:
+              - email
+            properties:
+              email:
+                type: string
+                example: usuario@example.com
+      responses:
+        200:
+          description: Correo electrónico enviado
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+        404:
+          description: Usuario no encontrado
+
+  /user/reset-password:
+    post:
+      tags:
+        - users
+      summary: Confirmar restablecimiento de contraseña
+      description: Restablece la contraseña del usuario utilizando el token proporcionado
+      parameters:
+        - in: body
+          name: body
+          description: Nueva contraseña y token de restablecimiento
+          required: true
+          schema:
+            type: object
+            required:
+              - token
+              - password
+            properties:
+              token:
+                type: string
+              password:
+                type: string
+                example: nuevaContraseña123
+      responses:
+        200:
+          description: Contraseña restablecida exitosamente
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+        400:
+          description: Error en la solicitud
+        404:
+          description: Token inválido o expirado
+
+  # ======= SITE ROUTES =======
+  /site:
+    get:
+      tags:
+        - sites
+      summary: Obtener sitios
+      description: Obtiene la lista de sitios filtrados por los parámetros proporcionados
+      security:
+        - Bearer: []
+      parameters:
+        - in: query
+          name: id
+          type: integer
+          required: false
+          description: ID del sitio
+        - in: query
+          name: name
+          type: string
+          required: false
+          description: Nombre del sitio
+        - in: query
+          name: address
+          type: string
+          required: false
+          description: Dirección del sitio
+        - in: query
+          name: manager_id
+          type: integer
+          required: false
+          description: ID del administrador del sitio
+        - in: query
+          name: category_id
+          type: integer
+          required: false
+          description: ID de la categoría
+        - in: query
+          name: service_id
+          type: integer
+          required: false
+          description: ID del servicio
+      responses:
+        200:
+          description: Lista de sitios
+          schema:
+            type: array
+            items:
+              type: object
+              properties:
+                id:
+                  type: integer
+                name:
+                  type: string
+                address:
+                  type: string
+                phone:
+                  type: integer
+                manager_id:
+                  type: integer
+        404:
+          description: Sitios no encontrados
+    post:
+      tags:
+        - sites
+      summary: Crear sitio
+      description: Crea un nuevo sitio
+      security:
+        - Bearer: []
+      parameters:
+        - in: body
+          name: body
+          description: Información del sitio
+          required: true
+          schema:
+            type: object
+            required:
+              - name
+              - address
+              - phone
+              - manager_id
+            properties:
+              name:
+                type: string
+                example: Sitio Ejemplo
+              address:
+                type: string
+                example: Dirección Ejemplo
+              phone:
+                type: integer
+                example: 1234567890
+              manager_id:
+                type: integer
+                example: 1
+              category_id:
+                type: integer
+                example: 2
+              service_id:
+                type: integer
+                example: 3
+              photos:
+                type: object
+                properties:
+                  photo1:
+                    type: string
+                  photo2:
+                    type: string
+      responses:
+        201:
+          description: Sitio creado exitosamente
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+              site:
+                type: object
+        400:
+          description: Error en la solicitud
+    put:
+      tags:
+        - sites
+      summary: Actualizar sitio
+      description: Actualiza la información de un sitio existente
+      security:
+        - Bearer: []
+      parameters:
+        - in: query
+          name: id
+          type: integer
+          required: false
+          description: ID del sitio
+        - in: body
+          name: body
+          description: Nueva información del sitio
+          required: true
+          schema:
+            type: object
+            required:
+              - id
+            properties:
+              name:
+                type: string
+              address:
+                type: string
+              phone:
+                type: integer
+              manager_id:
+                type: integer
+              photos:
+                type: object
+                properties:
+                  photo1:
+                    type: string
+                  photo2:
+                    type: string
+      responses:
+        200:
+          description: Sitio actualizado exitosamente
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+              site:
+                type: object        
+        400:
+          description: Error en la solicitud
+        404:
+          description: Sitio no encontrado
+    delete:
+      tags:
+        - sites
+      summary: Eliminar sitio
+      description: Elimina un sitio existente
+      security:
+        - Bearer: []
+      parameters:
+        - in: query
+          name: id
+          type: integer
+          required: false
+          description: ID del sitio
+      responses:
+        200:
+          description: Sitio eliminado exitosamente
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+        400:
+          description: Error en la solicitud
+        404:
+          description: Sitio no encontrado
+  
+  /site_has_category:
+    get:
+      tags:
+        - sites
+      summary: Obtener categorías
+      description: Obtiene la lista de las categorías por sitio
+      security:
+        - Bearer: []
+      responses:
+        200:
+          description: Lista de categorías
+        404:
+          description: Categorías no encontradas
+    post:
+      tags:
+        - sites
+      summary: Obtener categorías
+      description: Obtiene la lista de las categorías por sitio
+      security:
+        - Bearer: []
+      parameters:
+        - in: body
+          name: body
+          description: Información del sitio
+          required: true
+          schema:
+            type: object
+            properties:
+              site_id:
+                type: integer
+              category_id:
+                type: integer
+      responses:
+        200:
+          description: Lista de categorías
+        404:
+          description: Categorías no encontradas    
+          
+  # ======= APPOINTMENT ROUTES =======
+  /appointment:
+    get:
+      tags:
+        - appointments
+      summary: Obtener citas
+      description: Obtiene la lista de citas filtradas por los parámetros proporcionados
+      security:
+        - Bearer: []
+      parameters:
+        - in: query
+          name: id
+          type: integer
+          required: false
+          description: ID de la cita
+        - in: query
+          name: status
+          type: string
+          required: false
+          description: Estado de la cita (pending, confirmed, canceled, completed)
+        - in: query
+          name: worker_id
+          type: integer
+          required: false
+          description: ID del trabajador
+        - in: query
+          name: site_id
+          type: integer
+          required: false
+          description: ID del sitio
+        - in: query
+          name: service_id
+          type: integer
+          required: false
+          description: ID del servicio
+        - in: query
+          name: client_id
+          type: integer
+          required: false
+          description: ID del cliente
+      responses:
+        200:
+          description: Lista de citas
+          schema:
+            type: array
+            items:
+              type: object
+              properties:
+                id:
+                  type: integer
+                appointmenttime:
+                  type: string
+                  format: date-time
+                status:
+                  type: string
+                worker_id:
+                  type: integer
+                site_id:
+                  type: integer
+                service_id:
+                  type: integer
+                client_id:
+                  type: integer
+        404:
+          description: Citas no encontradas
+    post:
+      tags:
+        - appointments
+      summary: Crear cita
+      description: Crea una nueva cita
+      security:
+        - Bearer: []
+      parameters:
+        - in: body
+          name: body
+          description: Información de la cita
+          required: true
+          schema:
+            type: object
+            required:
+              - appointmenttime
+              - worker_id
+              - site_id
+              - service_id
+              - client_id
+            properties:
+              appointmenttime:
+                type: string
+                format: date-time
+                example: "2025-05-20T14:00:00"
+              status:
+                type: string
+                default: pending
+                example: pending
+              worker_id:
+                type: integer
+              site_id:
+                type: integer
+              service_id:
+                type: integer
+              client_id:
+                type: integer
+              request:
+                type: boolean
+                default: false
+      responses:
+        201:
+          description: Cita creada exitosamente
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+              appointment:
+                type: object
+        400:
+          description: Error en la solicitud
+    put:
+      tags:
+        - appointments
+      summary: Actualizar cita
+      description: Actualiza la información de una cita existente
+      security:
+        - Bearer: []
+      parameters:
+        - in: query
+          name: id
+          type: integer
+          required: true
+          description: ID de la cita a eliminar
+        - in: body
+          name: body
+          description: Nueva información de la cita
+          required: true
+          schema:
+            type: object
+            properties:
+              appointmenttime:
+                type: string
+                format: date-time
+              status:
+                type: string
+              worker_id:
+                type: integer
+              site_id:
+                type: integer
+              service_id:
+                type: integer
+              client_id:
+                type: integer
+      responses:
+        200:
+          description: Cita actualizada exitosamente
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+              appointment:
+                type: object
+        400:
+          description: Error en la solicitud
+        404:
+          description: Cita no encontrada
+    delete:
+      tags:
+        - appointments
+      summary: Eliminar cita
+      description: Elimina una cita existente
+      security:
+        - Bearer: []
+      parameters:
+        - in: query
+          name: id
+          type: integer
+          required: true
+          description: ID de la cita a eliminar
+      responses:
+        200:
+          description: Cita eliminada exitosamente
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+        400:
+          description: Error en la solicitud
+        404:
+          description: Cita no encontrada
+
+  /appointmentdetail:
+    get:
+      tags:
+        - appointments
+      summary: Obtener detalles de cita
+      description: Obtiene detalles adicionales de las citas
+      security:
+        - Bearer: []
+      parameters:
+        - in: query
+          name: id
+          type: integer
+          required: false
+          description: ID de la cita
+        - in: query
+          name: worker_id
+          type: integer
+          required: false
+          description: ID del trabajador
+        - in: query
+          name: site_id
+          type: integer
+          required: false
+          description: ID del sitio
+        - in: query
+          name: service_id
+          type: integer
+          required: false
+          description: ID del servicio
+        - in: query
+          name: status
+          type: string
+          required: false
+          description: Status
+        - in: query
+          name: client_id
+          type: integer
+          required: false
+          description: ID del cliente
+      responses:
+        200:
+          description: Detalles de las citas
+          schema:
+            type: array
+            items:
+              type: object
+        404:
+          description: No se encontraron citas
+
+  /appointment/worker_statistics:
+    get:
+      tags:
+        - appointments
+      summary: Obtener estadísticas de citas por trabajador
+      description: Obtiene estadísticas de citas agrupadas por trabajador
+      security:
+        - Bearer: []
+      parameters:
+        - in: query
+          name: site_id
+          type: integer
+          required: false
+          description: ID del sitio
+        - in: query
+          name: period
+          type: string
+          required: false
+          description: Periodicidad
+        - in: query
+          name: count_periods
+          type: integer
+          required: false
+          description: Cantidad de periodos
+      responses:
+        200:
+          description: Estadísticas de citas por trabajador
+          schema:
+            type: array
+            items:
+              type: object
+        404:
+          description: No se encontraron estadísticas
+
+  /appointment/site_statistics:
+    get:
+      tags:
+        - appointments
+      summary: Obtener estadísticas de citas por sitio
+      description: Obtiene estadísticas de citas agrupadas por sitio
+      security:
+        - Bearer: []
+      parameters:
+        - in: query
+          name: site_id
+          type: integer
+          required: false
+          description: ID del sitio
+        - in: query
+          name: period
+          type: string
+          required: false
+          description: Periodicidad
+        - in: query
+          name: count_periods
+          type: integer
+          required: false
+          description: Cantidad de periodos
+      responses:
+        200:
+          description: Estadísticas de citas por sitio
+          schema:
+            type: array
+            items:
+              type: object
+        404:
+          description: No se encontraron estadísticas
+  /appointment/service_statistics:
+    get:
+      tags:
+        - appointments
+      summary: Obtener estadísticas de citas por servicio
+      description: Obtiene estadísticas de citas agrupadas por servicio
+      security:
+        - Bearer: []
+      parameters:
+        - in: query
+          name: site_id
+          type: integer
+          required: false
+          description: ID del sitio
+        - in: query
+          name: period
+          type: string
+          required: false
+          description: Periodicidad
+        - in: query
+          name: count_periods
+          type: integer
+          required: false
+          description: Cantidad de periodos
+      responses:
+        200:
+          description: Estadísticas de citas por servicio
+          schema:
+            type: array
+            items:
+              type: object
+        404:
+          description: No se encontraron estadísticas
+          
+  # ======= SERVICE ROUTES =======
+  /service:
+    get:
+      tags:
+        - services
+      summary: Obtener servicios
+      description: Obtiene la lista de servicios filtrados por los parámetros proporcionados
+      security:
+        - Bearer: []
+      parameters:
+        - in: query
+          name: id
+          type: integer
+          required: false
+          description: ID del servicio
+        - in: query
+          name: name
+          type: string
+          required: false
+          description: Nombre del servicio
+        - in: query
+          name: category_id
+          type: integer
+          required: false
+          description: ID de la categoría
+      responses:
+        200:
+          description: Lista de servicios
+          schema:
+            type: array
+            items:
+              type: object
+              properties:
+                id:
+                  type: integer
+                name:
+                  type: string
+                category_id:
+                  type: integer
+        404:
+          description: Servicios no encontrados
+    post:
+      tags:
+        - services
+      summary: Crear servicio
+      description: Crea un nuevo servicio
+      security:
+        - Bearer: []
+      parameters:
+        - in: body
+          name: body
+          description: Información del servicio
+          required: true
+          schema:
+            type: object
+            required:
+              - name
+              - category_id
+            properties:
+              name:
+                type: string
+                example: Servicio Ejemplo
+              category_id:
+                type: integer
+                example: 1
+      responses:
+        201:
+          description: Servicio creado exitosamente
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+              service:
+                type: object
+        400:
+          description: Error en la solicitud
+
+  # ======= CATEGORY ROUTES =======
+  /category:
+    get:
+      tags:
+        - categories
+      summary: Obtener categorías
+      description: Obtiene la lista de todas las categorías
+      security:
+        - Bearer: []
+      responses:
+        200:
+          description: Lista de categorías
+          schema:
+            type: array
+            items:
+              type: object
+              properties:
+                id:
+                  type: integer
+                name:
+                  type: string
+        404:
+          description: Categorías no encontradas
+
+  # ======= WORKER ROUTES =======
+  /worker:
+    get:
+      tags:
+        - workers
+      summary: Obtener trabajadores
+      description: Obtiene la lista de trabajadores filtrados por los parámetros proporcionados
+      security:
+        - Bearer: []
+      parameters:
+        - in: query
+          name: id
+          type: integer
+          required: false
+          description: ID del trabajador
+        - in: query
+          name: name
+          type: string
+          required: false
+          description: Nombre del trabajador
+        - in: query
+          name: site_id
+          type: integer
+          required: false
+          description: ID del sitio
+        - in: query
+          name: service_id
+          type: integer
+          required: false
+          description: ID del servicio
+      responses:
+        200:
+          description: Lista de trabajadores
+          schema:
+            type: array
+            items:
+              type: object
+              properties:
+                id:
+                  type: integer
+                user_id:
+                  type: integer
+                site_id:
+                  type: integer
+        404:
+          description: Trabajadores no encontrados
+    post:
+      tags:
+        - workers
+      summary: Crear trabajador
+      description: Crea un nuevo trabajador
+      security:
+        - Bearer: []
+      parameters:
+        - in: body
+          name: body
+          description: Información del trabajador
+          required: true
+          schema:
+            type: object
+            properties:
+              name:
+                type: string
+              site_id:
+                type: integer
+              profilepicture:
+                type: string
+              description:
+                type: string
+      responses:
+        201:
+          description: Trabajador creado exitosamente
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+              worker:
+                type: object
+        400:
+          description: Error en la solicitud
+    put:
+      tags:
+        - workers
+      summary: Actualizar trabajador
+      description: Actualiza la información de un trabajador existente
+      security:
+        - Bearer: []
+      parameters:
+        - in: query
+          name: id
+          type: integer
+          required: false
+          description: ID del trabajador
+        - in: body
+          name: body
+          description: Información del trabajador
+          required: true
+          schema:
+            type: object
+            properties:
+              name:
+                type: string
+              site_id:
+                type: integer
+              profilepicture:
+                type: string
+              description:
+                type: string
+      responses:
+        200:
+          description: Trabajador actualizado exitosamente
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+              worker:
+                type: object
+        400:
+          description: Error en la solicitud
+        404:
+          description: Trabajador no encontrado
+    delete:
+      tags:
+        - workers
+      summary: Eliminar trabajador
+      description: Elimina un trabajador existente
+      security:
+        - Bearer: []
+      parameters:
+        - in: query
+          name: id
+          type: integer
+          required: false
+          description: ID del trabajador
+      responses:
+        200:
+          description: Trabajador eliminado exitosamente
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+        400:
+          description: Error en la solicitud
+        404:
+          description: Trabajador no encontrado
+          
+  /worker/weekly_schedule:
+    get:
+      tags:
+        - workers
+      summary: Obtener horario semanal del trabajador
+      description: Obtiene el horario semanal de un trabajador específico
+      security:
+        - Bearer: []
+      parameters:
+        - in: query
+          name: worker_id
+          type: integer
+          required: true
+          description: ID del trabajador
+      responses:
+        200:
+          description: Horario semanal del trabajador
+          schema:
+            type: object
+        404:
+          description: No se encontró el horario
+          
+  /worker/daily_schedule:
+    get:
+      tags:
+        - workers
+      summary: Obtener horario diario del trabajador
+      description: Obtiene el horario diario de un trabajador específico
+      security:
+        - Bearer: []
+      parameters:
+        - in: query
+          name: worker_id
+          type: integer
+          required: true
+          description: ID del trabajador
+        - in: query
+          name: date
+          type: string
+          format: date
+          required: true
+          description: Fecha (YYYY-MM-DD)
+      responses:
+        200:
+          description: Horario diario del trabajador
+          schema:
+            type: object
+        404:
+          description: No se encontró el horario
+  
+  /worker_has_service:
+    get:
+      tags:
+        - workers
+      summary: Obtener servicios de trabajadores
+      description: Obtiene la lista de los servicios por trabajador
+      security:
+        - Bearer: []
+      responses:
+        200:
+          description: Lista de categorías
+        404:
+          description: Categorías no encontradas
+    post:
+      tags:
+        - workers
+      summary: Servicios de trabajadores
+      description: Modifica los servicios por trabajador
+      security:
+        - Bearer: []
+      parameters:
+        - in: body
+          name: body
+          description: Información del sitio
+          required: true
+          schema:
+            type: object
+            properties:
+              worker_id:
+                type: integer
+              service_id:
+                type: integer
+      responses:
+        200:
+          description: Lista de categorías
+        404:
+          description: Categorías no encontradas
+  
+# ======= MANAGER ROUTES =======
+  /subscription/{id}:
+    get:
+      tags:
+        - managers
+      summary: Obtener suscripción
+      description: Obtiene la información de suscripción de un administrador
+      security:
+        - Bearer: []
+      parameters:
+        - in: path
+          name: id
+          type: integer
+          required: true
+          description: ID del administrador
+      responses:
+        200:
+          description: Información de suscripción
+          schema:
+            type: object
+            properties:
+              id:
+                type: integer
+              subscriptionactive:
+                type: boolean
+              subscriptionstartdate:
+                type: string
+                format: date-time
+              subscriptiontype:
+                type: string
+              subscriptionfinishdate:
+                type: string
+                format: date-time
+        404:
+          description: No se encontró la suscripción
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                example: "Manager not found"
+    put:
+      tags:
+        - managers
+      summary: Actualizar suscripción
+      description: Actualiza la suscripción de un administrador
+      security:
+        - Bearer: []
+      parameters:
+        - in: path
+          name: id
+          type: integer
+          required: true
+          description: ID del administrador
+        - in: body
+          name: body
+          description: Nueva información de la suscripción
+          required: true
+          schema:
+            type: object
+            required:
+              - subscriptionactive
+            properties:
+              subscriptionactive:
+                type: boolean
+                description: Estado de la suscripción (activa o inactiva)
+              subscriptionstartdate:
+                type: string
+                format: date-time
+                description: "Fecha de inicio de la suscripción (formato: YYYY-MM-DDThh:mm:ss)"
+                example: "2025-05-01T10:00:00"
+              subscriptiontype:
+                type: string
+                description: "Tipo de suscripción (básica, premium, etc.)"
+                example: "premium"
+              subscriptionfinishdate:
+                type: string
+                format: date-time
+                description: "Fecha de finalización de la suscripción (formato: YYYY-MM-DDThh:mm:ss)"
+                example: "2026-05-01T10:00:00"
+      responses:
+        200:
+          description: Suscripción actualizada exitosamente
+          schema:
+            type: object
+            properties:
+              manager:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  subscriptionactive:
+                    type: boolean
+                  subscriptionstartdate:
+                    type: string
+                    format: date-time
+                  subscriptiontype:
+                    type: string
+                  subscriptionfinishdate:
+                    type: string
+                    format: date-time
+        400:
+          description: Error en la solicitud
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                example: "Invalid date format. Use ISO format (YYYY-MM-DDThh:mm:ss)"
+        404:
+          description: No se encontró la suscripción
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                example: "Manager not found"
+        500:
+          description: Error del servidor
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                example: "An error occurred updating the subscription"
+
+# ======= NOTIFICATIONS ROUTES =======
+  /notification:
+    get:
+      tags:
+        - notifications
+      summary: Obtener notificaciones
+      description: Obtiene la lista de notificaciones filtradas por los parámetros proporcionados
+      security:
+        - Bearer: []
+      parameters:
+        - in: query
+          name: id
+          type: integer
+          required: false
+          description: ID de la notificación
+        - in: query
+          name: status
+          type: string
+          required: false
+          description: Estado de la notificación (pending, read, etc.)
+        - in: query
+          name: appointment_id
+          type: integer
+          required: false
+          description: ID de la cita asociada
+        - in: query
+          name: type
+          type: string
+          required: false
+          description: Tipo de notificación
+        - in: query
+          name: worker_id
+          type: integer
+          required: false
+          description: ID del trabajador asociado a la cita
+        - in: query
+          name: service_id
+          type: integer
+          required: false
+          description: ID del servicio asociado a la cita
+        - in: query
+          name: site_id
+          type: integer
+          required: false
+          description: ID del sitio asociado a la cita
+      responses:
+        200:
+          description: Lista de notificaciones
+          schema:
+            type: array
+            items:
+              type: object
+              properties:
+                id:
+                  type: integer
+                type:
+                  type: string
+                status:
+                  type: string
+                appointment_id:
+                  type: integer
+                worker_id:
+                  type: integer
+                service_id:
+                  type: integer
+                site_id:
+                  type: integer
+        404:
+          description: Notificaciones no encontradas
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                example: "Notification not found"
+    post:
+      tags:
+        - notifications
+      summary: Crear notificación
+      description: Crea una nueva notificación
+      security:
+        - Bearer: []
+      parameters:
+        - in: body
+          name: body
+          description: Información de la notificación
+          required: true
+          schema:
+            type: object
+            required:
+              - type
+              - appointment_id
+            properties:
+              timestamp:
+                type: integer
+                required: false
+                example: "2025-01-14 04:15:11.440999+00:00"
+              type:
+                type: string
+                description: Tipo de notificación
+              status:
+                type: string
+                description: Estado de la notificación
+                default: "pending"
+              appointment_id:
+                type: integer
+                description: ID de la cita asociada
+      responses:
+        201:
+          description: Notificación creada exitosamente
+          schema:
+            type: object
+        404:
+          description: Cita no encontrada
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+        500:
+          description: Error del servidor
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+    put:
+      tags:
+        - notifications
+      summary: Actualizar notificación
+      description: Actualiza una notificación existente
+      security:
+        - Bearer: []
+      parameters:
+        - in: query
+          name: id
+          type: integer
+          required: false
+          description: ID de la notificación
+        - in: body
+          name: body
+          description: Nueva información de la notificación
+          required: true
+          schema:
+            type: object
+            properties:
+              timestamp:
+                type: integer
+                required: false
+                example: "2025-01-14 04:15:11.440999+00:00"
+              type:
+                type: string
+                description: Tipo de notificación
+              status:
+                type: string
+                description: Estado de la notificación
+              appointment_id:
+                type: integer
+                description: ID de la cita asociada
+      responses:
+        200:
+          description: Notificación actualizada exitosamente
+          schema:
+            type: object
+        400:
+          description: Error en la solicitud
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                example: "Notification ID is required"
+        404:
+          description: Notificación no encontrada
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                example: "Notification not found"
+        500:
+          description: Error del servidor
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+    delete:
+      tags:
+        - notifications
+      summary: Eliminar notificación
+      description: Elimina una notificación existente
+      security:
+        - Bearer: []
+      parameters:
+        - in: query
+          name: id
+          type: integer
+          required: true
+          description: ID de la notificación a eliminar
+      responses:
+        200:
+          description: Notificación eliminada exitosamente
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                example: "Notification deleted"
+        400:
+          description: Error en la solicitud
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                example: "Notification ID is required as a query parameter"
+        404:
+          description: Notificación no encontrada
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                example: "Notification not found"
+        500:
+          description: Error del servidor
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+
+# ======= PAYMENT ROUTES =======
+  /payment:
+    get:
+      tags:
+        - payment
+      summary: Obtener pagos
+      description: Obtiene la lista de pagos filtrados por los parámetros proporcionados
+      security:
+        - Bearer: []
+      parameters:
+        - in: query
+          name: id
+          type: integer
+          required: false
+          description: ID del pago
+        - in: query
+          name: status
+          type: string
+          required: false
+          description: Estado del pago (pending, completed, etc.)
+        - in: query
+          name: appointment_id
+          type: integer
+          required: false
+          description: ID de la cita asociada
+        - in: query
+          name: amount
+          type: integer
+          required: false
+          description: Mostrar pagos con monto menor o igual a este valor
+        - in: query
+          name: paymentmethod
+          type: string
+          required: false
+          description: Método de pago (efectivo, tarjeta, etc.)
+        - in: query
+          name: worker_id
+          type: integer
+          required: false
+          description: ID del trabajador asociado a la cita
+        - in: query
+          name: service_id
+          type: integer
+          required: false
+          description: ID del servicio asociado a la cita
+        - in: query
+          name: site_id
+          type: integer
+          required: false
+          description: ID del sitio asociado a la cita
+      responses:
+        200:
+          description: Lista de pagos
+          schema:
+            type: array
+            items:
+              type: object
+              properties:
+                id:
+                  type: integer
+                amount:
+                  type: integer
+                paymentmethod:
+                  type: string
+                status:
+                  type: string
+                appointment_id:
+                  type: integer
+                worker_id:
+                  type: integer
+                service_id:
+                  type: integer
+                site_id:
+                  type: integer
+        404:
+          description: Pagos no encontrados
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                example: "Payment not found"
+    post:
+      tags:
+        - payment
+      summary: Crear pago
+      description: Crea un nuevo pago
+      security:
+        - Bearer: []
+      parameters:
+        - in: body
+          name: body
+          description: Información del pago
+          required: true
+          schema:
+            type: object
+            properties:
+              amount:
+                type: integer
+                description: Monto del pago
+              paymentmethod:
+                type: string
+                description: Método de pago (efectivo, tarjeta, etc.)
+              status:
+                type: string
+                description: Estado del pago
+                default: "pending"
+              appointment_id:
+                type: integer
+                description: ID de la cita asociada
+      responses:
+        201:
+          description: Pago creado exitosamente
+          schema:
+            type: object
+        404:
+          description: Cita no encontrada
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+        500:
+          description: Error del servidor
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+    put:
+      tags:
+        - payment
+      summary: Actualizar pago
+      description: Actualiza un pago existente
+      security:
+        - Bearer: []
+      parameters:
+        - in: query
+          name: id
+          type: integer
+          required: false
+          description: ID del pago
+        - in: body
+          name: body
+          description: Nueva información del pago
+          required: true
+          schema:
+            type: object
+            properties:
+              timestamp:
+                type: integer
+                required: false
+                example: "2025-01-14 04:15:11.440999+00:00"
+              amount:
+                type: integer
+                description: Monto del pago
+              paymentmethod:
+                type: string
+                description: Método de pago (efectivo, tarjeta, etc.)
+              status:
+                type: string
+                description: Estado del pago
+              appointment_id:
+                type: integer
+                description: ID de la cita asociada
+      responses:
+        200:
+          description: Pago actualizado exitosamente
+          schema:
+            type: object
+        400:
+          description: Error en la solicitud
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                example: "Payment ID is required"
+        404:
+          description: Pago no encontrado
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                example: "Payment not found"
+        500:
+          description: Error del servidor
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+    delete:
+      tags:
+        - payment
+      summary: Eliminar pago
+      description: Elimina un pago existente
+      security:
+        - Bearer: []
+      parameters:
+        - in: query
+          name: id
+          type: integer
+          required: true
+          description: ID del pago a eliminar
+      responses:
+        200:
+          description: Pago eliminado exitosamente
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                example: "Payment deleted"
+        400:
+          description: Error en la solicitud
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                example: "Payment ID is required as a query parameter"
+        404:
+          description: Pago no encontrado
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                example: "Payment not found"
+        500:
+          description: Error del servidor
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+
+  /payment/worker_statistics:
+    get:
+      tags:
+        - payment
+      summary: Obtener estadísticas de pagos por trabajador
+      description: Obtiene estadísticas de pagos agrupadas por trabajador
+      security:
+        - Bearer: []
+      parameters:
+        - in: query
+          name: site_id
+          type: integer
+          required: true
+          description: ID del sitio
+        - in: query
+          name: period
+          type: string
+          required: false
+          description: Periodicidad (total, daily, weekly, monthly)
+        - in: query
+          name: count_periods
+          type: integer
+          required: false
+          description: Número de períodos a incluir desde la fecha actual hacia atrás
+      responses:
+        200:
+          description: Estadísticas de pagos por trabajador
+          schema:
+            type: object
+            properties:
+              site_id:
+                type: integer
+              period:
+                type: string
+              count_periods:
+                type: integer
+              statistics:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    worker_id:
+                      type: integer
+                    total_amount:
+                      type: integer
+                    day:
+                      type: string
+                      format: date
+                    week_start:
+                      type: string
+                      format: date
+                    year:
+                      type: integer
+                    month:
+                      type: integer
+        400:
+          description: Error en la solicitud
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                example: "Invalid period parameter. Use total, daily, weekly or monthly"
+
+  /payment/site_statistics:
+    get:
+      tags:
+        - payment
+      summary: Obtener estadísticas de pagos por sitio
+      description: Obtiene estadísticas de pagos agrupadas por sitio
+      security:
+        - Bearer: []
+      parameters:
+        - in: query
+          name: site_id
+          type: integer
+          required: true
+          description: ID del sitio
+        - in: query
+          name: period
+          type: string
+          required: false
+          description: Periodicidad (total, daily, weekly, monthly)
+        - in: query
+          name: count_periods
+          type: integer
+          required: false
+          description: Número de períodos a incluir desde la fecha actual hacia atrás
+      responses:
+        200:
+          description: Estadísticas de pagos por sitio
+          schema:
+            type: object
+            properties:
+              site_id:
+                type: integer
+              period:
+                type: string
+              count_periods:
+                type: integer
+              statistics:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    total_amount:
+                      type: integer
+                    day:
+                      type: string
+                      format: date
+                    week_start:
+                      type: string
+                      format: date
+                    year:
+                      type: integer
+                    month:
+                      type: integer
+        400:
+          description: Error en la solicitud
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                example: "Invalid period parameter. Use total, daily, weekly or monthly"
+
+  /payment/service_statistics:
+    get:
+      tags:
+        - payment
+      summary: Obtener estadísticas de pagos por servicio
+      description: Obtiene estadísticas de pagos agrupadas por servicio
+      security:
+        - Bearer: []
+      parameters:
+        - in: query
+          name: site_id
+          type: integer
+          required: true
+          description: ID del sitio
+        - in: query
+          name: period
+          type: string
+          required: false
+          description: Periodicidad (total, daily, weekly, monthly)
+        - in: query
+          name: count_periods
+          type: integer
+          required: false
+          description: Número de períodos a incluir desde la fecha actual hacia atrás
+      responses:
+        200:
+          description: Estadísticas de pagos por servicio
+          schema:
+            type: object
+            properties:
+              site_id:
+                type: integer
+              period:
+                type: string
+              count_periods:
+                type: integer
+              statistics:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    service_id:
+                      type: integer
+                    total_amount:
+                      type: integer
+                    day:
+                      type: string
+                      format: date
+                    week_start:
+                      type: string
+                      format: date
+                    year:
+                      type: integer
+                    month:
+                      type: integer
+        400:
+          description: Error en la solicitud
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                example: "Invalid period parameter. Use total, daily, weekly or monthly"
+
+# ======= DETAIL ROUTES =======
+  /detail:
+    get:
+      tags:
+        - detail
+      summary: Obtener detalles de servicios
+      description: Obtiene los detalles de servicios filtrados por los parámetros proporcionados
+      security:
+        - Bearer: []
+      parameters:
+        - in: query
+          name: site_id
+          type: integer
+          required: false
+          description: ID del sitio
+        - in: query
+          name: service_id
+          type: integer
+          required: false
+          description: ID del servicio
+        - in: query
+          name: name
+          type: string
+          required: false
+          description: Nombre del servicio
+        - in: query
+          name: price
+          type: integer
+          required: false
+          description: Precio del servicio
+        - in: query
+          name: category_id
+          type: integer
+          required: false
+          description: ID de la categoría
+      responses:
+        200:
+          description: Lista de detalles
+          schema:
+            type: array
+            items:
+              type: object
+        404:
+          description: No se encontró el servicio
+    post:
+      tags:
+        - detail
+      summary: Crear servicio
+      description: Crea un nuevo servicio
+      security:
+        - Bearer: []
+      parameters:
+        - in: body
+          name: body
+          description: Información de disponibilidad
+          required: true
+          schema:
+            type: object
+            properties:
+              site_id:
+                type: integer
+              service_id:
+                type: integer
+              description:
+                type: string
+              price:
+                type: string
+              photos:
+                type: object
+                properties:
+                  before:
+                    type: string
+                    format: uri
+                    example: "https://example.com/photo1.jpg"
+                  after:
+                    type: string
+                    format: uri
+                    example: "https://example.com/photo2.jpg"
+      responses:
+        201:
+          description: Disponibilidad creada exitosamente
+          schema:
+            type: object
+        400:
+          description: Error de validación
+        500:
+          description: Error de inserción
+    put:
+      tags:
+        - detail
+      summary: Actualizar disponibilidad
+      description: Actualiza una disponibilidad existente
+      security:
+        - Bearer: []
+      parameters:
+        - in: query
+          name: site_id
+          type: integer
+          required: false
+          description: ID del sitio
+        - in: query
+          name: service_id
+          type: integer
+          required: false
+          description: ID del servicio
+        - in: body
+          name: body
+          description: Información de disponibilidad
+          required: true
+          schema:
+            type: object
+            properties:
+              site_id:
+                type: integer
+              service_id:
+                type: integer
+              description:
+                type: string
+              price:
+                type: string
+              photos:
+                type: object
+                properties:
+                  before:
+                    type: string
+                    format: uri
+                    example: "https://example.com/photo1.jpg"
+                  after:
+                    type: string
+                    format: uri
+                    example: "https://example.com/photo2.jpg"
+      responses:
+        200:
+          description: Detalle actualizado exitosamente
+          schema:
+            type: object
+        400:
+          description: Error en la solicitud
+        404:
+          description: No se encontró 
+        500:
+          description: Error de actualización
+    delete:
+      tags:
+        - detail
+      summary: Eliminar disponibilidad
+      description: Elimina una disponibilidad existente
+      security:
+        - Bearer: []
+      parameters:
+        - in: query
+          name: site_id
+          type: integer
+          required: false
+          description: ID del sitio
+        - in: query
+          name: service_id
+          type: integer
+          required: false
+          description: ID del servicio
+      responses:
+        200:
+          description: Detalle eliminado exitosamente
+          schema:
+            type: object
+        400:
+          description: Error en la solicitud
+        404:
+          description: No se encontró el detalle
+        500:
+          description: Error de eliminación
+  # ======= AVAILABILITY ROUTES =======
+  /availability:
+    get:
+      tags:
+        - availability
+      summary: Obtener disponibilidad
+      description: Obtiene la disponibilidad filtrada por los parámetros proporcionados
+      security:
+        - Bearer: []
+      parameters:
+        - in: query
+          name: id
+          type: integer
+          required: false
+          description: ID
+        - in: query
+          name: worker_id
+          type: integer
+          required: false
+          description: ID del trabajador
+        - in: query
+          name: weekday
+          type: string
+          required: false
+          description: Día de la semana (0-6, donde 0 es lunes)
+      responses:
+        200:
+          description: Lista de disponibilidad
+          schema:
+            type: array
+            items:
+              type: object
+        404:
+          description: No se encontró disponibilidad
+    post:
+      tags:
+        - availability
+      summary: Crear disponibilidad
+      description: Crea una nueva disponibilidad
+      security:
+        - Bearer: []
+      parameters:
+        - in: body
+          name: body
+          description: Información de disponibilidad
+          required: true
+          schema:
+            type: object
+            required:
+              - worker_id
+              - weekday
+              - starttime
+              - endtime
+            properties:
+              worker_id:
+                type: integer
+              weekday:
+                type: integer
+              starttime:
+                type: string
+                format: time
+                example: "09:00:00"
+              endtime:
+                type: string
+                format: time
+                example: "17:00:00"
+      responses:
+        201:
+          description: Disponibilidad creada exitosamente
+          schema:
+            type: object
+        400:
+          description: Error en la solicitud
+    put:
+      tags:
+        - availability
+      summary: Actualizar disponibilidad
+      description: Actualiza una disponibilidad existente
+      security:
+        - Bearer: []
+      parameters:
+        - in: query
+          name: id
+          type: integer
+          required: false
+          description: ID
+        - in: body
+          name: body
+          description: Nueva información de disponibilidad
+          required: true
+          schema:
+            type: object
+            properties:
+              worker_id:
+                type: integer
+              weekday:
+                type: string
+              starttime:
+                type: string
+                format: time
+              endtime:
+                type: string
+                format: time
+      responses:
+        200:
+          description: Disponibilidad actualizada exitosamente
+          schema:
+            type: object
+        400:
+          description: Error en la solicitud
+        404:
+          description: No se encontró la disponibilidad
+    delete:
+      tags:
+        - availability
+      summary: Eliminar disponibilidad
+      description: Elimina una disponibilidad existente
+      security:
+        - Bearer: []
+      parameters:
+        - in: query
+          name: id
+          type: integer
+          required: false
+          description: ID
+      responses:
+        200:
+          description: Disponibilidad eliminada exitosamente
+          schema:
+            type: object
+        400:
+          description: Error en la solicitud
+        404:
+          description: No se encontró la disponibilidad
+
+  # ======= DAYS OFF ROUTES =======
+  /days_off:
+    get:
+      tags:
+        - days_off
+      summary: Obtener días libres
+      description: Obtiene los días libres filtrados por los parámetros proporcionados
+      security:
+        - Bearer: []
+      parameters:
+        - in: query
+          name: id
+          type: integer
+          required: false
+          description: ID
+        - in: query
+          name: worker_id
+          type: integer
+          required: false
+          description: ID del trabajador
+        - in: query
+          name: dayoff
+          type: string
+          format: date
+          required: false
+          description: Fecha (YYYY-MM-DD)
+      responses:
+        200:
+          description: Lista de días libres
+          schema:
+            type: array
+            items:
+              type: object
+        404:
+          description: No se encontraron días libres
+    post:
+      tags:
+        - days_off
+      summary: Crear día libre
+      description: Crea un nuevo día libre
+      security:
+        - Bearer: []
+      parameters:
+        - in: body
+          name: body
+          description: Información del día libre
+          required: true
+          schema:
+            type: object
+            required:
+              - worker_id
+              - dayoff
+            properties:
+              worker_id:
+                type: integer
+              dayoff:
+                type: string
+                format: date
+                example: "2025-06-15"
+      responses:
+        201:
+          description: Día libre creado exitosamente
+          schema:
+            type: object
+        400:
+          description: Error en la solicitud
+    put:
+      tags:
+        - days_off
+      summary: Actualizar días libres
+      description: Actualiza los días libres filtrados por los parámetros proporcionados
+      security:
+        - Bearer: []
+      parameters:
+        - in: query
+          name: id
+          type: integer
+          required: false
+          description: ID        
+        - in: body
+          name: body
+          description: Información del día libre
+          required: true
+          schema:
+            type: object
+            required:
+              - worker_id
+              - dayoff
+            properties:
+              worker_id:
+                type: integer
+              dayoff:
+                type: string
+                format: date
+                example: "2025-06-15"
+      responses:
+        200:
+          description: Lista de días libres
+          schema:
+            type: array
+            items:
+              type: object
+        404:
+          description: No se encontraron días libres
+    delete:
+      tags:
+        - days_off
+      summary: Eliminar día libre
+      description: Elimina un día libre existente
+      security:
+        - Bearer: []
+      parameters:
+        - in: query
+          name: id
+          type: integer
+          required: false
+          description: ID   
+      responses:
+        200:
+          description: Día libre eliminado exitosamente
+          schema:
+            type: object
+        400:
+          description: Error en la solicitud
+        404:
+          description: No se encontró el día libre

@@ -1,0 +1,14 @@
+.git
+.gitignore
+README.md
+Dockerfile
+.dockerignore
+build/
+vendor/
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
