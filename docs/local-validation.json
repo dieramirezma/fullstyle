@@ -1,0 +1,28 @@
+{
+  "checked_utc": "2026-11-05T01:16:40.039615+00:00",
+  "scope": "local Docker, synthetic data",
+  "passed": true,
+  "ci_exit_code": 0,
+  "ci_steps": 27,
+  "source_fingerprint": "3b464616a52b75a9af61d109c5ad776739f1e8f9819cc5b98563fd9ae2c5f590",
+  "quality_checks": 30,
+  "dependency_groups": 7,
+  "pytest_cases": 47,
+  "security_regressions": 19,
+  "http_contracts": 17,
+  "consistency_scenarios": 17,
+  "identity_scenarios": 6,
+  "browser_steps": 5,
+  "clean_project": "fullstyle-portfolio-clean-70799902",
+  "clean_cleanup_complete": true,
+  "sql_firebase_encrypted_restore": true,
+  "original_files_unchanged": 720,
+  "original_repositories_unchanged": 9,
+  "modernization_fingerprint_unchanged": true,
+  "github_actions": "Configured; live results are available in the repository Actions tab",
+  "excluded": [
+    "production deployment",
+    "real provider credential rotation",
+    "commercial effects"
+  ]
+}

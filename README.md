@@ -35,7 +35,7 @@ flowchart LR
     Proxy --> Web[Next.js / NextAuth]
     Proxy --> Auth[Go / Gin]
     Proxy --> Business[Flask]
-    Proxy --> Chat[FastAPI: dos réplicas]
+    Proxy --> Chat[FastAPI]
     Web --> Gateway[GraphQL / Apollo]
     Gateway --> Business
     Chat --> Business

@@ -1,6 +1,6 @@
 # Consolidación para portafolio
 
-Estado: preparación y verificación en curso. Este documento registra la validación del monorepo; los resultados de la copia modernizada son históricos y no sustituyen estas comprobaciones.
+Estado: **monorepo verificado en Docker local; publicación en curso**. Este documento registra la validación del monorepo; los resultados de la copia modernizada son históricos y no sustituyen estas comprobaciones.
 
 ## Checklist de publicación
 
@@ -12,8 +12,8 @@ Estado: preparación y verificación en curso. Este documento registra la valida
 - [x] Unificar Compose y aislar proyecto, imágenes y puertos.
 - [x] Eliminar dependencia de rutas privadas y fixtures de benchmark externos.
 - [x] Documentar demo, arquitectura, calidad y alcance de licencias.
-- [ ] Verificar archivos versionados, secretos e historial nuevo.
-- [ ] Ejecutar la pipeline completa sobre este monorepo y la reconstrucción limpia.
+- [x] Verificar archivos versionados, secretos e historial nuevo.
+- [x] Ejecutar la pipeline completa sobre este monorepo y la reconstrucción limpia.
 - [ ] Publicar `dieramirezma/fullstyle`, público, y comprobar remoto y GitHub Actions.
 
 ## Decisiones
@@ -25,3 +25,14 @@ Los archivos de texto se normalizan a LF mediante `.gitattributes`. Los hashes d
 La importación es un snapshot del estado modernizado, incluidas modificaciones locales. No conserva el grafo de commits de los nueve repositorios dentro del nuevo repositorio, ni modifica sus historiales originales. [provenance.json](provenance.json) registra la relación con esos historiales y los autores; los hashes de importación describen el estado previo a adaptaciones de portabilidad y saneamiento.
 
 Las evidencias operativas voluminosas, respaldos y llaves permanecen fuera de Git. Los resultados nuevos se generan en `.quality/reports`. El repositorio incluye código, locks, tests, documentación y herramientas para reproducirlos.
+
+
+## Resultado sobre el monorepo
+
+Pipeline local de **27 pasos con salida 0**, 30 controles de calidad, siete auditorías de locks, 47 casos pytest, 19 regresiones de seguridad, 17 contratos HTTP y 17 escenarios de consistencia aprobados. Se verificaron seis recorridos de identidad y cinco etapas de navegador, mutaciones, fallos reales y restauración cifrada SQL/Firebase/claves. La reconstrucción desde archivos Git usó `fullstyle-portfolio-clean-70799902`, repitió los contratos y eliminó sus propios volúmenes y redes.
+
+[Resumen de validación](local-validation.json). El fingerprint pertenece a este monorepo, no a la copia modernizada. El original conserva 720 hashes y nueve estados Git; la copia modernizada conserva su fingerprint previo. Los logs completos y los respaldos permanecen en `.quality/` fuera de Git.
+
+GitHub Actions ejecuta la pipeline sobre un checkout nuevo. Consultar sus resultados actuales en [Actions](https://github.com/dieramirezma/fullstyle/actions); la evidencia local anterior no afirma por sí sola el resultado de ese runner.
+
+Durante la preparación, el primer intento falló en el navegador por selectores con tildes leídos con una codificación incorrecta. Se restauró ese archivo desde UTF-8, se comprobó el botón real y se repitió la pipeline completa con éxito. El intento fallido permanece separado en `.quality/attempt-browser-encoding/`; no se computa como una ejecución aprobada.

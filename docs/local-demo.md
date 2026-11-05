@@ -2,15 +2,17 @@
 
 La configuración única es `compose.yaml`. Su nombre de proyecto es `fullstyle-portfolio`; no comparte imágenes, volúmenes, redes ni puertos publicados con `fullstyle-modernization`.
 
-| Uso | Dirección local |
+| Uso | Dirección de acceso |
 | --- | --- |
 | Web / API / GraphQL | http://localhost:38080 |
-| PostgreSQL sintético | `127.0.0.1:35432` |
-| Redis sintético | `127.0.0.1:36379` |
-| RabbitMQ AMQP / administración | `127.0.0.1:35672` / http://localhost:35673 |
+| PostgreSQL sintético | `postgres:5432` dentro de la red Docker |
+| Redis sintético | `redis:6379` dentro de la red Docker |
+| RabbitMQ AMQP / administración | `rabbitmq:5672` / `rabbitmq:15672` dentro de la red Docker |
 | Reconstrucción desechable de tests | http://localhost:38081 |
 
-Las credenciales sintéticas de las dependencias están declaradas en Compose. No existe conexión a datos originales o productivos. `db-init` aplica las migraciones versionadas antes de admitir tráfico y finaliza con código 0; los otros doce contenedores permanecen en ejecución. Dos réplicas de chatbot comparten SQL. El worker de correo se supervisa mediante persistencia y pruebas de entrega; no declara un healthcheck HTTP.
+Las credenciales sintéticas de las dependencias están declaradas en Compose. No existe conexión a datos originales o productivos. `db-init` aplica las migraciones versionadas antes de admitir tráfico y finaliza con código 0; los otros doce contenedores permanecen en ejecución. La demo inicia un contenedor de chatbot; las pruebas de fiabilidad despliegan dos réplicas adicionales en un proyecto desechable para verificar su estado SQL compartido. El worker de correo se supervisa mediante persistencia y pruebas de entrega; no declara un healthcheck HTTP.
+
+Compose conserva declaraciones de puertos `35432`, `36379`, `35672` y `35673` en el contrato de aislamiento de las dependencias. En el motor verificado, la red interna no publica esos endpoints al host (`NetworkSettings.Ports` vacío). La entrada de la aplicación es el proxy en `38080`. Para administrar SQL desde el host usar `docker compose exec postgres psql -U synthetic -d fullstyle_synthetic`; para Redis, `docker compose exec redis redis-cli`. No depender de conectividad directa a los puertos declarados de las bases.
 
 ## Arranque y parada
 
