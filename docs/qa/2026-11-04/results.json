@@ -1,0 +1,755 @@
+{
+  "completed_utc": "2026-11-05T01:58:55.093307+00:00",
+  "timezone": "America/Bogota",
+  "origin": "http://localhost:38080",
+  "code_commit": "8fe5e16c97894ac117b1f536b68e7fc7a7fb010a",
+  "source_fingerprint": "3b464616a52b75a9af61d109c5ad776739f1e8f9819cc5b98563fd9ae2c5f590",
+  "browser": "Microsoft Edge headless, fresh QA profiles",
+  "viewports": [
+    {
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "width": 390,
+      "height": 844
+    }
+  ],
+  "result": "partially functional; guided synthetic booking cycle verified; business onboarding blocked",
+  "counts": {
+    "PASA": 36,
+    "FALLA": 3,
+    "BLOQUEADO": 1
+  },
+  "cases": [
+    {
+      "id": "QA-01",
+      "title": "Página inicial",
+      "status": "PASA",
+      "started_utc": "2026-11-05T01:33:36.584Z",
+      "observed": "Página renderizada; HTTP 200.",
+      "overflow": false,
+      "url": "/",
+      "screenshot": "screenshots/qa-01.png"
+    },
+    {
+      "id": "QA-02",
+      "title": "Selección de registro",
+      "status": "PASA",
+      "started_utc": "2026-11-05T01:33:39.666Z",
+      "observed": "Página renderizada; HTTP 200.",
+      "overflow": false,
+      "url": "/register",
+      "screenshot": "screenshots/qa-02.png"
+    },
+    {
+      "id": "QA-03",
+      "title": "Formulario de cliente",
+      "status": "PASA",
+      "started_utc": "2026-11-05T01:33:40.877Z",
+      "observed": "Página renderizada; HTTP 200.",
+      "overflow": false,
+      "url": "/register/customer",
+      "screenshot": "screenshots/qa-03.png"
+    },
+    {
+      "id": "QA-04",
+      "title": "Formulario de administrador",
+      "status": "PASA",
+      "started_utc": "2026-11-05T01:33:42.124Z",
+      "observed": "Página renderizada; HTTP 200.",
+      "overflow": false,
+      "url": "/register/owner",
+      "screenshot": "screenshots/qa-04.png"
+    },
+    {
+      "id": "QA-05",
+      "title": "Acceso anonimo a planes",
+      "status": "PASA",
+      "started_utc": "2026-11-05T01:33:42.917Z",
+      "observed": "Redireccion a /login al no existir sesion",
+      "overflow": false,
+      "url": "/login",
+      "screenshot": "screenshots/qa-05.png"
+    },
+    {
+      "id": "QA-06",
+      "title": "Validación de registro vacío",
+      "status": "PASA",
+      "started_utc": "2026-11-05T01:34:53.768Z",
+      "observed": "El formulario muestra errores por campos y no redirige.",
+      "url": "/register/customer",
+      "screenshot": "screenshots/qa-06.png"
+    },
+    {
+      "id": "QA-07",
+      "title": "Registro de cliente desde la interfaz",
+      "status": "PASA",
+      "started_utc": "2026-11-05T01:34:56.162Z",
+      "observed": "Cliente creado mediante formulario y redirección a login.",
+      "actor": "qa_client_bfc3e3a6@synthetic.invalid",
+      "url": "/login",
+      "screenshot": "screenshots/qa-07.png"
+    },
+    {
+      "id": "QA-08",
+      "title": "Contraseña incorrecta",
+      "status": "PASA",
+      "started_utc": "2026-11-05T01:34:58.077Z",
+      "observed": "Rechazo visible sin crear una sesión.",
+      "url": "/login",
+      "screenshot": "screenshots/qa-08.png"
+    },
+    {
+      "id": "QA-09",
+      "title": "Login correcto y área de cliente",
+      "status": "PASA",
+      "started_utc": "2026-11-05T01:34:59.199Z",
+      "observed": "Login por UI y redirección /customer.",
+      "actor": "qa_client_bfc3e3a6@synthetic.invalid",
+      "overflow": false,
+      "url": "/customer",
+      "screenshot": "screenshots/qa-09.png"
+    },
+    {
+      "id": "QA-10",
+      "title": "Perfil del cliente",
+      "status": "PASA",
+      "started_utc": "2026-11-05T01:35:10.611Z",
+      "observed": "Página autenticada renderizada. Estado de sus datos registrado en la captura.",
+      "overflow": false,
+      "url": "/customer/profile",
+      "screenshot": "screenshots/qa-10.png"
+    },
+    {
+      "id": "QA-11",
+      "title": "Calendario de citas",
+      "status": "PASA",
+      "started_utc": "2026-11-05T01:35:12.507Z",
+      "observed": "Página autenticada renderizada. Estado de sus datos registrado en la captura.",
+      "overflow": false,
+      "url": "/customer/appointments",
+      "screenshot": "screenshots/qa-11.png"
+    },
+    {
+      "id": "QA-12",
+      "title": "Panel de operaciones",
+      "status": "PASA",
+      "started_utc": "2026-11-05T01:35:13.395Z",
+      "observed": "Página autenticada renderizada. Estado de sus datos registrado en la captura.",
+      "overflow": false,
+      "url": "/operations",
+      "screenshot": "screenshots/qa-12.png"
+    },
+    {
+      "id": "QA-13",
+      "title": "Interfaz de chatbot",
+      "status": "PASA",
+      "started_utc": "2026-11-05T01:35:14.174Z",
+      "observed": "Página autenticada renderizada. Estado de sus datos registrado en la captura.",
+      "overflow": false,
+      "url": "/chatbot",
+      "screenshot": "screenshots/qa-13.png"
+    },
+    {
+      "id": "QA-14",
+      "title": "Correo duplicado en registro",
+      "status": "FALLA",
+      "started_utc": "2026-11-05T01:37:29.598Z",
+      "observed": "El servidor rechaza el correo duplicado, pero la UI muestra literalmente undefined.",
+      "url": "/register/customer",
+      "screenshot": "screenshots/qa-14.png"
+    },
+    {
+      "id": "QA-15",
+      "title": "Búsqueda y filtros sin catálogo",
+      "status": "PASA",
+      "started_utc": "2026-11-05T01:37:33.296Z",
+      "observed": "Se abre el panel de filtros; catálogo vacío y mensaje de ausencia de resultados.",
+      "overflow": false,
+      "url": "/customer",
+      "screenshot": "screenshots/qa-15.png"
+    },
+    {
+      "id": "QA-16",
+      "title": "Consultar reservas y correo desde operaciones",
+      "status": "FALLA",
+      "started_utc": "2026-11-05T01:37:34.575Z",
+      "observed": "Consulta de reservas desde botón: HTTP 404. rvar otra vez, crea una reserva nueva. Las aprobaciones tardías pasan a conciliación.\n\nMis mensajes de correo\nConsultar entregas y fallos\nIdentificador del evento \n\nSolo se reprograman mensajes de contacto válidos dirigidos a tu cuenta. Los mensajes entregados y los eventos inválidos se conservan sin repetirlos.\n\nMotivo de reembolso o reprogramación \nReprogramar correo local\n\nAppointment not found",
+      "url": "/operations",
+      "screenshot": "screenshots/qa-16.png"
+    },
+    {
+      "id": "QA-17",
+      "title": "Mensaje e historial del chatbot",
+      "status": "PASA",
+      "started_utc": "2026-11-05T01:37:35.839Z",
+      "observed": "Envío desde interfaz: HTTP 200. Adaptador local: usa 'mis citas' o 'cancelar <id>'. No hay proveedor LLM conectado.",
+      "limitation": "Proveedor local sintético; no se evalúa un LLM comercial.",
+      "url": "/chatbot",
+      "screenshot": "screenshots/qa-17.png"
+    },
+    {
+      "id": "QA-18",
+      "title": "Cambio de contraseña desde perfil",
+      "status": "PASA",
+      "started_utc": "2026-11-05T01:37:38.212Z",
+      "observed": "Cambio enviado por formulario: HTTP 200. ",
+      "current_password_field_present": false,
+      "url": "/customer/profile",
+      "screenshot": "screenshots/qa-18.png"
+    },
+    {
+      "id": "QA-19",
+      "title": "Cerrar sesión y volver a entrar",
+      "status": "PASA",
+      "started_utc": "2026-11-05T01:38:53.419Z",
+      "observed": "Tras cambiar la contraseña se exige una sesión nueva. Login con la contraseña actual, logout por UI y nuevo login correctos.",
+      "url": "/customer",
+      "screenshot": "screenshots/qa-19.png"
+    },
+    {
+      "id": "QA-20",
+      "title": "Vista móvil y navegación lateral",
+      "status": "PASA",
+      "started_utc": "2026-11-05T01:55:11.530Z",
+      "observed": "Navegación a Mis reservas y cierre del menú con Escape; sin desbordamiento horizontal. Observación: el menú permanece abierto al cambiar de ruta.",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "extra_screenshot": "screenshots/qa-20-menu-open.png",
+      "url": "/customer/appointments",
+      "screenshot": "screenshots/qa-20.png"
+    },
+    {
+      "id": "QA-21",
+      "title": "Registro de administrador desde UI",
+      "status": "PASA",
+      "started_utc": "2026-11-05T01:39:01.485Z",
+      "observed": "Registro de administrador: HTTP 200. ",
+      "actor": "qa_owner_bfc3e3a6@synthetic.invalid",
+      "url": "/login",
+      "screenshot": "screenshots/qa-21.png"
+    },
+    {
+      "id": "QA-22",
+      "title": "Login de administrador y requisito de plan",
+      "status": "PASA",
+      "started_utc": "2026-11-05T01:40:23.642Z",
+      "observed": "Login correcto. La cuenta nueva se redirige a /plans hasta activar su suscripción; no es un fallo de autenticación.",
+      "url": "/plans",
+      "screenshot": "screenshots/qa-22.png"
+    },
+    {
+      "id": "QA-23",
+      "title": "Dashboard después del reembolso",
+      "status": "PASA",
+      "started_utc": "2026-11-05T01:55:17.146Z",
+      "observed": "Dashboard accesible después del ciclo de pago y reembolso. Captura final de métricas sintéticas.",
+      "displayed_text": "Propietario QA FullStyle\nPanel de Control Gerente\nHome\nPerfil\nNegocio\nServicios\nEmpleados\nCerrar sesión\nToggle Sidebar\nFullStyle\nResumen de tu negocio\nIngresos del mes\n$20.000\n\nNo hay datos del mes anterior\n\nReservas del mes\n1\n\nNo hay datos del mes anterior\n\nNuevos clientes\n0\n\nEste mes\n\nVentas\nNov\n0\n5000\n10000\n15000\n20000\nReservas\nNov\n0\n0.25\n0.5\n0.75\n1\n0.25",
+      "url": "/owner",
+      "screenshot": "screenshots/qa-23.png"
+    },
+    {
+      "id": "QA-24",
+      "title": "Consulta de negocio precargado",
+      "status": "PASA",
+      "started_utc": "2026-11-05T01:49:58.104Z",
+      "observed": "Pantalla accesible con suscripción sintética activa y sede de fixture. No implica CRUD completo aprobado.",
+      "overflow": false,
+      "url": "/owner/business",
+      "screenshot": "screenshots/qa-24.png"
+    },
+    {
+      "id": "QA-25",
+      "title": "Pantalla de empleados",
+      "status": "PASA",
+      "started_utc": "2026-11-05T01:49:59.166Z",
+      "observed": "Pantalla accesible con suscripción sintética activa y sede de fixture. No implica CRUD completo aprobado.",
+      "overflow": false,
+      "url": "/owner/employees",
+      "screenshot": "screenshots/qa-25.png"
+    },
+    {
+      "id": "QA-26",
+      "title": "Pantalla de servicios",
+      "status": "PASA",
+      "started_utc": "2026-11-05T01:50:00.000Z",
+      "observed": "Pantalla accesible con suscripción sintética activa y sede de fixture. No implica CRUD completo aprobado.",
+      "overflow": false,
+      "url": "/owner/services",
+      "screenshot": "screenshots/qa-26.png"
+    },
+    {
+      "id": "QA-27",
+      "title": "Operaciones de administrador",
+      "status": "PASA",
+      "started_utc": "2026-11-05T01:40:29.937Z",
+      "observed": "Pantalla renderizada; contenido y estado registrados.",
+      "overflow": false,
+      "url": "/operations",
+      "screenshot": "screenshots/qa-27.png"
+    },
+    {
+      "id": "QA-28",
+      "title": "Planes con sesión de administrador",
+      "status": "PASA",
+      "started_utc": "2026-11-05T01:40:30.913Z",
+      "observed": "Pantalla renderizada; contenido y estado registrados.",
+      "overflow": true,
+      "url": "/plans",
+      "screenshot": "screenshots/qa-28.png"
+    },
+    {
+      "id": "QA-29",
+      "title": "Activación de suscripción sintética por UI",
+      "status": "PASA",
+      "started_utc": "2026-11-05T01:42:02.961Z",
+      "observed": "Catálogo, intención, aprobación sintética y consulta de estado activo completados desde botones. Ningún cargo comercial.",
+      "url": "/operations",
+      "screenshot": "screenshots/qa-29.png"
+    },
+    {
+      "id": "QA-30",
+      "title": "Nueva sesión de administrador con plan activo",
+      "status": "PASA",
+      "started_utc": "2026-11-05T01:42:05.327Z",
+      "observed": "Después de cerrar sesión y entrar nuevamente, ruta final /owner.",
+      "url": "/owner",
+      "screenshot": "screenshots/qa-30.png"
+    },
+    {
+      "id": "QA-31",
+      "title": "Alta de negocio: validación de dirección",
+      "status": "BLOQUEADO",
+      "started_utc": "2026-11-05T01:52:39.729Z",
+      "observed": "Con nombre, dirección, teléfono y tipo de negocio completos, geocodificación responde HTTP 503 y el botón de registro queda deshabilitado. La UI informa que no se encuentra la dirección, aunque el proveedor está desactivado.",
+      "limitation": "Proveedor geográfico desactivado explícitamente en la demo local; no se invoca un servicio comercial.",
+      "url": "/register/business",
+      "screenshot": "screenshots/qa-31.png"
+    },
+    {
+      "id": "QA-32",
+      "title": "Catálogo con datos sintéticos precargados",
+      "status": "PASA",
+      "started_utc": "2026-11-05T01:47:56.907Z",
+      "observed": "La oferta sintética aparece en la búsqueda. Datos preparados por ORM exclusivamente para este QA; no se declara aprobada su creación por UI.",
+      "url": "/customer",
+      "screenshot": "screenshots/qa-32.png"
+    },
+    {
+      "id": "QA-33",
+      "title": "Seleccionar profesional y horario",
+      "status": "PASA",
+      "started_utc": "2026-11-05T01:47:58.624Z",
+      "observed": "Profesional y agenda semanal cargados desde la interfaz; hay horarios futuros disponibles.",
+      "url": "/customer/service/3",
+      "screenshot": "screenshots/qa-33.png"
+    },
+    {
+      "id": "QA-34",
+      "title": "Crear reserva desde la interfaz",
+      "status": "PASA",
+      "started_utc": "2026-11-05T01:47:59.943Z",
+      "observed": "POST de UI con HTTP 201 y reserva pendiente creada. No se marca pagada al reservar.",
+      "appointment_id": 5,
+      "appointmenttime": "2026-11-05 09:00:00",
+      "url": "/customer/service/3",
+      "screenshot": "screenshots/qa-34.png"
+    },
+    {
+      "id": "QA-35",
+      "title": "Reserva visible en el calendario del cliente",
+      "status": "PASA",
+      "started_utc": "2026-11-05T01:48:00.571Z",
+      "observed": "La nueva reserva y su servicio se muestran en Mis reservas.",
+      "url": "/customer/appointments",
+      "screenshot": "screenshots/qa-35.png"
+    },
+    {
+      "id": "QA-36",
+      "title": "Pago sintético de la reserva desde operaciones",
+      "status": "PASA",
+      "started_utc": "2026-11-05T01:48:01.618Z",
+      "observed": "Cotización del servidor, intención, simulación de aprobación y consulta completadas por UI. No se realiza un cobro real.",
+      "appointment_id": 5,
+      "url": "/operations",
+      "screenshot": "screenshots/qa-36.png"
+    },
+    {
+      "id": "QA-37",
+      "title": "Conciliación y reembolso sintético desde UI",
+      "status": "PASA",
+      "started_utc": "2026-11-05T01:50:01.316Z",
+      "observed": "Conciliación y reembolso desde botones: HTTP 200. ",
+      "appointment_id": 5,
+      "url": "/operations",
+      "screenshot": "screenshots/qa-37.png"
+    },
+    {
+      "id": "QA-38",
+      "title": "Estado de reserva después del reembolso",
+      "status": "PASA",
+      "started_utc": "2026-11-05T01:50:05.725Z",
+      "observed": "La UI muestra la reserva cancelada después del reembolso sintético, conservando su registro.",
+      "appointment_id": 5,
+      "url": "/operations",
+      "screenshot": "screenshots/qa-38.png"
+    },
+    {
+      "id": "QA-39",
+      "title": "Separación de rol cliente/administrador",
+      "status": "PASA",
+      "started_utc": "2026-11-05T01:50:07.460Z",
+      "observed": "Una sesión cliente que navega a /owner termina en /customer.",
+      "url": "/customer",
+      "screenshot": "screenshots/qa-39.png"
+    },
+    {
+      "id": "QA-40",
+      "title": "Filtro de sedes con catálogo precargado",
+      "status": "FALLA",
+      "started_utc": "2026-11-05T01:52:44.148Z",
+      "observed": "El selector Sitio está vacío aun existiendo una sede; GET /api/logic/site?service_id= devuelve HTTP 400.",
+      "combobox_labels": [
+        "Categoría",
+        "Sitio",
+        "Servicio",
+        "Precio"
+      ],
+      "url": "/customer",
+      "screenshot": "screenshots/qa-40.png"
+    }
+  ],
+  "screenshots": [
+    {
+      "path": "screenshots/qa-01.png",
+      "width": 1440,
+      "height": 2588,
+      "sha256": "b8dad1cbb91249b8ba8008157b0b4a1af5343fe36b22b866aafe1afc870149ff",
+      "bytes": 155501
+    },
+    {
+      "path": "screenshots/qa-02.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "500aa78616f00436303f7a58eac531d14a84334ba1f8fbb53e2059b550b4fb22",
+      "bytes": 60099
+    },
+    {
+      "path": "screenshots/qa-03.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "054d448c4ef323c3c56524502b3fee1cf5ff90f350db57fc693e4ca20d11b660",
+      "bytes": 239510
+    },
+    {
+      "path": "screenshots/qa-04.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "c0b191591b888697752c493a8f2ec66aa4614fb723490389aaf6ca133b46d2d9",
+      "bytes": 47939
+    },
+    {
+      "path": "screenshots/qa-05.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "fb1185e8c7f0b67b4a46361ddf045581e044e192ef7e26f5ade4ef09eec8c8cf",
+      "bytes": 237195
+    },
+    {
+      "path": "screenshots/qa-06.png",
+      "width": 1440,
+      "height": 1110,
+      "sha256": "8c2a7685d2776f1dd4773e228b9123222bcb22cdce91ef9c70da23350f0148a9",
+      "bytes": 294690
+    },
+    {
+      "path": "screenshots/qa-07.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "b64f5c2fe13bbdb838350d7cc0fa2dcc2c707fa376d45f42361eeb81a616ce2b",
+      "bytes": 237032
+    },
+    {
+      "path": "screenshots/qa-08.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "4b9990bccd07e33251a0e0690b001675a4d385312c5764b8c5153297cf2baee3",
+      "bytes": 245110
+    },
+    {
+      "path": "screenshots/qa-09.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "f4d44429bbb9a4cc27ef68bb0b6bbfd6eed3cf24177d88e8a4fcd895848b171b",
+      "bytes": 32858
+    },
+    {
+      "path": "screenshots/qa-10.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "886fb54a636c5a81a25e5058fe15b77eef014a339e54a5a757c3f89bcf1550f8",
+      "bytes": 46708
+    },
+    {
+      "path": "screenshots/qa-11.png",
+      "width": 1440,
+      "height": 1112,
+      "sha256": "1be7caaaadd73f82fdc35564ec6a1d29c0491c0fe45bcbeda6b187f2c25366e1",
+      "bytes": 30819
+    },
+    {
+      "path": "screenshots/qa-12.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "c4eb6fe523b635cda24f34e589f67171aa1f4b80c89ea944ed0cb488189e8c51",
+      "bytes": 71269
+    },
+    {
+      "path": "screenshots/qa-13.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "301812ac4d1cfda8471f3a88f73d01478e651b970a5a08d866d2696c2c6f67ee",
+      "bytes": 29326
+    },
+    {
+      "path": "screenshots/qa-14.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "e1790a245494be0ad86c3684059a96acc478e6807d3efeedb7f9369809bd44d3",
+      "bytes": 249634
+    },
+    {
+      "path": "screenshots/qa-15.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "1b7af813f3eb966fbbb18ca4d30225ee6d1fd762b588e072aae38dc6ee123e18",
+      "bytes": 15520
+    },
+    {
+      "path": "screenshots/qa-16.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "fe4027d9d193512e838f2553521398774f5353581835cf3ee663e2ecbe6800cb",
+      "bytes": 73117
+    },
+    {
+      "path": "screenshots/qa-17.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "098ffc37d4f75af349c1745ffdff84ae3c5aeaa101db8e23e3aa47837284444c",
+      "bytes": 55748
+    },
+    {
+      "path": "screenshots/qa-18.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "69184cadfe9ba9154f6f3af1a627b432d61749b944b9376b22cf149cb466de37",
+      "bytes": 53135
+    },
+    {
+      "path": "screenshots/qa-19.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "f4d44429bbb9a4cc27ef68bb0b6bbfd6eed3cf24177d88e8a4fcd895848b171b",
+      "bytes": 32858
+    },
+    {
+      "path": "screenshots/qa-20-menu-open.png",
+      "width": 390,
+      "height": 956,
+      "sha256": "5687ecc427c81ac0e741ecab471f40f3e6a0ac10824960f784d7f45764b5ab41",
+      "bytes": 13605
+    },
+    {
+      "path": "screenshots/qa-20.png",
+      "width": 390,
+      "height": 956,
+      "sha256": "46a89dc67194d26ac3c652190d967f7b2abf81c20019d26d1969f2fa37549b32",
+      "bytes": 17968
+    },
+    {
+      "path": "screenshots/qa-21.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "fb1185e8c7f0b67b4a46361ddf045581e044e192ef7e26f5ade4ef09eec8c8cf",
+      "bytes": 237195
+    },
+    {
+      "path": "screenshots/qa-22.png",
+      "width": 1456,
+      "height": 1334,
+      "sha256": "bb1e6e1b09567b29dfcefe69123315a67108b75ac9474931f159c45542968da4",
+      "bytes": 92077
+    },
+    {
+      "path": "screenshots/qa-23.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "aeff04c7d6b68c84a461fbf034d4d53e21a61c86c0c2e46886f58fd65b630de9",
+      "bytes": 47679
+    },
+    {
+      "path": "screenshots/qa-24.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "0ceb4cb5c751baa2826c30ae918c395237637f31bcab82e523d104e4f4a57f55",
+      "bytes": 194896
+    },
+    {
+      "path": "screenshots/qa-25.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "30d239eaffc6d06002933fbed8b0fa7cc03972ad8f0deebd4cf3ace6a2e7fd86",
+      "bytes": 35264
+    },
+    {
+      "path": "screenshots/qa-26.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "2e87519ddb37e8c32402056e5180e68335c16df0ebd7c3d9460ec27150097743",
+      "bytes": 282316
+    },
+    {
+      "path": "screenshots/qa-27.png",
+      "width": 1440,
+      "height": 1208,
+      "sha256": "cf508680362b10214a22aeed0e87743caa33484d7cb065e7e5f0fe71f4b791b1",
+      "bytes": 97010
+    },
+    {
+      "path": "screenshots/qa-28.png",
+      "width": 1456,
+      "height": 1334,
+      "sha256": "bb1e6e1b09567b29dfcefe69123315a67108b75ac9474931f159c45542968da4",
+      "bytes": 92077
+    },
+    {
+      "path": "screenshots/qa-29.png",
+      "width": 1440,
+      "height": 1625,
+      "sha256": "49ac6d6d93979f55d0a3204e6ac88a7d362fcafa00d0ba6969262711d42230e9",
+      "bytes": 127956
+    },
+    {
+      "path": "screenshots/qa-30.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "8df75a8155d0fcef16aa60ade5646488aa33c9b1d8e10ea64fda7430310b4859",
+      "bytes": 46061
+    },
+    {
+      "path": "screenshots/qa-31.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "fbfbad11afdcc90e67218e7bf3d733c0a5f08df72ffc6ed60516937cc977819c",
+      "bytes": 37992
+    },
+    {
+      "path": "screenshots/qa-32.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "1d35132bd987538469ddacad579e5f1f3abed90f0cb60cbfb742ba35b9d436e3",
+      "bytes": 242093
+    },
+    {
+      "path": "screenshots/qa-33.png",
+      "width": 1440,
+      "height": 1852,
+      "sha256": "eb082fd437c7ad1ffb77356bbb8a96990592d77c356e76307f20eac8d5ddf098",
+      "bytes": 139972
+    },
+    {
+      "path": "screenshots/qa-34.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "afe960f103b20ccfc1cd8ae9c954db143edfbd116aca29fe4aa9da289fb49e0a",
+      "bytes": 33296
+    },
+    {
+      "path": "screenshots/qa-35.png",
+      "width": 1440,
+      "height": 1112,
+      "sha256": "cf870095e3104010330bf83d7cbd062453775e03224a81b2b05c49e3dd695175",
+      "bytes": 33860
+    },
+    {
+      "path": "screenshots/qa-36.png",
+      "width": 1440,
+      "height": 1299,
+      "sha256": "12ee96c939d485b318c5d21a234c4bf55316b11b64ae1b4523534facb8a6a82e",
+      "bytes": 103540
+    },
+    {
+      "path": "screenshots/qa-37.png",
+      "width": 1440,
+      "height": 1351,
+      "sha256": "8df6a0ac32b278604a3b75fcc9957288ca0f57734a671340b19ea4529b29500c",
+      "bytes": 113305
+    },
+    {
+      "path": "screenshots/qa-38.png",
+      "width": 1440,
+      "height": 1228,
+      "sha256": "0a212d5d40dacd2acfc1765f581c541d76474726d1ddc3778cb1c7be410f5634",
+      "bytes": 84339
+    },
+    {
+      "path": "screenshots/qa-39.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "806098ddfbc2dea2e7115d569de2febb5eaa56d52fa12fa6f49b0338fa7eded8",
+      "bytes": 242224
+    },
+    {
+      "path": "screenshots/qa-40.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "7335e0ac076c6d82ba8492152be74a05c23bbbbc9b66e2654fb5e5d08138025f",
+      "bytes": 15922
+    }
+  ],
+  "fixtures": {
+    "method": "local ORM preconditions; not UI creation",
+    "site_id": 3,
+    "worker_id": 3,
+    "service_id": 3,
+    "appointment_id": 5,
+    "final_appointment_state": "cancelled",
+    "refund": "synthetic, HTTP 200",
+    "data_retained_locally_for_review": true
+  },
+  "accounts": {
+    "customer": "qa_client_bfc3e3a6@synthetic.invalid",
+    "manager": "qa_owner_bfc3e3a6@synthetic.invalid",
+    "passwords": "local private file only; not published"
+  },
+  "hosted_ci": {
+    "url": "https://github.com/dieramirezma/fullstyle/actions/runs/41947745113",
+    "conclusion": "success",
+    "head_sha": "8fe5e16c97894ac117b1f536b68e7fc7a7fb010a"
+  },
+  "source_integrity": {
+    "passed": true,
+    "original_files": 720,
+    "original_repositories": 9,
+    "modernization_imported_files": 798,
+    "modernization_fingerprint_unchanged": true
+  },
+  "console_observations": [
+    {
+      "path": "/customer/profile",
+      "error": "React #418, hydration mismatch; page recovers and password change works"
+    },
+    {
+      "path": "/customer",
+      "error": "Unhandled promise rejections for empty catalog 404 and site filter 400"
+    },
+    {
+      "path": "registration pages",
+      "error": "Google Maps script requested with undefined key and blocked by local CSP"
+    }
+  ]
+}

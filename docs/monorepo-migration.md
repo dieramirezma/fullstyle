@@ -38,3 +38,7 @@ GitHub Actions ejecuta la pipeline sobre un checkout nuevo. Consultar sus result
 Durante la preparación, el primer intento falló en el navegador por selectores con tildes leídos con una codificación incorrecta. Se restauró ese archivo desde UTF-8, se comprobó el botón real y se repitió la pipeline completa con éxito. El intento fallido permanece separado en `.quality/attempt-browser-encoding/`; no se computa como una ejecución aprobada.
 
 Repositorio público: [dieramirezma/fullstyle](https://github.com/dieramirezma/fullstyle). Se comprobó la correspondencia del commit remoto con la copia local y la creación de la ejecución de GitHub Actions; su resultado hospedado se consulta en Actions, separado de la evidencia Docker local.
+
+## QA funcional posterior a la publicación
+
+La validación técnica local y GitHub Actions están aprobadas. El QA exploratorio web arroja **36 comprobaciones aprobadas, tres fallidas y una bloqueada**, con 41 capturas. El ciclo de reserva/pago/reembolso sintético funciona con oferta precargada; el onboarding de negocio está bloqueado por geocodificación local. [Estado funcional y evidencia](qa/2026-11-04/README.md). Este resultado amplía el alcance de la aceptación técnica y no convierte los hallazgos pendientes en tareas ya resueltas.
